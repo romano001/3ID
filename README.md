@@ -9,5 +9,5 @@
 
 ## UML
 [4] UML: in percorso per una buona progettazione: [qui](http://www.cs.kent.edu/~jmaletic/cs63901/lectures/UML.pdf)  
-[5] UML: il manuale di Rumbaugh, Jacobspon e Booch: [qui](https://github.com/zuccante/3ID)  
+[5] UML: il manuale di Rumbaugh, Jacobspon e Booch: [qui](https://www.utdallas.edu/~chung/Fujitsu/UML_2.0/Rumbaugh--UML_2.0_Reference_CD.pdf)
 [6] UML: io manuale "UML in 24" si SChmuller: [qui](http://web.uettaxila.edu.pk/CMS/AUT2011/seSCbs/tutorial%5CElectronic_Book(UML%2024%20Hours).pdf).
