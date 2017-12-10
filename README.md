@@ -5,7 +5,7 @@
 [1] I materiali nel repository di AM: [qui](https://github.com/divino-marchese/zuccante/tree/master/bash)  
 
 ## RegExp
-[3] Una dispensa: [qui](http://www.marianospadaccini.it/repository/espressioni_regolari.pdf
+[3] Una dispensa: [qui](http://www.marianospadaccini.it/repository/espressioni_regolari.pdf)
 
 ## UML
 [4] UML: in percorso per una buona progettazione: [qui](http://www.cs.kent.edu/~jmaletic/cs63901/lectures/UML.pdf)  
