@@ -16,3 +16,4 @@ Qui di seguito alcuni riferimenti emateriali per la 3ID proposti dai profe. Andr
 ## Javascript
 [8] "Eloquent Javascript" di Marijn Haverbeke: [qui](http://eloquentjavascript.net/).
 [9] W3School: tutorial [qui](https://www.w3schools.com/js/).
+[10] var, le, const ... per chiarirsi un po' le idee, [qui](https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e).
