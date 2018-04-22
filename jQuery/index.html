@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Il Bubble Sort</title>
+  <link rel="stylesheet" type="text/css" href="stile.css">
+  <link rel="icon" href="favicon.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+    #mainnav{
+      display: block;
+    }
+  </style>
+</head>
+  <body>
+    <div id="container">
+    <header>
+      <h1 class="titolo"><center><b>Bubble sort</b></center></h1>
+    </header>
+    <nav>
+      <div class="droptitle">
+        <center>COLLEGAMENTI:</center>
+      </div>
+      <div class="dropdown">
+          <button class="dropbtn">Altri siti</button>
+            <div class="dropdown-content">
+                <a href="https://www.google.it">Google</a>
+                <a href="https://www.youtube.it">YouTube</a>
+            </div>
+      </div><br>
+      <div class="dropdown">
+          <button class="dropbtn">Progetti</button>
+            <div class="dropdown-content">
+                <a href="#">Progetti in <b>Java</b></a>
+                <a href="#">Progetti in <b>C++</b></a>
+                <a href="#">Progetti in <b>Pascal</b></a>
+            </div>
+      </div>
+      <div class="dropdown">
+          <button class="dropbtn">jQuery</button>
+            <div class="dropdown-content">
+                <a href="animazioni.html">Animazioni</a>
+            </div>
+      </div>
+      <div class="dropdown">
+          <button class="dropbtn">Login</button>
+            <div class="dropdown-content">
+              <form action="#">
+                <a>USERNAME</a>
+                <input type="text"></input>
+                <a>PASSWORD</a>
+                <input type="password"></input>
+                <input type="submit" id="btnsubmit"></input>
+              </form>
+            </div>
+      </div>
+    </nav>
+    <main id="mainnav">
+      <p>
+      <b>Presentazione generale:</b><br>
+      In informatica il Bubble sort o ordinamento a bolla è un semplice algoritmo di ordinamento di una lista di dati. Ogni coppia di elementi adiacenti viene comparata e invertita di posizione se sono nell'ordine sbagliato. L'algoritmo continua nuovamente a ri-eseguire questi passaggi per tutta la lista finché non vengono più eseguiti scambi, situazione che indica che la lista è ordinata.
+      <br><b>Denominazione ed efficienza:</b><br>
+      L'algoritmo deve il suo nome al modo in cui gli elementi vengono ordinati in una lista: quelli più piccoli "risalgono" verso un'estremità della lista, mentre quelli più grandi "affondano" verso l'estremità opposta della lista, come le bolle in un bicchiere di spumante. In particolare, alcuni elementi attraversano la lista velocemente (in gergo detti "<b>conigli</b>"), altri invece più lentamente (detti "<b>tartarughe</b>"). I primi vengono spostati nella stessa direzione in cui scorre l'indice dell'algoritmo, mentre i secondi nella direzione opposta.
+
+<br>
+<button id="esempio">Mostra/Nascondi esempio</button>
+<div class="blk" id="blk_6"><img id="imgesempio" src="gifbubble.gif" alt="Immagine animata non disponibile"></div>
+    </p>
+  <b>Altri algoritmi di ordinamento:</b>
+  <ul>
+    <li><a href="#">Quick Sort</a></li>
+    <li><a href="#">Selection Sort</a></li>
+  </ul>
+  </main>
+    <footer>Fonte <a href="https://it.wikipedia.org/wiki/Bubble_sort">wikipedia</a>.
+  <a href="mailto:alberto.basaglia17@gmail.com" target="_top">Contatto mail.</a>
+    </footer>
+    </div>
+    <script>
+      $(document).ready(function(){
+        $("#mainnav").hide();
+        $("#mainnav").show(2000);
+        $('#imgesempio').hide();
+        $("#esempio").click(function(){
+          $("#imgesempio").fadeToggle();
+        });
+      });
+    </script>
+  </body>
+</html>
