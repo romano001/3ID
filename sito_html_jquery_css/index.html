@@ -6,9 +6,10 @@
      <script>
      let commento=true;
      $(document).ready(function(){
+		$("#commento").hide(0);
 		//bottone commenti
 		$("#bottoneCommento").click(function(){
-			$("#commento").toggle();
+			$("#commento").toggle(500);
 		});
 		//pulsante del menu laterale
 		$('.btnMenuLat').click(function(){
