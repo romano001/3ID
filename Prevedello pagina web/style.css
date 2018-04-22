@@ -1,0 +1,357 @@
+#container {
+            position:relative;
+	    background-color:#333;
+            height:100%;
+            width:100%;
+}
+main{
+  background-size:100% 100%;
+  color:white;
+  text-align:left;
+  font-size:20px;
+  position:absolute;
+  top:7%;
+  left:0%;
+  height:90%;
+  width:100%;
+}
+footer{
+  background-color:grey;
+  text-align:right;
+  position:absolute;
+  top:97%;
+  height:3%;
+  width:100%;
+  z-index: 6;
+
+}
+
+body{margin:0}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: absolute;
+  top:0%;
+  height:7%;
+  left:18%;
+  width:64%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  height:100%;
+  width:12.5%;
+  top: 50%;
+  text-decoration:none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.navbar2 {
+  overflow: hidden;
+  background-color: #333;
+  position: absolute;
+  top:0%;
+  height:7%;
+  right:8%;
+  width:8%;
+}
+
+.navbar2 a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  height:100%;
+  width:100%;
+  top: 50%;
+  text-decoration:none;
+  font-size: 17px;
+}
+
+.navbar2 a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.navbar3 {
+  overflow: hidden;
+  background-image: url("gora.png");
+  background-size:100% 100%;
+  position: absolute;
+  top:0%;
+  height:7%;
+  right:0%;
+  width:8%;
+}
+
+.navbar3 a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  height:100%;
+  width:100%;
+  top: 50%;
+  text-decoration:none;
+  font-size: 17px;
+}
+
+.navbar3 a:hover {
+  background-image: url("gora.png");
+  background-size:100% 100%;
+  color: black;
+}
+
+.navbar4 {
+  overflow: hidden;
+  background-image: url("lol.png");
+  background-size:100% 100%;
+  position: absolute;
+  top:0%;
+  height:7%;
+  left:0%;
+  width:4%;
+}
+
+.navbar4 a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  height:100%;
+  width:100%;
+  top: 50%;
+  text-decoration:none;
+  font-size: 17px;
+}
+
+.navbar4 a:hover {
+  background-image: url("lol.png");
+  background-size:100% 100%;
+  color: black;
+}
+
+#logo {
+  position: absolute;
+  background-image: url("sad.png");
+  background-size:100% 100%;
+  top:5%;
+  width:18%;
+  height:18%;
+  left:8%;
+  z-index: 6;
+}
+
+#b1 {
+   position: absolute;
+   background-color:#feee66;
+   color:#ff6400;
+   border-color: #ffdf00;
+   outline: 0;
+   right:12%;
+   top:90%;
+   z-index: 6;
+}
+
+#b2 {
+  position: absolute;
+  background-color:#feee66;
+  color:#ff6400;
+  border-color: #ffdf00;
+  right:9%;
+  top:90%;
+  z-index: 6;
+}
+
+#b3 {
+  position: absolute;
+  background-color:#feee66;
+  border-color: #ffdf00;
+  color:#ff6400;
+  right:6%;
+  top:90%;
+  z-index: 6;
+}
+
+#b4 {
+  position: absolute;
+  background-color:#feee66;
+  color:#ff6400;
+  border-color: #ffdf00;
+  right:3%;
+  top:90%;
+  z-index: 6;
+}
+
+#div1 {
+   background-image: url("irelia.png");
+   background-size:100% 100%;
+   position: relative;
+   top:0%;
+   left0%;
+   width:100%;
+   height:100%;
+   z-index: 5;
+}
+
+#div2 {
+   background-image: url("mf.jpg");
+   background-size:100% 100%;
+   top:0%;
+   left0%;
+   position: relative;
+   width:100%;
+   height:100%;
+   z-index: 5;
+}
+
+#div3 {
+   background-image: url("kaisa.png");
+   background-size:100% 100%;
+   position: relative;
+   top:0%;
+   left0%;
+   width:100%;
+   height:100%;
+   z-index: 5;
+}
+
+#div4 {
+   background-image: url("annie.jpg");
+   background-size:100% 100%;
+   top:0%;
+   left0%;
+   position: relative;
+   width:100%;
+   height:100%;
+   z-index: 5;
+}
+
+#diva1{
+   position: absolute;
+   color:orange;
+   text-align: left;
+   font-size: 40px;
+   top:25%;
+   left:9%;
+   z-index: 6;
+}
+
+#diva2{
+   position: absolute;
+   color:yellow;
+   text-align: left;
+   font-size: 30px;
+   font-style: italic;
+   top:33%;
+   left:9%;
+   z-index: 6;
+}
+
+#diva3{
+   position: absolute;
+   text-align: left;
+   font-size: 20px;
+   top:39%;
+   left:9%;
+   z-index: 6;
+}
+
+#divb1{
+   position: absolute;
+   color:orange;
+   text-align: left;
+   font-size: 40px;
+   top:25%;
+   left:9%;
+   z-index: 6;
+}
+
+#divb2{
+   position: absolute;
+   color:yellow;
+   text-align: left;
+   font-size: 30px;
+   font-style: italic;
+   top:33%;
+   left:9%;
+   z-index: 6;
+}
+
+#divb3{
+   position: absolute;
+   text-align: left;
+   font-size: 20px;
+   top:39%;
+   left:9%;
+   z-index: 6;
+}
+
+#divc1{
+   position: absolute;
+   color:orange;
+   text-align: left;
+   font-size: 40px;
+   top:25%;
+   left:9%;
+   z-index: 6;
+}
+
+#divc2{
+   position: absolute;
+   color:yellow;
+   text-align: left;
+   font-size: 30px;
+   font-style: italic;
+   top:33%;
+   left:9%;
+   z-index: 6;
+}
+
+#divc3{
+   position: absolute;
+   text-align: left;
+   font-size: 20px;
+   top:39%;
+   left:9%;
+   z-index: 6;
+}
+
+#divd1{
+   position: absolute;
+   color:orange;
+   text-align: left;
+   font-size: 40px;
+   top:25%;
+   left:9%;
+   z-index: 6;
+}
+
+#divd2{
+   position: absolute;
+   color:yellow;
+   text-align: left;
+   font-size: 30px;
+   font-style: italic;
+   top:33%;
+   left:9%;
+   z-index: 6;
+}
+
+#divd3{
+   position: absolute;
+   text-align: left;
+   font-size: 20px;
+   top:39%;
+   left:9%;
+   z-index: 6;
+}
