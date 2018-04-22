@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="stile.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">/*imput di jquery*/
+    </script>
+    <script>
+    let x=1;
+    $(document).ready(function(){
+        $("#bottonemenusinistra").click(function(){
+          if(x==0)
+          {
+            $("p1").animate({left: '-25%'});
+            $("#bottonemenusinistra").animate({left: '0%'});
+            x=1;
+          }else{
+            $("p1").animate({left: '0%'});
+            $("#bottonemenusinistra").animate({left: '25%'});
+            x=0;
+          }
+        });
+      });/*animazione del menu a sinistra*/
+      $(document).ready(function(){
+        $("#foto_testo").hover(function(){
+          $(this).width('50%');
+        }, function(){
+          $(this).width('200');
+        });
+          $("#esci_immagine").click(function(){
+            $(this).hide(200);
+            $("#immagine").hide(500);
+            $("#immagine_scelta").hide(200);
+          });
+          $("#foto_testo").click(function(){
+            $("#esci_immagine").show(500);
+            $("#immagine").show(200);
+            $("#immagine_scelta").show(200);
+            $("#immagine_scelta").css('background-image',"url('the_riva_degli.jpg')");
+          });
+        $("#immagine1").hover(function(){
+          $(this).width('30%');
+          $(this).css({"padding":"1px"});
+        }, function(){
+          $(this).width('25%');
+          $(this).css({"padding":"2.3%"});
+        });
+        $("#immagine2").hover(function(){
+          $(this).width('30%');
+          $(this).css({"padding":"1px"});
+        }, function(){
+          $(this).width('25%');
+          $(this).css({"padding":"2.3%"});
+        });
+        $("#immagine3").hover(function(){
+          $(this).width('30%');
+          $(this).css({"padding":"1px"});
+        }, function(){
+          $(this).width('25%');
+          $(this).css({"padding":"2.3%"});
+        });
+        $("#immagine1").click(function(){
+          $("#esci_immagine").show(500);
+          $("#immagine").show(200);
+          $("#immagine_scelta").show(200);
+          $("#immagine_scelta").css('background-image',"url('ponte_rialto_venezia.jpg')");
+        });
+        $("#immagine2").click(function(){
+          $("#esci_immagine").show(500);
+          $("#immagine").show(200);
+          $("#immagine_scelta").show(200);
+          $("#immagine_scelta").css('background-image',"url('dow.jpg')");
+        });
+        $("#immagine3").click(function(){
+          $("#esci_immagine").show(500);
+          $("#immagine").show(200);
+          $("#immagine_scelta").show(200);
+          $("#immagine_scelta").css('background-image',"url('venezia.jpg')");
+        });
+      });
+    </script>
+    </head>
+  <body>
+      <p id="sfondo_pagina">
+      </p>
+      <p id="main">
+        <div id="Titolo_pagina" >
+          Venezia
+        </div>
+        <p id="primotesto"><img id="foto_testo" src="the_riva_degli.jpg" width="150" height="auto">
+          La città di Venezia è stata per più di un millennio capitale della Repubblica di Venezia ed è conosciuta a questo
+          riguardo come la Serenissima, la Dominante e la Regina dell'Adriatico. Per le peculiarità urbanistiche e per il suo
+           patrimonio artistico, Venezia è universalmente considerata una tra le più belle città del mondo ed è annoverata,
+           assieme alla sua laguna, tra i siti italiani patrimonio dell'umanità dall'UNESCO: questo fattore ha contribuito a
+           farne la terza città italiana (dopo Roma e Milano) con il più alto flusso turistico, in gran parte proveniente da
+           fuori Italia.
+        </p>
+        <p id="container_immagini">
+          <img id="immagine1" src="ponte_rialto_venezia.jpg">
+          <img id="immagine2" src="dow.jpg">
+          <img id="immagine3" src="venezia.jpg">
+        </p>
+        <div id="footer">
+          sito di plamadeala mircea
+          <div id="youtube">
+          </div>
+        </div>
+      </p>
+      <p1>
+        <button id="bottonemenusinistra"></button>
+        <a href="#">
+          <div id="menusinistra1" >
+            Venezia
+          </div>
+        </a>
+        <div id="barraricerca">
+          <input class="w3-input" type="text" placeholder="Search..">
+        </div>
+        <a href="#">
+          <div id="menusinistra2">
+            citta
+          </div>
+        </a>
+        <a href="#">
+          <div id="menusinistra3">
+            Info
+          </div>
+        </a>
+        <div id="menusinistra4">
+          <span>Immagini</span>
+          <div class="dropdown-content">
+            <a href="#"><p>ponte Rialto</p></a>
+            <a href="#"><p>venezia</p></a>
+            <a href="#container_immagini"><p>citta</p></a>
+          </div>
+        </div>
+        <div id="footer_menu">
+          sito di plamadeala mircea
+        </div>
+      </p1>
+      <a id="immagine">
+      </a>
+      <div id="immagine_scelta"></div>
+      <div id="esci_immagine"></div>
+  </body>
+
+</html>
