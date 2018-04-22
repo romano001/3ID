@@ -1,0 +1,135 @@
+<html>
+  <head>
+	   <title>author: Lorenzo De Luca</title>
+     <link rel="stylesheet" type="text/css" href="stile.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script>
+     let commento=true;
+     $(document).ready(function(){
+		//bottone commenti
+		$("#bottoneCommento").click(function(){
+			$("#commento").toggle();
+		});
+		//pulsante del menu laterale
+		$('.btnMenuLat').click(function(){
+			$('.menuLat').toggleClass('uscitaLat');
+		});
+		//menu a tendina discesa
+		$('.bottoneDrop').mouseover(function(){
+			$(".menuD-lista").fadeIn(500);
+			$(".menuD").fadeIn(500);
+		});
+		$('.menuD').mouseleave(function(){
+			$(".menuD-lista").fadeOut(250);
+		}); 
+		//effetto scomparsa e comparsa immagini social in alto
+		$("header>a>img").hover(function(){
+			$(this).toggle(400); 
+		});  
+		//ingrandimento righe paragrafi
+		$("main>ol>li").mouseover(function(){
+			$(this).animate({ fontSize : '18' },"fast");
+		});
+		$("main>ol>li").mouseleave(function(){
+			$(this).stop().animate({ fontSize : '14' });
+		});
+	});
+    </script>
+  </head>
+  <body>
+      <header>
+        &emsp;&emsp;
+        <a href="https://facebook.com" target="_blank" title="Facebook"><img src="images/facebook.png" alt="facebook"/></a>&nbsp;
+        <a href="https://twitter.com" target="_blank" title="Twitter"><img src="images/twitter.png" alt="twitter"/></a>&nbsp;
+        <a href="https://youtube.com" target="_blank" title="Youtube"><img src="images/youtube.png" alt="youtube"/></a>&nbsp;
+        <a href="https://linkedin.com" target="_blank" title="Linkedin"><img src="images/linkedin.png" alt="linkedin"/></a>&nbsp;
+        <a href="https://github.com" target="_blank" title="Github"><img src="images/github.png" alt="github"/></a>&nbsp;
+        <a href="#" target="_blank" title="rss"><img src="images/rss.png" alt="rss"/></a>
+        <div id="mail">
+          <a href="mailto:mail@example.com">
+            <img src="images/email.png" style="width:32px;height:32px;" alt="mail"/><h7>mail@example.com</h7>
+          <a>
+        </div>
+     </header>
+     <nav>
+		<div class="menuLat">
+			<button class="btnMenuLat"></button>
+			<ul>
+				<li><a href="#">Contattaci</a></li>
+				<li><a href="#">privacy policy</a></li>
+				<li><a href="#">cookie policy</a></li>
+				<li><a href="#">Login</a></li>
+			</ul>
+		</div>
+        <h1><font face="Lucida Handwriting"><b><i>&emsp;&nbsp;Lorenzo De Luca</b></i></font></h1>
+        <div id="menu">
+          <ul id="nav">
+            <li class="menuD">
+              <a href="#tornaSu" class="bottoneSenzaDrop">Home</a>
+            </li>
+            <li class="menuD">
+              <a href="#" class="bottoneDrop">Scrittori del XIV secolo</a>
+              <div class="menuD-lista">
+                <a href="#">Dante Alighieri</a>
+                <a href="#">Cecco Angiolieri</a>
+                <a href="#">Giovanni Boccaccio</a>
+                <a href="#">Giovanni Sercambi</a>
+                <a href="#tornaSu">Francesco Petrarca</a>
+                <a href="#">Agostino Trionfi</a>
+              </div><!--div menuD-lista-->
+            </li>
+            <li class="menuD">
+              <a href="#" class="bottoneSenzaDrop">Altri scrittori</a>
+            </li>
+          </ul>
+      </div><!-- div menu-->
+     </nav>
+     <main>
+       <div id="tornaSu"></div>
+       <h2><b>&emsp;Solo et pensoso i pi&ugrave; deserti campi - Francesco Petrarca</b></h2>
+       <ol>
+         <p>
+          <li>Solo et pensoso i pi&uacute; deserti campi</li>
+          <li>vo mesurando a passi tardi et lenti,</li>
+          <li>et gli occhi porto per fuggire intenti</li>
+          <li>ove vestigio human la rena stampi.</li>
+         </p><p>
+          <li>Altro schermo non trovo che mi scampi</li>
+          <li>dal manifesto accorger de le genti,</li>
+          <li>perch&eacute; negli atti d'alegrezza spenti</li>
+          <li>di fuor si legge com'io dentro avampi</li>
+         </p><p>
+          <li>s&iacute; ch'io mi credo omai che monti et piagge</li>
+          <li>et fiumi et selve sappian di che tempre</li>
+          <li>sia la mia vita, ch'&eacute; celata altrui.</li>
+         </p><p>
+          <li>Ma pur s&igrave; aspre vie n&eacute; s&iacute; selvagge</li>
+          <li>cercar non so, ch'Amor non venga sempre</li>
+          <li>ragionando con meco, et io co llui</li>
+        </p>
+       </ol><br>
+       <button id="bottoneCommento">Mostra/Nascondi il commento</button>
+       <br>
+       <div id="commento">
+         <h2><b>Analisi e commento della poesia:</b></h2>
+         Il tema portante del sonetto &egrave; il bisogno disperato del poeta di evadere dal pensiero amoroso, un assillo che non conosce requie, e non
+         concede un solo attimo di tregua all'amante disperato. A questo tema centrale, Petrarca collega una serie di temi collaterali, coincidenti con i temi fondamentali di tutto il <i>Canzoniere</i>.<br>Una caratteristica saliente del sonetto  &egrave; senz'altro la totale mancanza di concretezza realistica nella rappresentazione del
+         paesaggio: &egrave; evidente che l'intento di Petrarca non  &egrave; quello di delineare uno spazio reale, bens &igrave; quello di suggerire uno spazio astratto, un luogo che  &egrave; innanzitutto luogo dell'anima, e cio&egrave; una rappresentazione "per immagini" dell'idea stessa di solitudine ottendendo cos&igrave; un effetto anti-realistico e "metafisico".
+       </div>
+      <div id="InfoArt">
+       <table>
+        <tr><td>TAGS:</td><td>Il Canzoniere,</td><td>Francesco Petrarca,</td><td>Sonetto</td></tr>
+        <tr><td colspan="4"><center>Articolo pubblicato il 15/01/2018</center></td></tr>
+       </table>
+     </div><!--div InfoArt-->
+     <div id="share">
+       <a title="Share On Facebook" href="http://www.facebook.com/sharer.php?u=#" target="_blank"><img src="images/facebook-share-azzurra.png" alt="facebook"/></a>
+       <a title="Share On Twitter" href="http://twitter.com/share?url=#" target="_blank"><img src="images/twitter-share.png" alt="twitter"/></a>
+       <a title="Share On Google+" href="https://plus.google.com/share?url=#" target="_blank"><img src="images/googlep-share.png" alt="twitter"/></a>
+       <a title="Share On Linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=#" target="_blank"><img src="images/linkedin-share.png" alt="linkedin"/></a>
+     </div><!--div share-->
+     <center><b><a href="#tornaSu">TORNA ALL'INIZIO</a></b></center>
+     </main>
+     <footer><h4>&copy;2018 Lorenzo De Luca. All Rights Reserved.</h4></footer>
+  </body>
+</html>

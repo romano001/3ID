@@ -1,0 +1,272 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(1,22,39);
+  margin: 0;
+  padding: 0;
+/*nascondo le barre di scorrimento*/
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+header{
+	background-color: rgb(1,22,39);
+	position: fixed;
+	top:0px;
+	left:0px;
+    right:0px;
+	height:7%;
+	z-index:7;
+}
+header img{
+  margin-top: 0.6%;
+  width: 32px;
+  height: 32px;
+}
+
+#mail{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+#mail img{
+  position: relative;
+  vertical-align: middle;
+  right: 10px;
+}
+#mail h7{
+  position: relative;
+  right: 7px;
+  top: 5px;
+}
+#mail a:link    {color:orange; background-color:transparent; text-decoration:none}
+#mail a:visited {color:grey; background-color:transparent; text-decoration:none}
+#mail a:hover   {color:rgb(11,163,211); background-color:transparent; text-decoration:none}
+#mail a:active  {color:yellow; background-color:transparent; text-decoration:underline}
+nav{
+  position: fixed;
+	background-color: orange;
+  top: 7%;
+  left: 0px;
+  right: 0px;
+  height: 11%;
+  font-size: 18;
+  font-family: serif;
+  z-index: 5;
+}
+nav h1{
+  position: relative;
+  display: inline;
+  font-size: 35;
+  top: 25%;
+}
+nav h1:hover{
+  position: relative;
+  color: yellow;
+}
+.menuLat{
+  position: fixed;
+  top: 8.5%;
+  right: -250px;
+  background: orange;
+  width: 250px;
+  height: 100%;
+  transition: .3s;
+  z-index: 8;
+}
+ul{
+  margin: 0;
+  padding: 20px 0;
+}
+ul li{
+  list-style: none;
+}
+ul li a{
+  padding: 10px 20px;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+}
+.uscitaLat{
+	right: 0;
+}
+.btnMenuLat{
+  background-color: orange;
+  position: absolute;
+  top: 0px;
+  left: -50px;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-image: url(images/menu.png);
+  background-size: 100%;
+  border: none;
+  outline: none;
+  z-index: 8;
+}
+
+#menu{
+  top: 25%;
+  height: 7%;
+  position: absolute;
+  right: 5%;
+  /*il resto del codice si trova alla fine di questo file*/
+}
+main{
+  position: fixed;
+  top: 18%;
+  right: 0px;
+  left: 0px;
+  height: 74%;
+  font-family:Open Sans, sans-serif;
+  text-align: left;
+  font-size: 14;
+  background-image: url(images/sfondo.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right top;
+  background-size: cover;
+  overflow-y: scroll;
+  z-index: 1;
+}
+main li:hover{
+  font-weight: bold;
+}
+main h2:hover{
+  color: orange;
+}
+main a:link    {color:orange; background-color:transparent; text-decoration:none}
+#bottoneCommento {
+ outline: none;
+ cursor: pointer;
+ text-align: center;
+ text-decoration: none;
+ font: bold 12px Arial, Helvetica, sans-serif;
+ color: #fff;
+ padding: 10px 20px;
+ border: solid 2px black;
+ background: orange;
+ margin-left: 5%;
+}
+#commento{
+  margin-top: 20px;
+  margin-left: 2%;
+  margin-bottom: 20px;
+  max-width: 25%;
+  font-family: cursive;
+  text-align: left;
+}
+#share{
+  position: fixed;
+  right: 5%;
+  bottom: 10%;
+}
+
+#share img{
+  width: 32px;
+  height: 32px;
+  padding: 3px;
+}
+#share img:hover{
+  width: 50px;
+  height: 50px;
+}
+
+#infoArt table  {
+    position: relative;
+    left: 18px;
+    margin-top: 3%;
+    border-collapse: collapse;
+    font-size: 11;
+    bottom: 5px;
+    width: 25%;
+    height: 18%;
+    font-family: "Futura";
+    text-align: center;
+}
+#infoArt td, th {
+    border-bottom: 1px solid orange;
+    padding: 3px;
+}
+#infoArt td:hover{
+  text-decoration: underline;
+}
+footer{
+  position: fixed;
+	background-color: orange;
+  font-family:Open Sans, sans-serif;
+  font-stretch: ultra-condensed;
+  color: white;
+	bottom: 0px;
+  left: 0px;
+  right:0px;
+	height: 8%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+footer:hover {
+  font-weight: bold;
+  font-style: italic;
+}
+/*menu a tendina*/
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+#menu li {
+    float: left;
+}
+li a, .bottoneDrop{
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-bottom: 1px solid orange;
+}
+.bottoneSenzaDrop{
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-bottom: 1px solid orange;
+}
+li a:hover, .menuD:hover .bottoneDrop{
+    background-color: transparent;
+    color: rgb(11, 163, 211);
+}
+
+li.menuD{
+    display: inline-block;
+}
+
+.menuD-lista{
+    display: none;
+    position: fixed;
+    text-align: left;
+    background-color: rgb(253,211,87);
+    min-width: 220px;
+    font-size: 18;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 5; /*serve per mettere in primo piano il menu a tendina*/
+}
+
+.menuD-lista a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.menuD-lista a:hover {
+  background-color:  orange;
+  color:white;
+  text-align: right;
+}
