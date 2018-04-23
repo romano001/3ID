@@ -15,7 +15,17 @@ Qui di seguito alcuni riferimenti emateriali per la 3ID proposti dai profe. Andr
 
 ## Javascript
 [8] "Eloquent Javascript" di Marijn Haverbeke: [qui](http://eloquentjavascript.net/).  
-[9] W3School: tutorial [qui](https://www.w3schools.com/js/).  
-[10] var, le, const ... per chiarirsi un po' le idee, [qui](https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e).  
-[11] semicolon (;) sì o no ... meglio sì, leggi [qui](https://codeburst.io/why-i-prefer-to-use-semicolon-in-javascript-f00c303547).  
-[12] oggetti, come trattarli, un articolo [qui](https://medium.com/@justtoconfirm/object-oriented-javascript-d61fe073ca86).
+[9] "Javascript", documentazione di Mozilla: [qui](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
+[10] W3School: tutorial [qui](https://www.w3schools.com/js/).  
+
+## Binding e semicolon
+[11] var, le, const ... per chiarirsi un po' le idee, [qui](https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e).  
+[12] semicolon (;) sì o no ... meglio sì, leggi [qui](https://codeburst.io/why-i-prefer-to-use-semicolon-in-javascript-f00c303547). 
+
+## Oggetti
+Javascript può risultare ostico per chi proviene da C++ e java e le classi, proponiamo qui di seguito alcune letture (ad integrazione del testo) 
+[13] oggetti, come trattarli, un articolo [qui](https://medium.com/@justtoconfirm/object-oriented-javascript-d61fe073ca86).  
+[14] lavorare con gli oggetti (Mozilla): [qui](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
+
+# Consegne
+Per le consegne si rimanda al file [CONSEGNE.md](./CONSEGNE.md).

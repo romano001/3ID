@@ -1,0 +1,3 @@
+# Consegne
+- Prima consegna `consegna_01` "JQUery introduction", dead line 23/04/2018.
+- Seconda consegna `consegna_02` "CF", webapp per il calcolo dei codici fiscali, dead line 06/05/2018.
