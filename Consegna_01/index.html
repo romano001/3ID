@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Cubo Di Rubik</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css">
+    </style>
+    <script type="text/javascript">
+        var i = 0;
+
+        function scrivi() {
+            var ID = document.getElementById("testo");
+            ID.insertAdjacentText("beforeEnd", temp.charAt(i));
+            if (i < temp.length - 1) {
+                i++;
+                setTimeout("scrivi()", 100);
+            }
+        }
+
+        function inizio() {
+            var ID = document.getElementById("testo");
+            temp = ID.innerHTML;
+            ID.innerHTML = "";
+            scrivi();
+        }
+    </script>
+    <script type="text/javascript" src="jquery/jquery.js"></script>
+    <script type="text/javascript" src="jquery/funzioni.js"></script>
+    <script>
+        $(document).ready(function() {
+            blink('.testo-lampeggiante');
+        });
+    </script>
+
+</head>
+
+<body onload="inizio();">
+    <div id="wrapper">
+
+        <div id="head" class="box fadeInDownBig animated">
+            <h1 class="animated rubberBand infinite">Cubo Di Rubik</h1>
+        </div>
+
+        <div id="left_column" class="box bounceInleft animated">
+
+            <h1>Menu</h1>
+            <div id="menu">
+                <ul id="nav">
+                    <li><a href="index.html"><strong>HOME</strong></a></li>
+                    <li><a><strong>STORIA</strong></a>
+                        <ul>
+                            <li><a href="https://it.wikipedia.org/wiki/Cubo_di_Rubik">WIKIPEDIA</a></li>
+                            <li><a href="https://www.google.it/search?q=cubo+di+rubik&oq=cubo+di+rubik&aqs=chrome.0.69i59j69i61j0l4.5573j1j7&sourceid=chrome&ie=UTF-8">CUBO</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="menu_corr"><strong>GALLERIA</strong></a>
+                        <ul>
+                            <li><a href="https://www.google.it/search?q=cubo+di+rubik&source=lnms&tbm=isch&sa=X&ved=0ahUKEwi_xe-a78jaAhWFBywKHduaAdMQ_AUIDCgD&biw=1920&bih=959">FOTO</a></li>
+                            <li><a href="https://www.youtube.com/results?search_query=cubo+di+rubik">VIDEO</a></li>
+                        </ul>
+                    </li>
+                    <li><a><strong>INFORMAZIONI</strong></a>
+                        <ul>
+                            <li><a>FILIPPO SACCON</a></li>
+                            <li><a>3ID</a></li>
+                            <li><a>ZUCCANTE</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <h1>NEWS</h1>
+            <p> Questo sito verra`presto aggiornato alla versione 2.0 </p>
+        </div>
+
+        <div id="right_column" class="box bounceInRight animated">
+            <span class="testo-lampeggiante"><strong> Storia </strong></span>
+            <hr color="#293D52" size="3" align="center" margin-right: "10000px"/>
+
+            <p>Il cubo di Rubik o cubo magico (Rubik-kocka in ungherese) è un celebre twisty puzzle 3D inventato dal professore di architettura e scultore ungherese Ernő Rubik nel 1974. Chiamato originariamente Magic Cube (Cubo magico) dal suo inventore,il rompicapo fu rinominato in Rubik's Cube (Cubo di Rubik) dalla Ideal nel 1980, che lo vendette grazie all'uomo d'affari Tibor Laczi e al fondatore di Seven TownsTom Kremer, e nello stesso anno vinse un premio speciale dalla giuria dello Spiel des Jahres in Germania, unico solitario premiato nella storia del premio. Al periodo di gennaio 2009, erano stati venduti nel mondo complessivamente 350 milioni di cubi, rendendo il cubo di Rubik il puzzle più venduto al mondo. È da molti ritenuto essere il giocattolo più venduto al mondo.
+
+                <img src="immagini/body.jpg" class="foto_fade" /> Su un classico cubo di Rubik, ognuna delle sei facce è ricoperta da nove adesivi, ognuno dei quali presenta un particolare colore: bianco, giallo, rosso, verde, blu e arancione. Nei modelli attualmente sul mercato, generalmente il bianco è opposto al giallo, il rosso all'arancione, e il verde al blu; il bianco, il blu e il rosso sono ordinati in senso orario attorno al corrispettivo angolo del cubo. Nei primi cubi messi in commercio, la posizione dei colori variava da un cubo all'altro. Un meccanismo interno permette alle facce di ruotare in modo indipendente, così da mescolare i colori del cubo. Per risolvere il rompicapo, ogni faccia deve tornare a mostrare un solo colore. Rompicapi simili sono stati sviluppati nel tempo, con differenti dimensioni, colori, facce e adesivi, non tutti realizzati da Rubik.</p>
+
+            <h1>Permutazioni</h1>
+            <p>Lo scopo del gioco è di risalire alla posizione originale dei cubetti portando il cubo ad avere per ogni faccia un colore uguale. L'originale cubo di Rubik (3x3x3) è composto da otto angoli e dodici spigoli. Esistono quindi 8! (40.320) modi diversi di disporre i diversi pezzi angolari nel cubo. Ogni angolo può essere ruotato in tre posizioni diverse, ma solo sette degli otto angoli possono essere ruotati in modo indipendente; la disposizione dell'ultimo angolo dipenderà dalla posizione degli altri sette. Questo fornisce 37 (2.187) diverse possibilità. Ci sono 12!/2 (239.500.800) modi di disporre i dodici spigoli, ciascuno dei quali può essere ruotato in modo indipendente ad eccezione dell'ultimo, la cui posizione dipende da quella degli altri undici, per un totale di 211 (2.048) modi diversi. Il numero totale di permutazioni del cubo di Rubik, ovvero il numero totale di configurazioni che il cubo può assumere: 43.252.003.274.489.856.000
+            </p>
+            <h1>Dove acquistarlo?</h1>
+            <ul>
+                <li><a href="https://www.amazon.it/s/ref=nb_sb_ss_i_3_8?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&url=search-alias%3Daps&field-keywords=cubo+di+rubik&sprefix=cubo+di+%2Caps%2C165&crid=12SFBUJ596BMO">Amazon</a></li>
+                <li><a href="http://lightake.com/">Lightake</a></li>
+                <li><a href="https://eu.rubiks.com/store/">Rubiks</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div id="bottom">
+        <div id="left_footer">
+            <div id="testo">Copyright &copy;2018 Filippo Saccon,all rights reserved.</div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

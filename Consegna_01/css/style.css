@@ -1,0 +1,215 @@
+* {
+     margin: 0;
+     padding: 0;
+}
+ .foto_fade {
+     border: 1px solid #575757;
+     margin-left: 10px;
+}
+ a {
+     color: #3B526E;
+}
+ a:visited {
+     text-decoration: underline;
+}
+ a:hover {
+     color: #293D52;
+}
+ ul {
+     margin: 15px 40px;
+     list-style-type: none;
+}
+ body {
+     background: #333333;
+     background-position: 50% 50%;
+     font: normal 11px/18px verdana, georgia, times, serif;
+     text-align: center;
+}
+ .testo-lampeggiante{
+     font-size: 18px;
+     margin-left: 15px;
+     margin-right: 15px;
+     display: block;
+     padding-bottom: 3px;
+     border-bottom:solid #668EBF;
+     color: #293D52
+}
+ #testo {
+     text-align: Center;
+     color: #3330033;
+     font:normal 11px verdana;
+}
+ #wrapper {
+     margin: 0 auto;
+     text-align: left;
+     width: 690px;
+}
+ #menu {
+     clear:both;
+     float:left;
+     width:175px;
+     font-size:70%;
+     margin:20px 10px 0 0;
+}
+ #menu ul {
+     margin:0;
+     padding:0;
+}
+ #menu a {
+     display:block;
+     color:#ffcc00;
+     height:auto!important;
+     height:0;
+     text-decoration:none;
+     padding:0 0 0 20px;
+}
+ #menu li ul {
+     position:relative;
+     left:0;
+     top:0;
+     display:none;
+}
+ #menu li:hover ul, #menu li.over ul {
+     display:block;
+}
+ #menu li ul a {
+     color:#ffcc00;
+}
+ #menu a.menu_corr {
+     color:#ffcc00;
+     margin:0px 10px 0 0;
+}
+ #menu a:focus, #menu a:hover, #menu a:active {
+     color:#000099;
+     padding:0 0 0 10px;
+     background:#ccccff;
+}
+ #head {
+     width: 690px;
+     height: 195px;
+     background: #9D3A06 url("../immagini/header.jpg");
+     border: 5px solid #333333;
+     border-width: 5px 5px 5px 5px;
+     text-align: right;
+}
+ #head img {
+     position: relative;
+     right: 570px;
+     margin-bottom: 30px;
+}
+ #head h1 {
+     color: #fff;
+     font-size: 40px;
+     margin-top: 30px;
+     margin-right: 410px;
+     cursor: default;
+     color: #ffffff;
+     letter-spacing: -5px
+}
+ #left_column {
+     padding-top: 20px;
+     width: 200px;
+     float: left;
+}
+ #right_column {
+     padding-top: 20px;
+     width: 386px;
+     float: left;
+}
+ #left_column {
+     margin-top: 12px;
+     margin-left: 48px;
+     color: #ffffff;
+     background: #293D52 url("images/leftgrad.jpg") repeat-x;
+}
+ * html #left_column {
+     position: relative;
+     top: -8px;
+     margin-left: 26px;
+     width: 200px;
+}
+ * html #right_column {
+     position: relative;
+     top: -8px;
+     margin-left: 25px;
+}
+ #right_column {
+     margin-top: 12px;
+     margin-left: 20px;
+     color: #000000;
+     background: #668EBF url("images/rightgrad.jpg") repeat-x;
+}
+ #left_column h1, #right_column h1{
+     font-size: 18px;
+     margin-left: 15px;
+     margin-right: 15px;
+     display: block;
+     padding-bottom: 3px;
+}
+ #left_column h1 {
+     border-bottom:solid #668EBF;
+}
+ #right_column h1 {
+     border-bottom:solid #293D52;
+}
+ #left_column img, #right_column img{
+     border: 2px solid #293D52;
+     margin: 20px 0px 20px 0px;
+}
+ #left_column h1 {
+     color: #668EBF;
+}
+ #right_column h1 {
+     color: #293D52;
+}
+ p {
+     margin: 20px 20px 20px 20px;
+}
+ p:first-letter {
+     font-size: 20px;
+     float: left;
+     margin-right: 5px;
+}
+ .links {
+     list-style: none;
+     list-style-image: none;
+     margin: 20px 15px;
+}
+ .links li {
+     border-style: solid;
+     border-width: 0 0 0 5px;
+}
+ .blue {
+     border-color: #1D304A;
+}
+ .links a {
+     display: block;
+     width: 154px;
+     height: 24px;
+     background-color: #3B526E;
+     font: normal 11px/24px georgia, times, serif;
+     color: #fff;
+     text-decoration: none;
+     margin: 5px 0;
+     padding-left: 10px;
+}
+ * html .links a {
+     width: 154px;
+}
+ .links a:hover {
+     background-color: #668EBF;
+     color: #fff;
+}
+ #bottom {
+     float: center;
+     clear: both;
+     margin: 30px 0 0 70px;
+}
+ #left_footer {
+     color: #668EBF;
+     padding-bottom: 10px;
+}
+ * html #left_footer {
+     position: relative;
+}
+ 
