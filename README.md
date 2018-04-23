@@ -18,3 +18,7 @@ Qui di seguito alcuni riferimenti emateriali per la 3ID proposti dai profe. Andr
 [9] W3School: tutorial [qui](https://www.w3schools.com/js/).  
 [10] var, le, const ... per chiarirsi un po' le idee, [qui](https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e).  
 [11] semicolon (;) sì o no ... meglio sì, leggi [qui](https://codeburst.io/why-i-prefer-to-use-semicolon-in-javascript-f00c303547).
+
+## Consegne
+
+Le consegne si trovano sul file [CONSEGNE.md](./CONSEGNE.md).
