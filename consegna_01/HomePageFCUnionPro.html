@@ -1,0 +1,153 @@
+<html>
+<head>
+  <title>Andrea Stocco</title>
+  <link rel="stylesheet" type="text/css" href="stile2.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".dropdown").mouseenter(
+        function(){
+          $(".dropdown-content", this).stop(true, true).delay(50).slideDown("slow");
+        });
+      $(".dropdown-content").mouseleave(
+        function(){
+          $(this).stop(true, true).slideUp("slow");
+        });
+
+      $("#ok").click(
+        function(){
+          $(this).animate({left: '0', height : '400', width: '380'});
+        });
+
+      $("#ok").dblclick(
+        function(){
+          $(this).animate({left: '472', height: '250', width:'320'});
+        });
+
+      $("#ok2").click(
+        function(){
+          $(this).animate({top: '-200', left: '0', height : '400', width: '380'});
+        });
+
+      $("#ok2").dblclick(
+        function(){
+          $(this).animate({top: '50', left: '472', height: '250', width:'320'});
+        });
+
+      $("#ok3").click(
+        function(){
+          $(this).animate({top: '200', left: '0', height : '280', width: '380'});
+        });
+
+      $("#ok3").dblclick(
+        function(){
+          $(this).animate({top: '50', left: '472', height: '250', width:'320'});
+        });
+    });
+  </script>
+</head>
+  <body>
+    <div id="container">
+    <header>
+      <h3>FC UNION PRO</h3>
+    </header>
+    <nav>
+      <ul>
+  <li><a href="#">Home</a></li>
+  <li><a href="https://it.wikipedia.org/wiki/Football_Club_Union_Pro">Chi Siamo</a></li>
+  <li><a href="http://www.fcunionpro.com/p/contatti.html">Contatti</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Prima Squadra</a>
+    <div class="dropdown-content">
+      <a href="http://www.fcunionpro.com/p/rosa.html">Rosa</a>
+      <a href="http://www.fcunionpro.com/p/allenatore-e-staff-tecnico.html">Staff</a>
+      <a href="http://www.fcunionpro.com/p/blog-page_3.html">Risultati e Classifica 2017-2018</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Settore Giovanile</a>
+    <div class="dropdown-content">
+      <a href="http://settoregiovanileunionpro.blogspot.it/p/staff-settore-giovanile.html">Staff</a>
+      <a href="http://settoregiovanileunionpro.blogspot.it/p/classifica-e-risultati-juniores.html">Juniores Elite</a>
+      <a href="http://settoregiovanileunionpro.blogspot.it/p/classifica-e-risultati-allievi-elite.html">Allievi Elite</a>
+      <a href="http://settoregiovanileunionpro.blogspot.it/p/classifica-e-risultati-allievi_2.html">Allievi Sperimentali</a>
+      <a href="http://settoregiovanileunionpro.blogspot.it/p/classifica-e-risultati-giovanissimi_5.html">Giovanissimi Elite</a>
+      <a href="http://settoregiovanileunionpro.blogspot.it/p/classifica-e-risultati-giovanissimi.html">Giovanissimi Sperimentali</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Strutture</a>
+    <div class="dropdown-content">
+      <a href="https://www.google.it/maps/place/Polisportiva+Mogliano+Veneto/@45.4431392,11.9553674,11z/data=!4m8!1m2!2m1!1sstadio+mogliano+veneto!3m4!1s0x47794b2ae43ef2c5:0xb02d78410e749dfc!8m2!3d45.5515239!4d12.2469841?hl=it">Mogliano Veneto</a>
+      <a href="https://www.google.it/maps/place/Stadio+Comunale+di+Preganziol/@45.5878475,12.2355168,14z/data=!4m8!1m2!2m1!1sstadio+preganziol!3m4!1s0x47794a662b213427:0x6e30f5d705c13423!8m2!3d45.5987713!4d12.2372631?hl=it">Preganziol (TV)</a>
+    </div>
+  </li>
+  <li><a href="http://www.fcunionpro.com/2018/01/lunion-pro-ospita-il-liapiave-reduce-da.html">News</a></li>
+  <li><a href="http://www.fcunionpro.com/p/sponsor-della-societa.html">Sponsor</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Link Utili</a>
+    <div class="dropdown-content">
+      <a href="http://www.figcvenetocalcio.it/homepage">FIGC Veneto</a>
+      <a href="https://www.tuttocampo.it/">Tuttocampo</a>
+    </div>
+  </li>
+</ul>
+    </nav>
+    <main>
+      <div class="colonna">
+            <h2 style="color:red; text-decoration: underline; text-align:center">Stagione 2016-2017</h2><br>
+            <h3 style="text-align: center">PUNTI E POSIZIONE</h3><br>
+            <b>Prima Squadra</b>: Eccellenza Girone B <br>
+             <pre>  punti: 41 posizione: 7</pre><br />
+            <b>Juniores</b>: Regionali Girone E <br>
+             <pre>  punti: 75 posizione: 1</pre><br />
+            <b>Allievi</b>: Elite Girone B <br>
+             <pre>  punti: 30 posizione: 10</pre><br />
+            <b>Allievi</b>: Sperimentali Girone B <br>
+             <pre>  punti: 53 posizione: 7</pre><br />
+            <b>Giovanissimi</b>: Elite Girone B <br>
+             <pre>  punti: 41 posizione: 6</pre><br />
+            <b>Giovanissimi</b>: Sperimentali Girone A <br>
+             <pre>  punti: 21 posizione: 13</pre><br />
+            <br>
+           <br>
+           <img src="immagini/Stemma.PNG" width:"30" style="width:420px; height:300px;margin-left: 6px; margin-top: 120px;">
+         </div>
+         <div class="colonna2">
+            <h2 style="color:red; text-decoration: underline; text-align: center">Immagini & Foto</h2>
+            <br />
+            <img id = "ok" src="immagini/UnionPro.jpg" width:"30"  style="width:320px; height:250px;margin-left: 60px">
+            <img id = "ok2" src="immagini/UnionPro2.jpg" width:"30" style="width:320px; height:250px;margin-left: 60px; margin-top: 320px">
+            <img id = "ok3" src="immagini/UnionPro3.jpg" width:"30" style="width:320px; height:250px;margin-left: 60px; margin-top: 640px">
+          </div>
+          <div class="colonna">
+            <h2 style="color:red; text-decoration: underline; text-align:center">Newsletter & Commenti</h2>
+            <br /><br />
+            <b>21/01/2018</b>: <i>Amara sconfitta degli allievi elite</i><br />
+            <i>sul campo di Noale. Partita terminata 2-0,</i><br />
+            <i> prestazione insufficiente.</i><br /><br />
+            <b>21/01/2018</b>: <i>Vittoriosi 1-0 gli allievi</i><br />
+            <i>sperimentali in casa contro il Belluno,</i><br />
+            <i> agganciato il 4 posto.</i><br /><br />
+            <b>21/01/2018</b>: <i>I giovanissimi elite hanno</i><br />
+            <i>battuto il Calvi Noale 1-0 in casa</i><br />
+            <i>e sono fuori dalla zona</i><br />
+            <i>retrocessione.</i><br /><br />
+            <b>21/01/2018</b>: <i>I giovanissimi sperimentali</i><br />
+            <i>hanno perso contro il Rosà 3-0.</i><br />
+            <i>Brutta sconfitta alla quale</i><br />
+            <i>bisogna reagire nel modo giusto.</i><br />
+            <i>Forza ragazzi!!</i><br /><br />
+            <b>20/01/2018</b>: <i>La juniores elite</i><br />
+            <i>ha vinto contro il Villorba</i><br />
+            <i>2-1 e hanno cosi' consolidato</i><br />
+            <i>il secondo posto in classifica.</i><br /><br /><br />
+            <img src="immagini/joma.jpg" width:"30" style="width:420px; height:300px;margin-right: 6px; margin-top: 120px;">
+          </div>
+    </main>
+    <footer>
+        <pre style="color:white; font-size:80%; text-align:left;"><i> Webmaster Stocco Andrea                                                                                                                                                                                                                                                                                               astocco11@gmail.com</i></pre>
+    </footer>
+  </div>
+  </body>
+</html>
