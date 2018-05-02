@@ -25,7 +25,8 @@ Qui di seguito alcuni riferimenti emateriali per la 3ID proposti dai profe. Andr
 ### Oggetti
 Javascript può risultare ostico per chi proviene da C++ e java e le classi, proponiamo qui di seguito alcune letture (ad integrazione del testo) 
 [13] oggetti, come trattarli, un articolo [qui](https://medium.com/@justtoconfirm/object-oriented-javascript-d61fe073ca86).  
-[14] lavorare con gli oggetti (Mozilla): [qui](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
+[14] lavorare con gli oggetti (MDN): [qui](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
+[15] **prototipi** un articolo: [qui](https://hackernoon.com/prototypes-in-javascript-5bba2990e04b). 
 
 # Consegne
 Per le consegne si rimanda al file [CONSEGNE.md](./CONSEGNE.md).
