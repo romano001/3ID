@@ -23,9 +23,10 @@ Qui di seguito alcuni riferimenti emateriali per la 3ID proposti dai profe. Andr
 [12] semicolon (;) sì o no ... meglio sì, leggi [qui](https://codeburst.io/why-i-prefer-to-use-semicolon-in-javascript-f00c303547). 
 
 ### Oggetti
-Javascript può risultare ostico per chi proviene da C++ e java e le classi, proponiamo qui di seguito alcune letture (ad integrazione del testo) 
+Javascript può risultare ostico per chi proviene da C++ e java e le classi, proponiamo qui di seguito alcune letture (ad integrazione del testo)  
 [13] oggetti, come trattarli, un articolo [qui](https://medium.com/@justtoconfirm/object-oriented-javascript-d61fe073ca86).  
-[14] lavorare con gli oggetti (MDN): [qui](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
+[14] lavorare con gli oggetti (MDN): [qui](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).  
+[15] **prototipi** partiamo con [questa(http://sporto.github.io/blog/2013/02/22/a-plain-english-guide-to-javascript-prototypes/) lettura ad integrazione del testo.  
 [15] **prototipi** un articolo: [qui](https://hackernoon.com/prototypes-in-javascript-5bba2990e04b). 
 
 # Consegne
