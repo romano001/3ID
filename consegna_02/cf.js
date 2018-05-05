@@ -6,11 +6,9 @@ function calcola() {
     let comune = document.getElementById("selcomune").value;
     let anno = document.getElementById("selanno").value;
     let mese = document.getElementById("selmese").value;
-    let sesso = document.getElementById("selcomune").value;
-
-    if (sesso == "F") { var giorno = document.getElementById("selgiorno").value + 40; }
-    else { var giorno = document.getElementById("selgiorno").value; }
-
+    let sesso = document.getElementById("selsesso").value;
+    var giorno = document.getElementById("selgiorno").value;
+    if (sesso == "F") { giorno = parseInt(giorno)+ 40; }
 
     let lNome="";
     let lCognome="";
