@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+    background-color: #f1f1f1;
+    padding: 15px;
+    font-size: 130%;
+    text-align: center;
+    color: green;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+}
+
+.column.side {
+    width: 25%;
+}
+
+.column.middle {
+    width: 75%;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 120%;
+    color: red;
+}
+
+form {
+    border: 2px solid green;
+    border-radius: 7px;
+    padding: 20px;
+    margin-right: 45%;
+    margin-left: 2%;
+}
+
+input {
+    background-color: #f1f1f1;
+    border: 2px outset;
+}
+
+
+
+
+

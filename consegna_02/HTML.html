@@ -1,0 +1,482 @@
+<html>
+ <head>
+  <title> Consegna_02 </title>
+  <link rel="stylesheet" type="text/css" href="STYLE.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+   function myFunction() {
+   function CodiceFiscale(generality) {
+    if (!(this instanceof CodiceFiscale)) {
+        return new CodiceFiscale(generality);
+    }
+
+    var g = this._options(generality);
+
+    this.generality('nome', g.nome);
+    this.generality('cognome', g.cognome);
+    this.generality('giorno', g.giorno);
+    this.generality('mese', g.mese);
+    this.generality('anno', g.anno);
+    this.generality('eMaschio', g.eMaschio);
+    this.generality('luogo', g.luogo);
+}
+
+CodiceFiscale.prototype.constructor = CodiceFiscale;
+
+CodiceFiscale.__generalities = {
+    
+    nome: '',  
+    cognome: '',  
+    giorno: '',
+    mese: '',
+    anno: '',
+    eMaschio: '',
+    luogo: '',
+};
+
+
+CodiceFiscale.prototype.__settings = {
+ 
+    maxChar: 15,
+
+    monthCodes: [
+        'A', 'B', 'C',
+        'D', 'E', 'H',
+        'L', 'M', 'P',
+        'R', 'S', 'T',
+    ],
+   
+    controlChars: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    charsControlValue: {
+        'even': {
+            0: 0,
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5,
+            6: 6,
+            7: 7,
+            8: 8,
+            9: 9,
+            A: 0,
+            B: 1,
+            C: 2,
+            D: 3,
+            E: 4,
+            F: 5,
+            G: 6,
+            H: 7,
+            I: 8,
+            J: 9,
+            K: 10,
+            L: 11,
+            M: 12,
+            N: 13,
+            O: 14,
+            P: 15,
+            Q: 16,
+            R: 17,
+            S: 18,
+            T: 19,
+            U: 20,
+            V: 21,
+            W: 22,
+            X: 23,
+            Y: 24,
+            Z: 25
+        },
+        'odd': {
+            0: 1,
+            1: 0,
+            2: 5,
+            3: 7,
+            4: 9,
+            5: 13,
+            6: 15,
+            7: 17,
+            8: 19,
+            9: 21,
+            A: 1,
+            B: 0,
+            C: 5,
+            D: 7,
+            E: 9,
+            F: 13,
+            G: 15,
+            H: 17,
+            I: 19,
+            J: 21,
+            K: 2,
+            L: 4,
+            M: 18,
+            N: 20,
+            O: 11,
+            P: 3,
+            Q: 6,
+            R: 8,
+            S: 12,
+            T: 14,
+            U: 16,
+            V: 10,
+            W: 22,
+            X: 25,
+            Y: 24,
+            Z: 23
+        },
+    },
+    cadastralCodes: {},
+};
+
+CodiceFiscale.prototype.taxCode = function () {
+    var cognomeCode = this.cognomeCode(),
+        nomeCode = this.nomeCode(),
+        dataCode = this.dataCode(),
+        comuneCode = this.comuneCode(),
+        taxCode = '';
+
+    taxCode = cognomeCode + nomeCode + dataCode + comuneCode;
+    taxCode += this.controlChar();
+
+    return taxCode;
+};
+
+CodiceFiscale.prototype.lastnameCode = function () {
+    var cognome = this.generality('cognome'),
+        cognomeCode = '';
+
+    cognomeCode = this.__consonants(cognome);
+    cognomeCode += this.__vowels(cognome);
+    cognomeCode += 'XXX';
+    cognomeCode = cognomeCode.substr(0, 3);
+
+    return cognomeCode.toUpperCase();
+};
+
+CodiceFiscale.prototype.nomeCode = function () {
+    var nome = this.generality('nome'),
+        nomeCode = '';
+
+    nomeCode = this.__consonants(nome);
+    if (nomeCode.length >= 4) {
+        nomeCode = nomeCode.charAt(0) + nomeCode.charAt(2) + nomeCode.charAt(3);
+    }
+    else {
+        nomeCode += this.__vowels(nome);
+        nomeCode += 'XXX';
+        nomeCode = nomeCode.substr(0, 3);
+    }
+
+    return nomeCode.toUpperCase();
+};
+
+CodiceFiscale.prototype.dataCode = function () {
+    var stringedAnno = this.annoCode(),
+        stringedMese = this.meseCode(),
+        stringedGiorno = this.giornoCode();
+
+    return '' + stringedAnno + stringedMese + stringedGiorno;
+};
+
+CodiceFiscale.prototype.annoCode = function () {
+    anno = this.generality('anno').toString();
+
+    return anno.substr(year.length - 2, 2);
+};
+
+CodiceFiscale.prototype.meseCode = function () {
+    var mese = parseInt(this.generality('mese') - 1);
+
+    return this.setting('meseCodes')[mese];
+};
+
+CodiceFiscale.prototype.giornoCode = function () {
+    var giorno = parseInt(this.generality('giorno'));
+
+    giorno = (this.generality('eMaschio')) ? giorno : day + 40;
+    giorno = ('00' + giorno.toString()).substring(giorno.toString().length);
+
+    return giorno;
+};
+
+CodiceFiscale.prototype.comuneCode = function () {
+    var luogo = this.generality('luogo'),
+        stringToMatch = /^[A-Z]\d\d\d$/i;
+
+    if (luogo.match(stringToMatch)) {
+        return luogo;
+    }
+
+    return this._comune()[0][1];
+};
+
+CodiceFiscale.prototype.controlChar = function () {
+    var i = 0,
+        val = 0,
+        indexChar = 0,
+        maxChar = this.setting('maxChar'),
+        controlChar = this.setting('controlChars'),
+        cognomeCode = this.cognomeCode(),
+        nomeCode = this.nomeCode(),
+        dataCode = this.dataCode(),
+        comuneCode = this.comuneCode(),
+        partialTaxCode = '';
+
+    partialTaxCode = cognomeCode + nomeCode + dataCode + comuneCode;
+
+    for (i = 0; i < maxChar; i++) {
+        indexChar = partialTaxCode[i];
+        if (i % 2) {
+            val += this._controlValue('even', indexChar);
+        }
+        else {
+            val += this._controlValue('odd', indexChar);
+        }
+    }
+
+    val = val % controlChar.length;
+
+    return controlChar.charAt(val);
+};
+
+CodiceFiscale.prototype.setting = function (property, dataToSet) {
+    return this.__property('__settings.' + property, dataToSet);
+};
+
+CodiceFiscale.prototype.generality = function (property, dataToSet) {
+    return this.__property('__generalities.' + property, dataToSet);
+};
+
+CodiceFiscale.prototype._commune = function () {
+    var communeName = this.generality('communeName'),
+        code = [],
+        commune = [],
+        communeCodeToReturn = [],
+        stringToReplace = /([\\\.\+\*\?\[\^\]\$\(\)\{\}\=\!<\>\|\:])/g,
+        quoted = '',
+        re = '',
+        regex = '';
+
+    quoted = communeName.replace(stringToReplace, '\\$1');
+    regex = new RegExp('^' + quoted + '$', 'i');
+    for (code in this.setting('cadastralCodes')) {
+        commune = this._communeCadastralCode(code);
+        if (commune.match(regex)) {
+            communeCodeToReturn.push([commune, code]);
+        }
+    }
+
+    return communeCodeToReturn;
+};
+
+CodiceFiscale.prototype._communeCadastralCode = function (code) {
+    return this.setting('cadastralCodes')[code];
+};
+
+CodiceFiscale.prototype._controlValue = function (type, char) {
+    return this.setting('charsControlValue')[type][char];
+};
+
+CodiceFiscale.prototype._options = function (generality) {
+    var options = {
+        nome: generality.nome || generality[0],
+        cognome: generality.cognome || generality[1],
+        giorno: generality.giorno || generality[2],
+        mese: generality.mese || generality[3],
+        anno: generality.anno || generality[4],
+        eMaschio: generality.eMaschio || generality[5] || false,
+        luogo: generality.luogo || generality[6],
+    };
+
+    return options;
+};
+
+CodiceFiscale.prototype.__consonants = function (string) {
+    return string.replace(/[^BCDFGHJKLMNPQRSTVWXYZ]/gi, '');
+};
+
+CodiceFiscale.prototype.__vowels = function (string) {
+    return string.replace(/[^AEIOU]/gi, '');
+};
+
+CodiceFiscale.prototype.__property = function (propertyPath, dataToSet) {
+    return (function deepProp(self, path, data) {
+        if (typeof path === 'string') {
+            path = path.split('.');
+        }
+
+        if (path.length > 1) {
+            var singlePath = path.shift();
+
+            if (self[singlePath] === null || typeof self[singlePath] !== 'object') {
+                self[singlePath] = {};
+            }
+
+            return deepProp(self[singlePath], path, data);
+        }
+        else {
+            if (typeof data === 'undefined') {
+                return self[path[0]];
+            }
+            else {
+                self[path[0]] = data;
+            }
+        }
+    })(this, propertyPath, dataToSet);
+ };
+}
+  </script>
+ </head>
+ <body>
+  <div class="header">
+   <h3>GENERATORE CODICE FISCALE(non funzionante)</h3>
+  </div>
+  <div class="row">
+   <div class="column side">
+    
+   </div>
+   <div class="column middle">
+    <p><i>Inserire i dati richiesti per la compilazione del codice:</i></p><br>
+    <form>
+     <p style= "color: green">Cognome:</p>
+     <input type="text" name="cognome" placeholder="scrivi il cognome"><br>
+     <br>
+     <p style= "color: green">Nome:</p>
+     <input type="text" name="nome" placeholder="scrivi il nome"><br>
+      <p style= "color: green">Data di nascita:</p>
+      &emsp;&emsp;
+      <form>
+       <select name="Giorno">
+        <option value="1">&ensp;1&ensp;</option>
+        <option value="2">&ensp;2&ensp;</option>
+        <option value="3">&ensp;3&ensp;</option>
+        <option value="4">&ensp;4&ensp;</option>
+        <option value="5">&ensp;5&ensp;</option>
+        <option value="6">&ensp;6&ensp;</option>
+        <option value="7">&ensp;7&ensp;</option>
+        <option value="8">&ensp;8&ensp;</option>
+        <option value="9">&ensp;9&ensp;</option>
+        <option value="10">&ensp;10&ensp;</option>
+        <option value="11">&ensp;11&ensp;</option>
+        <option value="12">&ensp;12&ensp;</option>
+        <option value="13">&ensp;13&ensp;</option>
+        <option value="14">&ensp;14&ensp;</option>
+        <option value="15">&ensp;15&ensp;</option>
+        <option value="16">&ensp;16&ensp;</option>
+        <option value="17">&ensp;17&ensp;</option>
+        <option value="18">&ensp;18&ensp;</option>
+        <option value="19">&ensp;19&ensp;</option>
+        <option value="20">&ensp;20&ensp;</option>
+        <option value="21">&ensp;21&ensp;</option>
+        <option value="22">&ensp;22&ensp;</option>
+        <option value="23">&ensp;23&ensp;</option>
+        <option value="24">&ensp;24&ensp;</option>
+        <option value="25">&ensp;25&ensp;</option>
+        <option value="26">&ensp;26&ensp;</option>
+        <option value="27">&ensp;27&ensp;</option>
+        <option value="28">&ensp;28&ensp;</option>
+        <option value="29">&ensp;29&ensp;</option>
+        <option value="30">&ensp;30&ensp;</option>
+        <option value="31">&ensp;31&ensp;</option>
+       </select>
+       <b style= "color: green;">Giorno</b>
+       &emsp;&emsp;&emsp;&emsp;&emsp;
+       <form>
+        <select name="Mese">
+         <option value="A">Gennaio</option>
+         <option value="B">Febbraio</option>
+         <option value="C">Marzo</option>
+         <option value="D">Aprile</option>
+         <option value="E">Maggio</option>
+         <option value="H">Giugno</option>
+         <option value="L">Luglio</option>
+         <option value="M">Agosto</option>
+         <option value="P">Settembre</option>
+         <option value="R">Ottobre</option>
+         <option value="S">Novembre</option>
+         <option value="T">Dicembre</option>
+        </select>
+       <b style= "color: green;">Mese</b>
+       &emsp;&emsp;&emsp;&emsp;&emsp;
+       <form>
+        <select name="Anno">
+         <option value="60">&emsp;&emsp;1960&emsp;&emsp;</option>
+         <option value="61">&emsp;&emsp;1961&emsp;&emsp;</option>
+         <option value="62">&emsp;&emsp;1962&emsp;&emsp;</option>
+         <option value="63">&emsp;&emsp;1963&emsp;&emsp;</option>
+         <option value="64">&emsp;&emsp;1964&emsp;&emsp;</option>
+         <option value="65">&emsp;&emsp;1965&emsp;&emsp;</option>
+         <option value="66">&emsp;&emsp;1966&emsp;&emsp;</option>
+         <option value="67">&emsp;&emsp;1967&emsp;&emsp;</option>
+         <option value="68">&emsp;&emsp;1968&emsp;&emsp;</option>
+         <option value="69">&emsp;&emsp;1969&emsp;&emsp;</option>
+         <option value="70">&emsp;&emsp;1970&emsp;&emsp;</option>
+         <option value="71">&emsp;&emsp;1971&emsp;&emsp;</option>
+         <option value="72">&emsp;&emsp;1972&emsp;&emsp;</option>
+         <option value="73">&emsp;&emsp;1973&emsp;&emsp;</option>
+         <option value="74">&emsp;&emsp;1974&emsp;&emsp;</option>
+         <option value="75">&emsp;&emsp;1975&emsp;&emsp;</option>
+         <option value="76">&emsp;&emsp;1976&emsp;&emsp;</option>
+         <option value="77">&emsp;&emsp;1977&emsp;&emsp;</option>
+         <option value="78">&emsp;&emsp;1978&emsp;&emsp;</option>
+         <option value="79">&emsp;&emsp;1979&emsp;&emsp;</option>
+         <option value="80">&emsp;&emsp;1980&emsp;&emsp;</option>
+         <option value="81">&emsp;&emsp;1981&emsp;&emsp;</option>
+         <option value="82">&emsp;&emsp;1982&emsp;&emsp;</option>
+         <option value="83">&emsp;&emsp;1983&emsp;&emsp;</option>
+         <option value="84">&emsp;&emsp;1984&emsp;&emsp;</option>
+         <option value="85">&emsp;&emsp;1985&emsp;&emsp;</option>
+         <option value="86">&emsp;&emsp;1986&emsp;&emsp;</option>
+         <option value="87">&emsp;&emsp;1987&emsp;&emsp;</option>
+         <option value="88">&emsp;&emsp;1988&emsp;&emsp;</option>
+         <option value="89">&emsp;&emsp;1989&emsp;&emsp;</option>
+         <option value="90">&emsp;&emsp;1990&emsp;&emsp;</option>
+         <option value="91">&emsp;&emsp;1991&emsp;&emsp;</option>
+         <option value="92">&emsp;&emsp;1992&emsp;&emsp;</option>
+         <option value="93">&emsp;&emsp;1993&emsp;&emsp;</option>
+         <option value="94">&emsp;&emsp;1994&emsp;&emsp;</option>
+         <option value="95">&emsp;&emsp;1995&emsp;&emsp;</option>
+         <option value="96">&emsp;&emsp;1996&emsp;&emsp;</option>
+         <option value="97">&emsp;&emsp;1997&emsp;&emsp;</option>
+         <option value="98">&emsp;&emsp;1998&emsp;&emsp;;</option>
+         <option value="99">&emsp;&emsp;1999&emsp;&emsp;</option>
+         <option value="00">&emsp;&emsp;2000&emsp;&emsp;</option>
+         <option value="01">&emsp;&emsp;2001&emsp;&emsp;</option>
+         <option value="02">&emsp;&emsp;2002&emsp;&emsp;</option>
+         <option value="03">&emsp;&emsp;2003&emsp;&emsp;</option>
+         <option value="04">&emsp;&emsp;2004&emsp;&emsp;</option>
+         <option value="05">&emsp;&emsp;2005&emsp;&emsp;</option>
+         <option value="06">&emsp;&emsp;2006&emsp;&emsp;</option>
+         <option value="07">&emsp;&emsp;2007&emsp;&emsp;</option>
+         <option value="08">&emsp;&emsp;2008&emsp;&emsp;</option>
+         <option value="09">&emsp;&emsp;2009&emsp;&emsp;</option>
+         <option value="10">&emsp;&emsp;2010&emsp;&emsp;</option>
+         <option value="11">&emsp;&emsp;2011&emsp;&emsp;</option>
+         <option value="12">&emsp;&emsp;2012&emsp;&emsp;</option>
+         <option value="13">&emsp;&emsp;2013&emsp;&emsp;</option>
+         <option value="14">&emsp;&emsp;2014&emsp;&emsp;</option>
+         <option value="15">&emsp;&emsp;2015&emsp;&emsp;</option>
+         <option value="16">&emsp;&emsp;2016&emsp;&emsp;</option>
+         <option value="17">&emsp;&emsp;2017&emsp;&emsp;</option>
+         <option value="18">&emsp;&emsp;2018&emsp;&emsp;</option>
+        </select>
+       <b style= "color: green;">Anno</b><br>
+       <p style= "color: green">Sesso:</p>
+       <form>
+        <input type="radio" name="eMaschio" value="M"> Maschio<br><br>
+        <input type="radio" name="eMaschio" value="F"> Femmina<br>
+       <p style= "color: green">Luogo di nascita:</p>
+        <form>
+         <input type="text" name="Luogo" placeholder="scrivi il luogo di nascita">
+         &emsp;&emsp;&emsp;&emsp;
+         <input type="text" name="Provincia" maxlength="2" placeholder="provincia"><br><br>
+        </form>
+       </form> 
+      </form>
+     </form>
+    </form><br>
+    <button style="margin-left: 35px;" type="button" onclick="myFunction()">INVIA</button>
+   </div>
+  </div>
+ </body>
+</html>
