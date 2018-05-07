@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Codice Fiscale</title>
+  <style type="text/css">
+  #contenuto{
+       width:1000px;
+       margin-left: 550px;
+       margin-top: -210px;
+       }
+
+  p {
+    color: red;
+    margin: 4px;
+  }
+  b {
+    color: blue;
+  }
+
+  .submit{
+    background-color: green;
+    color: white;
+    height: 30px;
+    width: 250px;
+  }
+  </style>
+
+  <script>
+  function Calcola() {
+     let cognome = document.getElementById("cognome").value;
+     let nome = document.getElementById("nome").value;
+     let luogodinascita = document.getElementById("luogo di nascita").value;
+     let siglaProv = document.getElementById("provincia").value;
+     let sex =document.getElementsByName("gender");
+     let sesso="";
+     if (sex[0].checked) sesso="M";
+          else sesso="F";
+     let GNascita = document.getElementById("giorno").value;
+     let MNascita = document.getElementById("mese").value;
+     let GiorniMese = {Gennaio:31, Febbraio:28, Marzo:31, Aprile:30, Maggio:31, Giugno:30, Luglio:31, Agosto:31, Settembre:30, Ottobre:31, Novembre:30, Dicembre:31};
+     let ANascita = document.getElementById("anno").value;
+     let codice="";//dichiaro una variabile che conterra' il codice fiscale
+     let j;//dichiaro un indice che mi aiutera' con il posizionamento dei caratteri all'interno della stringa che conterra' il codice fiscale
+     let sommadispari=0;
+     let sommapari=0;
+     let CaratteriPari = {0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, A:0, B:1, C:2, D:3, E:4,  F:5,  G:6,  H:7, I:8,  J:9,   K:10, L:11,  M:12, N:13, O:14, P:15, Q:16, R:17, S:18,  T:19, U:20,  V:21, W:22, X:23, Y:24, Z:25 };
+     let CaratteriDispari = {0:1,  1:0,  2:5,  3:7,  4:9,  5:13, 6:15, 7:17, 8:19,9:21, A:1,  B:0,  C:5,  D:7,  E:9,  F:13, G:15, H:17,I:19, J:21, K:2,  L:4,  M:18, N:20, O:11, P:3,  Q:6, R:8,  S:12, T:14, U:16, V:10, W:22, X:25, Y:24, Z:23};
+     let Controllo=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+     cognome.toString();
+     nome.toString();
+     luogodinascita.toString();
+     siglaProv.toString();
+     GNascita.toString();
+     MNascita.toString();
+     ANascita.toString();
+     let ConCog="";//dichiaro una variabile in cui inseriro' le consonanti trovate nel cognome
+     let VocCog="";//dichiaro una variabile in cui inseriro' le vocali trovate nel cognome
+     let ConNom="";//dichiaro una variabile in cui inseriro' le consonanti trovate nel nome
+     let VocNom="";//dichiaro una variabile in cui inseriro' le vocali trovate nel nome
+     //Assegno lo zero a tutte le posizioni
+     cognome=cognome.toUpperCase();
+     nome=nome.toUpperCase();
+     let nCon = 0;//dichiaro una variabile utile per prendere le consonanti necessarie
+     let car="";
+     for(let i=0; i<cognome.length; i++)//imposto un ciclo for che percorre tutta la stringa alla ricerca delle consonanti
+     {  //car=cognome.charAt(i);
+       if(cognome.substring(i,i+1) != "A" && cognome.substring(i,i+1) != "E" && cognome.substring(i,i+1) != "I" && cognome.substring(i,i+1) != "O" && cognome.substring(i,i+1) != "U")//controllo che la lettera non sia una vocale
+       {
+         ConCog=ConCog+cognome.substring(i,i+1);
+        // ConCog=cognome.replace(cognome.substring(i,i+1), ConCog.substring(nCon,nCon+1));
+       }//if
+       else VocCog=VocCog+cognome.substring(i,i+1); //VocCog = VocCog.replace(VocCog.substring(nCon,nCon+1), cognome.substring(i,i+1));
+     }//for
+     let nVoc = 0;//dichiaro una variabile utile per prendere le vocali necessarie
+     nCon = 0;
+     nVoc = 0;
+     for(let i=0;i<nome.length;i++)//imposto un ciclo for che percorre tutta la stringa alla ricerca delle consonanti
+     {
+       if(nome.substring(i,i+1) != "A" && nome.substring(i,i+1) != "E" && nome.substring(i,i+1) != "I" && nome.substring(i,i+1) != "O" && nome.substring(i,i+1) != "U")//controllo che la lettera non sia una vocale
+       {
+         ConNom=ConNom+nome.substring(i,i+1);
+         //ConNom=ConNom.replace(ConNom.substring(nCon,nCon+1), nome.substring(i,i+1));
+       }//if
+       else VocNom=VocNom+nome.substring(i,i+1)//VocNom=VocNom.replace(VocNom.substring(nVoc,nVoc+1), nome.substring(i,i+1));
+     }//for
+     //Adesso calcoliamo la parte del codice fiscale occupata dal COGNOME
+     ConCog=ConCog+VocCog+"XXX";
+     ConNom=ConNom+VocNom+"XXX";
+     codice=codice+ConCog.substring(0,3)+ConNom.charAt(0)+ConNom.charAt(1)+ConNom.charAt(2);
+      //Adesso calcoliamo la parte dell'ANNO di nascita del codice fiscale
+      j=6;
+      for(let i=2;i<4;i++)
+      {
+        if(j<8)
+        {
+          codice=codice + ANascita.substring(i,i+1);
+          j++;
+        }//if
+      }//for
+      //Adesso calcoliamo la parte del MESE di nascita del codice fiscale
+      if(GNascita > GiorniMese[MNascita])
+      {
+        alert("ERRORE nella data inserita!");
+        return; //esce dalla funzione
+      }
+      switch(MNascita.substring(0,1))
+      {
+          case("F"): codice=codice + "B";
+              break;
+          case("L"): codice=codice + "L";
+              break;
+          case("S"): codice=codice + "P";
+              break;
+          case("O"): codice=codice + "R";
+              break;
+          case("N"): codice=codice + "S";
+              break;
+          case("D"): codice=codice + "T";
+              break;
+          case("G"):
+              if(MNascita.substring(1,2) == "A")
+                  codice=codice +  "A";
+              else
+                  codice=codice + "H";
+              break;
+          case("M"):
+              if(MNascita.substring(2,3) == "R")
+                  codice=codice + "C";
+              if(MNascita.substring(2,3) == "G")
+                  codice=codice + "E";
+              break;
+          case("A"):
+              if(MNascita.substring(1,2) == "P")
+                  codice=codice + "D";
+              else
+                  codice=codice + "M";
+              break;
+           default: alert("Errore nel calcolo del mese");
+      }//switch
+      j++;
+      //Adesso calcoliamo la parte del GIORNO di nascita del codice fiscale
+      let k=0;
+      if(sesso.substring(k,k+1) == "F")
+      {
+          GNascita=GNascita+GNascita.substring(k,k+1)+4;
+      }//if
+      for(k=0; k<2; k++)
+      {
+          if(j<11)
+          {
+              codice=codice+GNascita.substring(k,k+1);
+              j++;
+          }//if
+      }//for
+      //Adesso calcoliamo la parte del COMUNE di nascita del codice fiscale
+      codice=codice+siglaProv;
+     //Adesso calcoliamo la parte del codice fiscale occupata dal CARATTERE DI CONTROLLO
+     let pari=0;
+     let dispari=0;
+     for (let i = 1; i<codice.length; i=i+2)//parto da 1 perché contando nella realtaà quell'indice partirebbe da 2 e quindi anche l'indice sarebbe pari, ma devo considerare che siamo all'inerno di un array e quindi scala tutto di 1
+      {
+         pari = pari + CaratteriPari[codice[i]];//si prende il valore che corrisponde alla lettera di codice[i]
+      }//for
+
+     for (let i = 0; i<codice.length; i=i+2)
+      {
+         dispari = dispari + CaratteriDispari[codice[i]];
+      }//for
+      let somma = pari + dispari;
+      let resto = somma % 26;
+      codice=codice + Controllo[resto];
+      document.getElementById("codicefiscale").innerHTML=codice;//assegno al tag con id codicefiscale il valore appena calcolato
+  }//CF
+  </script>
+</head>
+<body>
+    <h1>
+      <center>
+      Webapp per il calcolo del codice fiscale
+    </center>
+    <br>
+    </h1>
+
+  <form onsubmit="Calcola()">
+  <div class="label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green" face="verdana">COGNOME</font>
+  <input type="text" value="" id="cognome">
+  <p></p>
+
+  </div>
+  <br>
+  <br>
+  <div class="label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green" face="verdana">NOME</font>
+  <input type="text" value="" id="nome">
+  <p></p>
+
+
+</div>
+<br>
+<br>
+<div class="label">&nbsp;<font color="green" face="verdana">LUOGO DI NASCITA</font>
+  <input type="text" value="" id="luogo di nascita">
+
+</div>
+<br>
+<br>
+<div class="label">&nbsp;&nbsp;<font color="green" face="verdana">PROVINCIA(SIGLA)</font>
+  <select name="luogo_natio" id="provincia">
+      <option value="A285">ANDRIA(BT)</option>
+      <option value="A509">AVELLINO(AV)</option>
+      <option value="D643">FOGGIA(FG)</option>
+      <option value="F206">MESSINA(ME)</option>
+      <option value="F257">MODENA(MO)</option>
+      <option value="G713">PISTOIA(PT)</option>
+      <option value="H501">ROMA(RM)</option>
+      <option value="L219">TORINO(TO)</option>
+      <option value="L736">VENEZIA(VE)</option>
+  </select>
+
+
+  <div id="contenuto">
+    <div class="label"><font color="green" face="verdana">SESSO</font><br><br>
+
+          <input type="radio" name="gender" value="M"><font color="blue" size=4>Maschio</font><br>
+          <input type="radio" name="gender" value="F"><font color="purple" size=4>Femmina</font><br>
+   </div>
+    <br>
+    <div class="label"><font color="green" face="verdana"><br><br>DATA DI NASCITA</font>&nbsp;
+      <select id="giorno">
+        <option>01</option>
+        <option>02</option>
+        <option>03</option>
+        <option>04</option>
+        <option>05</option>
+        <option>06</option>
+        <option>07</option>
+        <option>08</option>
+        <option>09</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+        <option>13</option>
+        <option>14</option>
+        <option>15</option>
+        <option>16</option>
+        <option>17</option>
+        <option>18</option>
+        <option>19</option>
+        <option>20</option>
+        <option>21</option>
+        <option>22</option>
+        <option>23</option>
+        <option>24</option>
+        <option>25</option>
+        <option>26</option>
+        <option>27</option>
+        <option>28</option>
+        <option>29</option>
+        <option>30</option>
+        <option>31</option>
+      </select>
+      <select id="mese">
+        <option>Gennaio</option>
+        <option>Febbraio</option>
+        <option>Marzo</option>
+        <option>Aprile</option>
+        <option>Maggio</option>
+        <option>Giugno</option>
+        <option>Luglio</option>
+        <option>Agosto</option>
+        <option>Settembre</option>
+        <option>Ottobre</option>
+        <option>Novembre</option>
+        <option>Dicembre</option>
+      </select>
+      <select id="anno">
+        <option value="1900">1900</option>
+        <option value="1901">1901</option>
+        <option value="1902">1902</option>
+        <option value="1903">1903</option>
+        <option value="1904">1904</option>
+        <option value="1905">1905</option>
+        <option value="1906">1906</option>
+        <option value="1907">1907</option>
+        <option value="1908">1908</option>
+        <option value="1909">1909</option>
+        <option value="1910">1910</option>
+        <option value="1911">1911</option>
+        <option value="1912">1912</option>
+        <option value="1913">1913</option>
+        <option value="1914">1914</option>
+        <option value="1915">1915</option>
+        <option value="1916">1916</option>
+        <option value="1917">1917</option>
+        <option value="1918">1918</option>
+        <option value="1919">1919</option>
+        <option value="1920">1920</option>
+        <option value="1921">1921</option>
+        <option value="1922">1922</option>
+        <option value="1923">1923</option>
+        <option value="1924">1924</option>
+        <option value="1925">1925</option>
+        <option value="1926">1926</option>
+        <option value="1928">1928</option>
+        <option value="1929">1929</option>
+        <option value="1930">1930</option>
+        <option value="1931">1931</option>
+        <option value="1933">1933</option>
+        <option value="1934">1934</option>
+        <option value="1935">1935</option>
+        <option value="1936">1936</option>
+        <option value="1937">1937</option>
+        <option value="1938">1938</option>
+        <option value="1939">1939</option>
+        <option value="1940">1940</option>
+        <option value="1941">1941</option>
+        <option value="1942">1942</option>
+        <option value="1943">1943</option>
+        <option value="1944">1944</option>
+        <option value="1945">1945</option>
+        <option value="1946">1946</option>
+        <option value="1947">1947</option>
+        <option value="1948">1948</option>
+        <option value="1949">1949</option>
+        <option value="1950">1950</option>
+        <option value="1951">1951</option>
+        <option value="1952">1952</option>
+        <option value="1953">1953</option>
+        <option value="1954">1954</option>
+        <option value="1955">1955</option>
+        <option value="1956">1956</option>
+        <option value="1957">1957</option>
+        <option value="1958">1958</option>
+        <option value="1959">1959</option>
+        <option value="1960">1960</option>
+        <option value="1961">1961</option>
+        <option value="1962">1962</option>
+        <option value="1963">1963</option>
+        <option value="1964">1964</option>
+        <option value="1965">1965</option>
+        <option value="1966">1966</option>
+        <option value="1968">1968</option>
+        <option value="1969">1969</option>
+        <option value="1970">1970</option>
+        <option value="1971">1971</option>
+        <option value="1972">1972</option>
+        <option value="1973">1973</option>
+        <option value="1974">1974</option>
+        <option value="1975">1975</option>
+        <option value="1976">1976</option>
+        <option value="1977">1977</option>
+        <option value="1978">1978</option>
+        <option value="1979">1979</option>
+        <option value="1980" selected="">1980</option>
+        <option value="1981">1981</option>
+        <option value="1982">1982</option>
+        <option value="1983">1983</option>
+        <option value="1984">1984</option>
+        <option value="1985">1985</option>
+        <option value="1986">1986</option>
+        <option value="1987">1987</option>
+        <option value="1988">1988</option>
+        <option value="1989">1989</option>
+        <option value="1990">1990</option>
+        <option value="1991">1991</option>
+        <option value="1992">1992</option>
+        <option value="1993">1993</option>
+        <option value="1994">1994</option>
+        <option value="1995">1995</option>
+        <option value="1996">1996</option>
+        <option value="1997">1997</option>
+        <option value="1998">1998</option>
+        <option value="1999">1999</option>
+        <option value="2000">2000</option>
+        <option value="2001">2001</option>
+        <option value="2002">2002</option>
+        <option value="2003">2003</option>
+        <option value="2004">2004</option>
+        <option value="2005">2005</option>
+        <option value="2006">2006</option>
+        <option value="2007">2007</option>
+        <option value="2008">2008</option>
+        <option value="2009">2009</option>
+        <option value="2010">2010</option>
+        <option value="2011">2011</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+</select>
+<br>
+<br>
+<br>
+</div>
+<input type="button" value="Calcola codice fiscale" class="submit" onclick="Calcola()">
+</form>
+</div>
+<br>
+<br>
+<br><br><font color="green" face="verdana">Il tuo codice fiscale e' :</font>
+<label id="codicefiscale" ></label>
+<br>
+<br>
+  </body>
+  </html>
