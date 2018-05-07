@@ -46,7 +46,10 @@ input {
     border: 2px outset;
 }
 
-
-
-
-
+#codicefiscale{
+  border: 2px solid black;
+  margin-top:20px;
+  padding: 15px;
+  margin-right:60%;
+  margin-left:2%;
+}
