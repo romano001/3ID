@@ -1,0 +1,61 @@
+<script>
+ let cognome;
+ let nome;
+ let nomecf ="";
+ let cognomecf="";
+ let lunghezza=0;
+ let anno;
+ let mese;
+ let giorno=0;
+ let sesso;
+  function myFunction() {
+    nome = document.getElementById("nome").value.toUpperCase();
+    cognome = document.getElementById("cognome").value.toUpperCase();
+    anno=document.getElementById("anno").value;
+    mese=document.getElementById("mese").value;
+    giorno=document.getElementById("giorno").value;
+    sesso=document.getElementById("sesso").value;
+    lunghezza=0;
+    nomecf="";
+    for(let i=0;i<nome.length;i++){
+      if (lunghezza==3) { break; }
+      if (nome[i]!='A'&&nome[i]!='E'&&nome[i]!='I'&&nome[i]!='O'&&nome[i]!='U'){
+        nomecf=nomecf+nome[i];
+        lunghezza++;
+      }
+    }
+    for(let i=0;i<nome.length;i++){
+        if (lunghezza==3) { break; }
+        if (nome[i]=='A'||nome[i]=='E'||nome[i]=='I'||nome[i]=='O'||nome[i]=='U'){
+          nomecf=nomecf+nome[i];
+          lunghezza++;
+        }
+      }
+      for(let i=lunghezza;i<3;i++){
+            nomecf=nomecf+'X';
+      }
+
+      lunghezza=0;
+      cognomecf="";
+      for(let i=0;i<cognome.length;i++){
+        if (lunghezza==3) { break; }
+        if (cognome[i]!='A'&&cognome[i]!='E'&&cognome[i]!='I'&&cognome[i]!='O'&&cognome[i]!='U'){
+          cognomecf=cognomecf+cognome[i];
+          lunghezza++;
+        }
+      }
+      for(let i=0;i<cognome.length;i++){
+          if (lunghezza==3) { break; }
+          if (cognome[i]=='A'||cognome[i]=='E'||cognome[i]=='I'||cognome[i]=='O'||cognome[i]=='U'){
+            cognomecf=cognomecf+cognome[i];
+            lunghezza++;
+          }
+        }
+        for(let i=lunghezza;i<3;i++){
+              cognomecf=cognomecf+'X';
+        }
+    anno=anno[anno.length-2]+anno[anno.length-1];
+    if (sesso=='F'){giorno= parseInt(giorno) +40;}
+    document.getElementById("codicefiscale").innerHTML = cognomecf+nomecf+anno+mese+giorno ;
+  }
+</script>
