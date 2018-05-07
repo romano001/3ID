@@ -1,0 +1,107 @@
+
+header{
+  background-color:#e5fcff;
+  text-align:center;
+  text-transform: uppercase;
+  font-size:180%;
+  position:absolute;
+  top:0%;
+  left:0%;
+  height:15%;
+  width:100%;
+}
+
+main{
+  color:black;
+  position:absolute;
+  top:15%;
+  left:0%;
+  height:70%;
+  width:100%;
+}
+
+/**.codice{
+  position:absolute;
+  top:20%;
+  left:25%;
+  width: 50%;
+  height:70%;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2%;
+  border-radius: 8px;
+}
+*/
+#calcolo {
+  background: #ffffff;
+  top:20%;
+  left:25%;
+  width: 50%;
+  height:60%;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  position: absolute;
+  border-style: solid;
+  border-width: 2%;
+  border-color: black;
+  border-radius: 8px;
+  padding: 5px 5px 15px 5px;
+}
+
+#calcolo .field {
+display: block;
+margin: 15px 10px 0 10px;
+width: auto;
+}
+
+#calcolo input[type=text] {
+line-height: 24px;
+padding: 0 4px;
+text-transform: uppercase;
+margin: 0;
+font-size: 18px;
+box-sizing: border-box;
+}
+
+#calcolo .cf .input {
+font-size: 30px;
+letter-spacing: 2px;
+font-weight: normal;
+font-size: 23px;
+}
+
+.label {
+font-weight: bold;
+color: #090;
+width: 120px;
+font-size: 15px;
+text-align: right;
+margin-right: 5px;
+}
+
+.cognome input[type="text"],
+.luogo input[type="text"]{
+width: 370px;
+}
+
+.provincia input[type="text"]{
+width: 50px;
+}
+
+.field > div {
+display: inline-block;
+vertical-align: middle;
+}
+
+#calcolo .field.nome .input input {
+width: 231px;
+}
+
+
+#calcolo select {
+font-size: 18px;
+}
+
+#calcolo .field.cf {display: none;}
