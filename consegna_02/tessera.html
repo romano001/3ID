@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<title>Lorenzo De Luca</title>
+		<style>
+		.boximg {
+			position: relative;
+			width: 400px; /* Stessa larghezza dell'immagine */
+			height: 300px; /* Stessa altezza dell'immagine */
+		}
+		div.boxtesto {
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			width: 100%;
+			background: rgb(0, 0, 0);
+			background: rgba(0, 0, 0, 0.0);
+		}
+		span.testo {
+			padding: 12px;
+			color: black;
+			font: bold 15px/45px Helvetica, Sans-Serif;
+			letter-spacing: -1px;
+		}
+		#codice{
+			position:relative;
+			top: +77px;
+			left: +80px;
+		}
+		#cognome{
+			position:relative;
+			top: +62px;
+			left: +80px;
+		}
+		#nome{
+			position:relative;
+			top: +45px;
+			left: +80px;
+		}
+		#luogo1{
+			position:relative;
+			top: +65px;
+			left: +80px;
+		}
+		#luogo2{
+			position:relative;
+			top: -12px;
+			left: +80px;
+		}
+		#sesso{
+			position:relative;
+			top: 0px;
+			left: +415px;
+		}
+		#data{
+			position:relative;
+			top: +7px;
+			left: +80px;
+		}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			function getUrlVars() {
+				var vars = {};
+				var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+					vars[key] = value;
+					});
+				return vars;
+			};
+			$(document).ready(function(){
+				let nome=getUrlVars()["nome"];
+				nome=nome.replace("%20",' ');
+				let cognome=getUrlVars()["cognome"];
+				cognome=cognome.replace("%20",' ');
+				let data=getUrlVars()["data"];
+				let pr=getUrlVars()["pr"];
+				pr=pr.replace("%20",' ');
+				let sesso=getUrlVars()["sesso"];
+				let cod=getUrlVars()["cod"];
+				cod=cod.replace(',','');cod=cod.replace(',','');cod=cod.replace(',','');cod=cod.replace(',','');cod=cod.replace(',','');cod=cod.replace(',','');cod=cod.replace(',','');cod=cod.replace(',','');cod=cod.replace(',','');cod=cod.replace(',','');cod=cod.replace(',','');cod=cod.replace(',','');cod=cod.replace(',','');cod=cod.replace(',','');cod=cod.replace(',','');
+				$("#codice").text(cod);
+				$("#cognome").text(cognome);
+				$("#nome").text(nome);
+				$("#data").text(data);
+				$("#luogo2").text(pr);
+				$("#luogo1").text(pr[0]+pr[1]);
+				$("#sesso").text(sesso);
+			});
+			alert(nome);
+		</script>
+	</head>
+	<body>
+		<div class="boximg">
+			<img border="0" src="tessera_sanitaria.jpg"/>
+			<div class="boxtesto">
+				<span class="testo" id="codice">Codice</span><br>
+				<span class="testo" id="cognome">De Luca</span><br>
+				<span class="testo" id="nome">Lorenzo</span><br>
+				<span class="testo" id="luogo1">Venezia</span><span class="testo" id="sesso">M</span>
+				<br><span class="testo" id="luogo2">Ve</span><br>
+				<span class="testo" id="data">20.0.0000</span>
+			</div>
+		</div>
+	</body>
+</html>
