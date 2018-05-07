@@ -1,0 +1,44 @@
+#titolo{
+  font-size: 200%;
+    color: #003366;
+}
+body{
+
+}
+input[type=text], select {
+
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+#rcorners2 {
+    border-radius:15px;
+    border: 5px solid #cce6ff;
+  background: linear-gradient(#66b5ff, #0084ff);
+    padding: 20px;
+    width: 600px;
+    height: 450px;
+    color: #003366;
+    font-size: 100%;
+
+}
+button
+{
+  display: inline-block;
+
+}
+#Totale{
+  background-color: #ffffff;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 100%
+}
