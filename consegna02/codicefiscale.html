@@ -9,7 +9,11 @@
     <style type="text/css">
       body{
           text-align: center;
+          
 
+    }
+    input{
+        text-transform: uppercase;
     }
     </style>
     <body>
@@ -27,6 +31,9 @@
         <input id="mese"type="text" name="mese"><br>
         Giorno<br>
         <input id="giorno"type="text" name="giorno"><br>
+        Comune<br>
+        <input id="comune"type="text" name="comune"><br>
+      
       
         <!-- RADIO -->
         Sesso<br>
@@ -48,6 +55,7 @@
               persona.mese=$("#mese").val();
               persona.giorno=$("#giorno").val();
               persona.sesso=$("#sesso").val();
+              persona.comune=$("#comune").val();
               alert(genera().toUpperCase());
 
           }

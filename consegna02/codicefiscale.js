@@ -1,7 +1,12 @@
 var persona={};
+CaratteriPari = [1, 0, 5, 7, 9, 13, 15, 17, 19, 21, 1, 0, 5, 7, 9, 13, 15, 17, 19, 21, 2, 4, 18, 20, 11, 3, 6, 8, 12, 14, 16, 10, 22, 25, 24, 23];
+CaratteriDispari = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
+IndiceControllo = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
 
 function partecognome(cognome)
 {
+    cognome.toLowerCase();
     var contcons=0;
     var dim=cognome.length;
     var ris="";
@@ -28,6 +33,7 @@ function partecognome(cognome)
 
 function partenome(nome)
 {
+    nome.toLowerCase();
     var contcons=0;
     var consonanti="";
     var vocali="";
@@ -94,6 +100,38 @@ function partegiornosesso(giorno,sesso)
     else if(giorno<9)return "0"+giorno;
     else return giorno;
 }
+function partecomune(comune)
+{
+    var ris="";
+    //comune=toLowerCase(comune);
+    if(comune=="venezia"){
+        ris="l736"; 
+        
+    } 
+    else if(comune=="milano"){
+        ris="f205";
+    }else if(comune=="torino"){
+        ris="l2019";
+    }else if(comune=="roma"){
+        ris="h501";
+    }else if(comune=="perugia"){
+        ris="g478";
+    }else if(comune=="padova"){
+        ris="g224";
+    }else if(comune=="vicenza"){
+        ris="l840";
+    }else if(comune=="treviso"){
+        ris="l407";
+    }else if(comune=="trieste"){
+        ris="l424";
+    }else if(comune=="torino"){
+        ris="l2019";
+    }else if(comune=="napoli"){
+        ris="f839";
+    }
+    return ris;
+}
+
 function genera(){
 
     let codiceficale=partecognome(persona.cognome);
@@ -101,5 +139,6 @@ codiceficale=codiceficale+partenome(persona.nome);
 codiceficale=codiceficale+parteanno(persona.anno);
 codiceficale=codiceficale+partemese(persona.mese);
 codiceficale=codiceficale+partegiornosesso(persona.giorno,persona.sesso);
+codiceficale=codiceficale+partecomune(persona.comune);
 return codiceficale;
 }
