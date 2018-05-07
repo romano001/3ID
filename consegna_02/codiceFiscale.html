@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <title>Calcolo codice fiscale</title>
+     <script src="CodiceFiscale.js"></script>
+     <link rel="stylesheet" type="text/css" href="stile.css">
+  </head>
+  <body id = "container">
+    <header>
+      <h1>Codice Fiscale</h1>
+    </header>
+    <nav>
+    <td>Cognome: </td><input id = "cognome"  type="text" size="40" maxlength="200" />
+    <br />
+    <br />
+    <td>Nome: </td><input  id = "nome"  type="text" size="40" maxlength="200" />
+    <br />
+    <br />
+    <td>Sesso: </td><input  id = "sesso"  type="text" size="40" maxlength="200" />
+    <br />
+    <br />
+    <td>Luogo di nascita: </td><input  id = "comune"  type="text" size="40" maxlength="200" />
+    <br />
+    <br />
+    <td>Data di nascita </td>
+    <select  id = "giorno">
+      <option>Giorno</option>
+      <script>
+        let giorni = document.querySelector("#giorno");
+        for(let i = 1; i < 32 ; i++)
+        {
+          let opzione = new Option(i, i);
+          giorni.appendChild(opzione);
+        }
+      </script>
+    </select>
+    <select  id = "mese">
+      <option>Mese</option>
+      <option>Gennaio</option>
+      <option>Febbraio</option>
+      <option>Marzo</option>
+      <option>Aprile</option>
+      <option>Maggio</option>
+      <option>Giugno</option>
+      <option>Luglio</option>
+      <option>Agosto</option>
+      <option>Settembre</option>
+      <option>Ottobre</option>
+      <option>Novembre</option>
+      <option>Dicembre</option>
+    </select>
+    <select  id = "anno">
+      <option>Anno</option>
+      <script>
+        let anni = document.querySelector("#anno");
+        for(let i = 1911; i < 2018 ; i++)
+        {
+          let opzione = new Option(i, i);
+          anni.appendChild(opzione);
+        }
+      </script>
+    </select>
+    <br />
+    <br />
+    <button onclick = "generaCodice()" >avvia generazione</button>
+    <input id = "codice"  type="text" size="40" maxlength="200"/>
+    <br />
+    <br />
+    </nav>
+    <script>
+       function generaCodice()
+       {
+         CF.cognome = $("#cognome").val();
+         CF.nome = $("#nome").val();
+         CF.giorno = $("#giorno").val();
+         CF.mese = $("#mese").val();
+         CF.anno = $("#anno").val();
+         CF.sesso =  $("#sesso").val();
+         CF.comune = $("#comune").val();
+         $("#codice").val(codificaCognome(CF.cognome)+codificaNome(CF.nome)+codificaAnno(CF.anno)+codificaMese(CF.mese)+codificaGiorno(CF.giorno)+codificaComune(CF.comune)+calcolaSec((codificaCognome(CF.cognome)+codificaNome(CF.nome)+codificaAnno(CF.anno)+codificaMese(CF.mese)+codificaGiorno(CF.giorno)+codificaComune(CF.comune)).toUpperCase()));
+       }
+    </script>
+  </body>
+</html>
