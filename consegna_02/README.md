@@ -1,0 +1,1 @@
+﻿Per usare la web app aprire index.html
