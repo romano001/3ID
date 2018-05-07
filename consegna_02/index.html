@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <title>Codice Fiscale</title>
+    <style>
+        #mainform{
+            width: 600px;
+            height: auto;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        input[type="text"] + label {
+            pointer-events: none;
+            * {
+                pointer-events: all;
+            }
+        }
+        .whiteinput{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+        <div id="mainform" class="card-panel teal">
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12 white-text">
+                            <i class="material-icons prefix white-text">person</i>
+                            <input id="nome" type="text" class="whiteinput">
+                            <label for="first_name" class="white-text">Nome</label>                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 white-text">
+                            <i class="material-icons prefix white-text">person</i>
+                            <input type="text" id="cognome" class="whiteinput">
+                            <label for="cognome" class="white-text">Cognome</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 white-text">
+                            <i class="material-icons prefix white-text">home</i>
+                            <input type="text" id="comune" class="whiteinput">
+                            <label for="comune" class="white-text">Comune</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 white-text">
+                            <i class="material-icons prefix">account_circle</i>
+                            <select id="sesso" class="white-text" class="whiteinput">
+                                <option value="" disabled selected>Sesso</option>
+                                <option value="m">Uomo</option>
+                                <option value="f">Donna</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix white-text">date_range</i>
+                            <input type="text" class="datepicker whiteinput" id="data">
+                            <label for="data" class="white-text">Data di Nascita</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 white-text">
+                            <button class="btn waves-effect waves-light light-blue" id="bottone" style="width: 100%;" type="button">Calcola codice fiscale
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row" style="display: none;" id="outputdiv">
+                        <div class="input-field col s10 white-text">
+                            <input type="text" id="output" class="white-text">
+                        </div>
+                        <div class="input-field col s2 white-text">
+                            <button class="btn waves-effect waves-light light-blue" onclick="copyToClip()"style="width: 100%;" type="button">
+                                <i class="material-icons">content_copy</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+                function copyToClip()
+                {
+                    var copyText = $('#output')
+                    copyText.select();
+                    document.execCommand("Copy");
+                }
+                document.addEventListener('DOMContentLoaded', function() {                    
+                    var dateelems = document.querySelectorAll('.datepicker');
+                    var dateoptions = {
+                        format: "dd-mm-yyyy",
+                        firstDay: 1,
+                        yearRange: 100
+                    }
+                    var dateinstances = M.Datepicker.init(dateelems,dateoptions);   
+                    var elems = document.querySelectorAll('select');
+                    var instances = M.FormSelect.init(elems);
+                    $('.select-dropdown').addClass("whiteinput");
+                    $('#bottone').click(function(){
+                        if($('#nome').val()!=""&&$('#cognome').val()!=""&&$('#comune').val()!=""&&$('#sesso').val()!=""&&$('#data').val()!="")
+                        {
+                            let data = $('#data').val();
+                            let v = data.split("-");
+                            let codice = calcolaCodice();
+                            $('#outputdiv').css("display","block");
+                            $('#output').val(codice);
+                            $('#bottone').removeClass("red darken-1");
+                            $('#bottone').addClass("light-blue");
+                        }else{
+                            $('#outputdiv').css("display","none");
+                            $('#bottone').removeClass("light-blue");
+                            $('#bottone').addClass("red darken-1");
+                        }
+                    });
+                });
+            </script>
+    </body>
+</html>
