@@ -1,5 +1,5 @@
 function calcola() {
-    document.getElementById("cffinito").innerHTML = "";  
+    document.getElementById("cffinito").innerHTML = "";
 
     let nome = document.getElementById("cfnome").value.toUpperCase();
     let cognome = document.getElementById("cfcognome").value.toUpperCase();
@@ -11,17 +11,27 @@ function calcola() {
     if (sesso == "F") { giorno = parseInt(giorno)+ 40; }
 
     let lNome="";
+    let lNomet="";
     let lCognome="";
+    let lCognomet="";
     let lungN = nome.length;
     let lungC = cognome.length;
     let c;
 
     //Nome
-    for (let i = 0; i < lungN && lNome.length < 3; i++) {
+    for (let i = 0; i < lungN ; i++) {
         c = nome[i];
         if (c != 'A' && c != 'E' && c != 'I' && c != 'O' && c != 'U') {
-            lNome = lNome + c;
+            lNomet = lNomet + c;
         }
+    }
+    if(lNomet.length>=4)
+    {
+      lNome=lNomet[0]+lNomet[2]+lNomet[3];
+    }
+    else
+    {
+      lNome=lNomet;
     }
     for (let i = 0; i < lungN && lNome.length < 3;i++) {
             c = nome[i];
@@ -34,12 +44,13 @@ function calcola() {
     }
 
     //Cognome
-    for (let i = 0; i < lungC && lCognome.length < 3; i++) {
+    for (let i = 0; i < lungC&& lCognome.length < 3; i++) {
         c = cognome[i];
         if (c != 'A' && c != 'E' && c != 'I' && c != 'O' && c != 'U') {
             lCognome = lCognome + c;
         }
     }
+
     for (let i = 0; i < lungC && lCognome.length < 3; i++) {
         c = cognome[i];
         if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
@@ -85,5 +96,5 @@ function calcola() {
     }
     let resto = somma % 26;
     codfinale = codfinale + carVer[resto + 10];
-    document.getElementById("cffinito").innerHTML =codfinale;  
+    document.getElementById("cffinito").innerHTML =codfinale;
 };
