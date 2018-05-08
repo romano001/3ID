@@ -35,6 +35,9 @@ function calcolaGiorno(giorno,sesso)
         {
             ret+=40;
         }
+	if(ret<10){
+		return "0"+ret;
+	}
         return ret;
     }
 }
