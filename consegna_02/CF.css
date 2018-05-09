@@ -42,7 +42,7 @@ main {
 .Sesso{
   position: absolute;
   top:55%;
-  left:70%;
+  left:68%;
 }
 .Comune{
   position: absolute;
@@ -73,11 +73,11 @@ main {
 
 
 #cffinito {
-    font-size: 150%;
+    font-size: 120%;
     position: absolute;
 
     top:35%;
-    right:54%;
+    right:41%;
     color: #000000;
 }
 .prisolvi{
