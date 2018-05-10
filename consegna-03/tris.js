@@ -26,71 +26,77 @@ function tris(casella) {
     else if (a[casella] == 2)
         document.getElementById(casella).innerHTML =cerchio;
 
-    if(a[1]==1&&a[2]==1&&a[3]==1)
+    if(a[0]==1&&a[1]==1&&a[2]==1)
     {
-      alert("Hai vinto X");
+      $('#1o').css('position','absolute');
+      $('#1o').css('width','85%');
+      $('#1o').css('height','15%');
+      $('#1o').css('top','15%');
+      $('#1o').css('left','5%');
+      $('#1o').css('background-color','#0000FF');
     }
-    if(a[4]==1&&a[5]==1&&a[6]==1)
+    else if(a[3]==1&&a[4]==1&&a[5]==1)
     {
-      alert("Hai vinto X");
+      alert("x");
     }
-    if(a[7]==1&&a[8]==1&&a[9]==1)
+    else if(a[6]==1&&a[7]==1&&a[8]==1)
     {
-      alert("Hai vinto X");
+      alert("x");
     }
-    if(a[1]==1&&a[4]==1&&a[7]==1)
+    else if(a[0]==1&&a[3]==1&&a[6]==1)
     {
-      alert("Hai vinto X");
+      alert("x");
     }
-    if(a[2]==1&&a[5]==1&&a[8]==1)
+    else if(a[1]==1&&a[4]==1&&a[7]==1)
     {
-      alert("Hai vinto X");
+      alert("x");
     }
-    if(a[9]==1&&a[6]==1&&a[3]==1)
+    else if(a[8]==1&&a[5]==1&&a[2]==1)
     {
-      alert("Hai vinto X");
+      alert("x");
     }
-    if(a[7]==1&&a[5]==1&&a[3]==1)
+    else if(a[6]==1&&a[4]==1&&a[2]==1)
     {
-      alert("Hai vinto X");
+      alert("x");
     }
-    if(a[1]==1&&a[5]==1&&a[9]==1)
+    else if(a[0]==1&&a[4]==1&&a[8]==1)
     {
-      alert("Hai vinto X");
+      alert("x");
     }
 
 
 ///OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-    if(a[1]==2&&a[2]==2&&a[3]==2)
-    {
-      alert("Hai vinto O");
-    }
-    if(a[4]==2&&a[5]==2&&a[6]==2)
-    {
-      alert("Hai vinto O");
-    }
-    if(a[7]==2&&a[8]==2&&a[9]==2)
-    {
-      alert("Hai vinto O");
-    }
-    if(a[1]==2&&a[4]==2&&a[7]==2)
-    {
-      alert("Hai vinto O");
-    }
-    if(a[2]==2&&a[5]==2&&a[8]==2)
-    {
-      alert("Hai vinto O");
-    }
-    if(a[9]==2&&a[6]==2&&a[3]==2)
-    {
-      alert("Hai vinto O");
-    }
-    if(a[7]==2&&a[5]==2&&a[3]==2)
-    {
-      alert("Hai vinto O");
-    }
-    if(a[1]==2&&a[5]==2&&a[9]==2)
-    {
-      alert("Hai vinto O");
-    }
+else if(a[0]==2&&a[1]==2&&a[2]==2)
+{
+  alert("o");
+}
+else if(a[3]==2&&a[4]==2&&a[5]==2)
+{
+  alert("o");
+}
+else if(a[6]==2&&a[7]==2&&a[8]==2)
+{
+  alert("o");
+}
+else if(a[0]==2&&a[3]==2&&a[6]==2)
+{
+  alert("o");
+}
+else if(a[1]==2&&a[4]==2&&a[7]==2)
+{
+  alert("o");
+}
+else if(a[8]==2&&a[5]==2&&a[2]==2)
+{
+  alert("o");
+}
+else if(a[6]==2&&a[4]==2&&a[2]==2)
+{
+  alert("o");
+}
+else if(a[0]==2&&a[4]==2&&a[8]==2)
+{
+  alert("o");
+}
+
 };
