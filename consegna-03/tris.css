@@ -144,7 +144,7 @@ main {
   border-radius: 25px;
   right:2%;
   text-align: center;
-  top:15%;
+  top:8%;
   font-size: 175%;
   color:silver;
   visibility:hidden;
@@ -152,7 +152,7 @@ main {
 #faccina{
   position:absolute;
   width: 25%;
-  height: 45%;
+  height: 49%;
   right:7%;
   top:45%;
   visibility:hidden;
@@ -169,4 +169,15 @@ main {
   top :3%;
   left:3%;
   color:red;
+}
+#cover{
+    position: absolute;
+    border-style: solid;
+    border-radius: 35px;
+    padding-left: 0.5%;
+    top: 10%;
+    left: 27%;
+    width: 600px;
+    height: 600px;
+    visibility: hidden;
 }
