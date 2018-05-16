@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>TicTacToe</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+
+.header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    font-size: 40px;
+    color: red;
+}
+
+
+.column {
+    float: left;
+    padding: 30px;
+    width: 50%;
+    text-align: center;
+}
+
+.column.left:hover{
+  background-color: #ff3a28;
+}
+
+.column.right:hover{
+  background-color: #41d83c;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+@media screen and (max-width: 600px) {
+    .column.side, .column.middle {
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+ <p> Benvenuto<br> scegli la modalita di gioco:</p>
+</div>
+
+<div class="row">
+  <div class="column left">
+   <a href="IA.html">Gioca contro l'IA</a>
+  </div>
+  <div class="column right">
+   <a href="1VS1.html">Gioca con un altro giocatore</a>
+  </div>
+</div>
+
+</body>
+</html>
