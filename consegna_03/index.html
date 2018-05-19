@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Tetris by Lorenzo De Luca</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link href="stile.css" rel="stylesheet" type="text/css">
+		<script src="tetris.js"></script>
+	</head>
+	<body onload="res()">
+		<div id="pulsanti">
+			<button onclick="res()">reset</button><button onclick="mod()" id="modB">2P</button>
+		</div>
+		<div id="griglia">
+			 <table style="width:100%;height:100%;">
+				<tr>
+					<th style="border-width: 0px 5px 5px 0px;" onclick="c(1)" id="1" >1 cella</th>
+					<th style="border-width: 0px 5px 5px 5px;" onclick="c(2)" id="2">2 cella</th>
+					<th style="border-width: 0px 0px 5px 5px;" onclick="c(3)" id="3">3 cella</th>
+				</tr>
+				<tr>
+					<th style="border-width: 5px 5px 5px 0px;" onclick="c(4)" id="4">4 cella</th>
+					<th style="border-width: 5px 5px 5px 5px;" onclick="c(5)" id="5">5 cella</th>
+					<th style="border-width: 5px 0px 5px 5px;" onclick="c(6)" id="6">6 cella</th>
+				</tr>
+				<tr>
+					<th style="border-width: 5px 5px 0px 0px;" onclick="c(7)" id="7">7 cella</th>
+					<th style="border-width: 5px 5px 0px 5px;" onclick="c(8)" id="8">8 cella</th>
+					<th style="border-width: 5px 0px 0px 5px;" onclick="c(9)" id="9">9 cella</th>
+				</tr>
+			</table> 
+		</div>
+	</body>
+</html>
