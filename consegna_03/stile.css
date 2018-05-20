@@ -8,17 +8,17 @@ table{
 th, td{
 	border-style: solid;
 }
-.impostazioni{
-   position:absolute;
-   width: 120px;
-   height: 120px;
-   top: 0px;
-   left:0px;
-   background: url(reset.png);
-}
 #pulsanti{
   background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
   background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
   background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
   background: linear-gradient(45deg, #00dbde, #fc00ff);
+}
+#modB{
+	position:absolute;
+	right: 10px;
+}
+#nome{
+	position: absolute;
+	left: 48%;
 }

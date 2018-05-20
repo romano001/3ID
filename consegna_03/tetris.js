@@ -1,9 +1,10 @@
 var cella=[0,0,0,0,0,0,0,0,0,0];
 var turno=false;
-let bot=false;
+var bot=false;
+let stop=false;
 function c(num)
 {
-	if(cella[num]==0)
+	if(cella[num]==0&&!stop)
 	{
 		if(turno)cella[num]=1;
 		else cella[num]=2;
@@ -39,14 +40,15 @@ function testVinto()
 }
 function vinto(vincitore)
 {
+	stop=true;
 	if(vincitore==1)alert("HA VINTO CROCE");
 	else if(vincitore==2)alert("HA VINTO CERCHIO");
 	else if(vincitore==0)alert("PARI");
-	reset();
 }
 function res(){
 	cella=[0,0,0,0,0,0,0,0,0,0];
 	turno=false;
+	stop=false;
 	rielabora();
 }
 function mod(){
