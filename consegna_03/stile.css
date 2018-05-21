@@ -1,0 +1,144 @@
+.container{
+  position: fixed;
+  top: 20%;
+  left: 35%;
+  right: 35%;
+  width: auto;
+  height: 30vw;
+  background-color: black;
+}
+#computer,#giocatore{
+  position: absolute;
+}
+#computer{
+  top: 40%;
+  width: 25%;
+  text-align: center;
+
+  background-color: red;
+}
+#giocatore{
+  background-color: blue;
+  width: 25%;
+  top: 60%;
+  text-align: center;
+}
+#title{
+  position: relative;
+  top: -15vh;
+  left: 0%;
+  text-align: center;
+  font-size: 10vh;
+  height: 20%;
+  width:100%;
+}
+body{
+  height: 100%;
+  background: linear-gradient(45deg, #0e2c62, #537895, #667eea, #ffc3a0, #EE7752);
+	background-size: 400% 400%;
+  -moz-animation: Gradiente 10s ease infinite;
+  animation: Gradiente 10s ease infinite;
+}
+@-webkit-keyframes Gradiente {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+#primariga,#secondariga,#terzariga{
+  position: absolute;
+  background-color: black;
+  width: 98%;
+  height: 32%;
+}
+#primariga{
+  top: 1%;
+  left: 1%;
+}
+#secondariga{
+  top: 34%;
+  left: 1%;
+}
+#terzariga{
+  bottom: 1%;
+  left: 1%;
+}
+#colonna11,#colonna12,#colonna13,#colonna21,#colonna22,#colonna23,#colonna31,#colonna32,#colonna33{
+  position: absolute;
+  background-color: white;
+  width: 32%;
+  height: 100%;
+}
+#colonna11,#colonna21,#colonna31{
+  left: 0%;
+}
+#colonna12,#colonna22,#colonna32{
+  left: 34%;
+}
+#colonna13,#colonna23,#colonna33{
+  right: 0%;
+}
+#reset{
+  position: absolute;
+  background-color: pink;
+  top: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 3vw;
+  vertical-align: center;
+  height: 4vw;
+}
+
+.croce{
+  position: relative;
+  background-image: url("croce.png");
+  background-repeat: no-repeat;
+  background-size: 100%,100%;
+  width: 100%;
+  height: 100%;
+}
+.cerchio{
+  position: absolute;
+  background-image: url("cerchio.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%,100%;
+  width: 100%;
+  height: 100%;
+}
+#vintocroce,#vintocerchio{
+  position: relative;
+  top: -10%;
+  height: 110%;
+  width: 100%;
+  text-align: center;
+}
+#vinto{
+  position: absolute;
+  background-color: red;
+  border-radius: 250px;
+}
+#vintodiag1{
+  position: absolute;
+  background-color: red;
+  border-radius: 250px;
+  transform: rotate(-45deg);
+  height: 120%;
+  width: 10%;
+  top:-10%;
+  left: 45%;
+}
+#vintodiag2{
+  position: absolute;
+  background-color: red;
+  border-radius: 250px;
+  transform: rotate(45deg);
+  height: 120%;
+  width: 10%;
+  top:-10%;
+  left: 45%;
+}

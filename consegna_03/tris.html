@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="stile.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div id="computer">contro computer</div>
+    <div id="giocatore">contro giocatore</div>
+  <div class="container">
+    <button id="reset">
+      reset
+    </button>
+  </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  function disegna (x)
+  {
+    switch (x) {
+      case 0:
+      if (array[x]==1)
+      {
+        $("#colonna11").append('<div class="croce" ></div>');
+      }else{
+        $("#colonna11").append('<div class="cerchio" ></div>');
+      }
+      break;
+      case 1:
+      if (array[x]==1)
+      {
+        $("#colonna12").append('<div class="croce" ></div>');
+      }else{
+        $("#colonna12").append('<div class="cerchio" ></div>');
+      }
+      break;
+      case 2:
+      if (array[x]==1)
+      {
+        $("#colonna13").append('<div class="croce" ></div>');
+      }else{
+        $("#colonna13").append('<div class="cerchio" ></div>');
+      }
+      break;
+      case 3:
+      if (array[x]==1)
+      {
+        $("#colonna21").append('<div class="croce" ></div>');
+      }else{
+        $("#colonna21").append('<div class="cerchio" ></div>');
+      }
+      break;
+      case 4:
+      if (array[x]==1)
+      {
+        $("#colonna22").append('<div class="croce" ></div>');
+      }else{
+        $("#colonna22").append('<div class="cerchio" ></div>');
+      }
+      break;
+      case 5:
+      if (array[x]==1)
+      {
+        $("#colonna23").append('<div class="croce" ></div>');
+      }else{
+        $("#colonna23").append('<div class="cerchio" ></div>');
+      }
+      break;
+      case 6:
+      if (array[x]==1)
+      {
+        $("#colonna31").append('<div class="croce" ></div>');
+      }else{
+        $("#colonna31").append('<div class="cerchio" ></div>');
+      }
+      break;
+      case 7:
+      if (array[x]==1)
+      {
+        $("#colonna32").append('<div class="croce" ></div>');
+      }else{
+        $("#colonna32").append('<div class="cerchio" ></div>');
+      }
+      break;
+      case 8:
+      if (array[x]==1)
+      {
+        $("#colonna33").append('<div class="croce" ></div>');
+      }else{
+        $("#colonna33").append('<div class="cerchio" ></div>');
+      }
+      break;
+    }
+  }
+  function assegnaval(val) {
+    if (computer==0)
+    {
+    if (array[val]==0)
+    {
+      array[val]=valore;
+      if (valore==1)
+      {
+        valore = 2 ;
+      }else {
+        valore = 1 ;
+      }
+    }
+  }else{
+  if (array[val]==0) {
+    array[val]=valore;
+    if (valore==1) {
+      valore = 2 ;
+    }else {
+      valore = 1 ;
+    }
+    vittoria;
+    for (let i=0;i<9;i++) {
+      if (array[i]==0) {
+        disegna(i);
+        array[i]=valore;
+        i=9;
+      }
+    }
+    if (valore==1) {
+      valore = 2 ;
+    }else {
+      valore = 1 ;
+    }
+  }
+  }
+}
+  function reset () {
+    valore=1;
+    $(".croce").remove();
+    $(".cerchio").remove();
+    $("#vintocroce").remove();
+    $("#vintocerchio").remove();
+    $("#vinto").remove();
+    $("#vintodiag1").remove();
+    $("#vintodiag2").remove();
+    for (let i=0;i<9;i++){
+          array[i]=0;
+    }
+  }
+  function vittoria() {
+    if(
+        array[0]==array[1]&&array[1]==array[2]&&array[0]==1||
+        array[3]==array[4]&&array[4]==array[5]&&array[3]==1||
+        array[6]==array[7]&&array[7]==array[8]&&array[6]==1||
+        array[0]==array[3]&&array[3]==array[6]&&array[0]==1||
+        array[1]==array[4]&&array[4]==array[7]&&array[1]==1||
+        array[2]==array[5]&&array[5]==array[8]&&array[2]==1||
+        array[0]==array[4]&&array[4]==array[8]&&array[0]==1||
+        array[2]==array[4]&&array[4]==array[6]&&array[2]==1
+      )
+    {
+      $(".container").append('<div id="vintocroce" >la croce ha vinto</div>');
+    }
+    else if(
+        array[0]==array[1]&&array[1]==array[2]&&array[0]==2||
+        array[3]==array[4]&&array[4]==array[5]&&array[3]==2||
+        array[6]==array[7]&&array[7]==array[8]&&array[6]==2||
+        array[0]==array[3]&&array[3]==array[6]&&array[0]==2||
+        array[1]==array[4]&&array[4]==array[7]&&array[1]==2||
+        array[2]==array[5]&&array[5]==array[8]&&array[2]==2||
+        array[0]==array[4]&&array[4]==array[8]&&array[0]==2||
+        array[2]==array[4]&&array[4]==array[6]&&array[2]==2
+      )
+    {
+      $(".container").append('<div id="vintocerchio" >il cerchio ha vinto</div>');
+    }
+    if (array[0]==array[1]&&array[1]==array[2]&&array[0]>0)
+    {
+      $(".container").append('<div id="vinto" ></div>');
+      $("#vinto").css({ top: '12%' ,left: '5%'});
+      $("#vinto").height("9%");
+      $("#vinto").width("90%");
+    }
+    if (array[3]==array[4]&&array[4]==array[5]&&array[3]>0)
+    {
+      $(".container").append('<div id="vinto" ></div>');
+      $("#vinto").css({ top: '45%' ,left: '5%'});
+      $("#vinto").height("9%");
+      $("#vinto").width("90%");
+    }
+    if (array[6]==array[7]&&array[7]==array[8]&&array[6]>0)
+    {
+      $(".container").append('<div id="vinto" ></div>');
+      $("#vinto").css({ top: '78%' ,left: '5%'});
+      $("#vinto").height("9%");
+      $("#vinto").width("90%");
+    }
+    if (array[0]==array[3]&&array[3]==array[6]&&array[0]>0)
+    {
+      $(".container").append('<div id="vinto" ></div>');
+      $("#vinto").css({ top: '5%' ,left: '12%'});
+      $("#vinto").height("90%");
+      $("#vinto").width("9%");
+    }
+    if (array[1]==array[4]&&array[4]==array[7]&&array[1]>0)
+    {
+      $(".container").append('<div id="vinto" ></div>');
+      $("#vinto").css({ top: '5%' ,left: '45%'});
+      $("#vinto").height("90%");
+      $("#vinto").width("9%");
+    }
+    if (array[2]==array[5]&&array[5]==array[8]&&array[2]>0)
+    {
+      $(".container").append('<div id="vinto" ></div>');
+      $("#vinto").css({ top: '5%' ,left: '78%'});
+      $("#vinto").height("90%");
+      $("#vinto").width("9%");
+    }
+    if (array[0]==array[4]&&array[4]==array[8]&&array[0]>0)
+    {
+      $(".container").append('<div id="vintodiag1" ></div>');
+    }
+    if (array[2]==array[4]&&array[4]==array[6]&&array[2]>0)
+    {
+      $(".container").append('<div id="vintodiag2" ></div>');
+    }
+  }
+  $(".container").append('<div id="primariga" ></div>');
+    $("#primariga").append('<div id="colonna11" ></div>');
+    $("#primariga").append('<div id="colonna12" ></div>');
+    $("#primariga").append('<div id="colonna13" ></div>');
+  $(".container").append('<div id="secondariga" ></div>');
+    $("#secondariga").append('<div id="colonna21" ></div>');
+    $("#secondariga").append('<div id="colonna22" ></div>');
+    $("#secondariga").append('<div id="colonna23" ></div>');
+  $(".container").append('<div id="terzariga" ></div>');
+    $("#terzariga").append('<div id="colonna31" ></div>');
+    $("#terzariga").append('<div id="colonna32" ></div>');
+    $("#terzariga").append('<div id="colonna33" ></div>');
+  let valore=1;//valore 1= croce valore 2= cerchio
+  let array =[0,0,0,0,0,0,0,0,0];
+  let computer=0;
+  $(document).ready(function(){
+    $("#computer").click(function(){//resetta il gioco corrente
+      reset();
+      computer=1;
+      /*$(this).;
+      $("#giocatore");*/
+    });
+    $("#giocatore").click(function(){//resetta il gioco corrente
+      reset();
+      computer=0;
+      /*$(this).css(background-color,'blue');
+      $("#computer");*/
+    });
+    $("#reset").click(function(){//resetta il gioco corrente
+      reset();
+    });
+    $("#colonna11").click(function(){
+      if(array[0]==0){
+      assegnaval(0);
+      disegna(0);
+      vittoria();
+    }
+    });
+    $("#colonna12").click(function(){
+      if (array[1]==0)
+      {
+      assegnaval(1);
+      disegna(1);
+      }
+      vittoria();
+    });
+    $("#colonna13").click(function(){
+      if (array[2]==0)
+      {
+      assegnaval(2);
+      disegna(2);
+    }
+    vittoria();
+    });
+    $("#colonna21").click(function(){
+      if (array[3]==0)
+      {
+      assegnaval(3);
+      disegna(3);
+    }
+    vittoria();
+    });
+    $("#colonna22").click(function(){
+      if (array[4]==0)
+      {
+      assegnaval(4);
+      disegna(4);
+    }
+    vittoria();
+    });
+    $("#colonna23").click(function(){
+      if (array[5]==0)
+      {
+      assegnaval(5);
+      disegna(5);
+    }
+    vittoria();
+    });
+    $("#colonna31").click(function(){
+      if (array[6]==0)
+      {
+      assegnaval(6);
+      disegna(6);
+    }
+    vittoria();
+    });
+    $("#colonna32").click(function(){
+      if (array[7]==0)
+      {
+      assegnaval(7);
+      disegna(7);
+    }
+    vittoria();
+    });
+    $("#colonna33").click(function(){
+      if (array[8]==0)
+      {
+      assegnaval(8);
+      disegna(8);
+    }
+    vittoria();
+    });
+});
+</script>
+</html>
