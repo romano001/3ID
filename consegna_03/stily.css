@@ -1,0 +1,12 @@
+div{
+  width:350px;
+  height:350px;
+  margin: auto;
+}
+body{
+ background: linear-gradient(to right, #8080ff , #00e600);
+}
+h1
+{
+  color:white;
+}

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="stily.css" rel="stylesheet" type="text/css" />
+<script>
+
+var gioco = {c1: 0 , c2: 0,c3: 0 , c4: 0,c5: 0 , c6: 0,c7: 0 , c8: 0,c9: 0 };
+var scelta=1;
+var sceltaCPU;
+var caselleOccupate = 0;
+
+
+
+
+
+
+function checkWinner()
+{
+
+	if(gioco.c1==gioco.c2&&gioco.c2==gioco.c3&&gioco.c3==gioco.c1&&gioco.c1!=0)
+    {
+    	if(gioco.c1 == 1)
+		{
+			alert("ha vinto X");
+		}
+		else
+		{
+			alert("ha vinto O");
+		}
+        reset()
+    }
+    else if(gioco.c4==gioco.c5&&gioco.c5==gioco.c6&&gioco.c6==gioco.c4&&gioco.c4!=0)
+    {
+		if(gioco.c4 == 1)
+		{
+			alert("ha vinto X");
+		}
+		else
+		{
+			alert("ha vinto O");
+		}
+        reset()
+    }
+    else if(gioco.c7==gioco.c8&&gioco.c8==gioco.c9&&gioco.c9==gioco.c7&&gioco.c7!=0)
+    {
+		if(gioco.c7 == 1)
+		{
+			alert("ha vinto X");
+		}
+		else
+		{
+			alert("ha vinto O");
+		}
+        reset()
+    }
+    else if(gioco.c1==gioco.c4&&gioco.c4==gioco.c7&&gioco.c7==gioco.c1&&gioco.c1!=0)
+    {
+		if(gioco.c1 == 1)
+		{
+			alert("ha vinto X");
+		}
+		else
+		{
+			alert("ha vinto O");
+		}
+        reset()
+    }
+    else if(gioco.c2==gioco.c5&&gioco.c5==gioco.c8&&gioco.c8==gioco.c2&&gioco.c2!=0)
+    {
+		if(gioco.c2 == 1)
+		{
+			alert("ha vinto X");
+		}
+		else
+		{
+			alert("ha vinto O");
+		}
+        reset()
+    }
+    else if(gioco.c3==gioco.c6&&gioco.c6==gioco.c9&&gioco.c9==gioco.c3&&gioco.c3!=0)
+    {
+		if(gioco.c3 == 1)
+		{
+			alert("ha vinto X");
+		}
+		else
+		{
+			alert("ha vinto O");
+		}
+        reset()
+    }
+    else if(gioco.c1==gioco.c5&&gioco.c5==gioco.c9&&gioco.c9==gioco.c1&&gioco.c1!=0)
+    {
+		if(gioco.c1 == 1)
+		{
+			alert("ha vinto X");
+		}
+		else
+		{
+			alert("ha vinto O");
+		}
+        reset()
+    }
+    else if(gioco.c3==gioco.c5&&gioco.c5==gioco.c7&&gioco.c7==gioco.c3&&gioco.c3!=0)
+    {
+		if(gioco.c3 == 1)
+		{
+			alert("ha vinto X");
+		}
+		else
+		{
+			alert("ha vinto O");
+		}
+        reset()
+    }
+	else if(gioco.c1!=0&&gioco.c2!=0&&gioco.c3!=0&&gioco.c4!=0&&gioco.c5!=0&&gioco.c6!=0&&gioco.c7!=0&&gioco.c8!=0&&gioco.c9!=0)
+	{
+		alert("pareggio");
+		reset();
+	}
+
+}
+
+
+function reset()
+{
+	scelta = 1;
+  gioco.c1=0;
+	document.getElementById("P1").src = "nero.png" ;
+	gioco.c2=0;
+	document.getElementById("P2").src = "nero.png" ;
+	gioco.c3=0;
+	document.getElementById("P3").src = "nero.png" ;
+	gioco.c4=0;
+	document.getElementById("P4").src = "nero.png" ;
+	gioco.c5=0;
+	document.getElementById("P5").src = "nero.png" ;
+	gioco.c6=0;
+	document.getElementById("P6").src = "nero.png" ;
+	gioco.c7=0;
+	document.getElementById("P7").src = "nero.png" ;
+	gioco.c8=0;
+	document.getElementById("P8").src = "nero.png" ;
+	gioco.c9=0;
+	document.getElementById("P9").src = "nero.png" ;
+	caselleOccupate = 0;
+
+}
+function Computer()
+{
+
+if(caselleOccupate != 9)
+{
+	while(true)
+	{
+		sceltaCPU = Math.floor((Math.random()*9)+1);
+
+		if(sceltaCPU==1)
+		{
+			if(gioco.c1 == 0)
+			{
+				document.getElementById("P1").src = "O.png" ;
+				gioco.c1 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+		if(sceltaCPU==2)
+		{
+			if(gioco.c2 == 0)
+			{
+				document.getElementById("P2").src = "O.png" ;
+				gioco.c2 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+		if(sceltaCPU==3)
+		{
+			if(gioco.c3 == 0)
+			{
+				document.getElementById("P3").src = "O.png" ;
+				gioco.c3 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+		if(sceltaCPU==4)
+		{
+			if(gioco.c4 == 0)
+			{
+				document.getElementById("P4").src = "O.png" ;
+				gioco.c4 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+		if(sceltaCPU==5)
+		{
+			if(gioco.c5 == 0)
+			{
+				document.getElementById("P5").src = "O.png" ;
+				gioco.c5 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+		if(sceltaCPU==6)
+		{
+			if(gioco.c6 == 0)
+			{
+				document.getElementById("P6").src = "O.png" ;
+				gioco.c6 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+		if(sceltaCPU==7)
+		{
+			if(gioco.c7 == 0)
+			{
+				document.getElementById("P7").src = "O.png" ;
+				gioco.c7 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+		if(sceltaCPU==8)
+		{
+			if(gioco.c8 == 0)
+			{
+				document.getElementById("P8").src = "O.png" ;
+				gioco.c8 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+		if(sceltaCPU==9)
+		{
+			if(gioco.c9 == 0)
+			{
+				document.getElementById("P9").src = "O.png" ;
+				gioco.c9 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+	}
+	}
+
+}
+$(document).ready(function()
+{
+    $("#P1").click(function()
+    {
+    	if(gioco.c1==0)
+        {
+    		if(scelta==1)
+    		{
+				document.getElementById("P1").src = "red.png" ;
+                gioco.c1=scelta;
+        		scelta=2;
+				caselleOccupate++;
+    		}
+			Computer();
+			caselleOccupate++;
+            checkWinner();
+
+        }
+    });
+    $("#P2").click(function()
+    {
+    	if(gioco.c2==0)
+        {
+    		if(scelta==1)
+    		{
+    			document.getElementById("P2").src = "red.png" ;
+                gioco.c2=scelta;
+				caselleOccupate++;
+        		scelta=2;
+    		}
+			Computer();
+			caselleOccupate++;
+            checkWinner();
+
+        }
+    });
+    $("#P3").click(function()
+    {
+    	if(gioco.c3==0)
+        {
+    		if(scelta==1)
+    		{
+    			document.getElementById("P3").src = "red.png" ;
+                gioco.c3=scelta;
+        		scelta=2;
+				caselleOccupate++;
+    		}
+			Computer();
+			caselleOccupate++;
+            checkWinner();
+        }
+    });
+    $("#P4").click(function()
+    {
+    	if(gioco.c4==0)
+        {
+    		if(scelta==1)
+    		{
+				document.getElementById("P4").src = "red.png" ;
+                gioco.c4=scelta;
+        		scelta=2;
+				caselleOccupate++;
+    		}
+			Computer();
+			caselleOccupate++;
+            checkWinner();
+        }
+    });
+    $("#P5").click(function()
+    {
+    	if(gioco.c5==0)
+        {
+    		if(scelta==1)
+    		{
+    			document.getElementById("P5").src = "red.png" ;
+                gioco.c5=scelta;
+        		scelta=2;
+				caselleOccupate++;
+    		}
+			Computer();
+			caselleOccupate++;
+            checkWinner();
+        }
+    });
+    $("#P6").click(function()
+    {
+    	if(gioco.c6==0)
+        {
+    		if(scelta==1)
+    		{
+    			document.getElementById("P6").src = "red.png" ;
+                gioco.c6=scelta;
+        		scelta=2;
+				caselleOccupate++;
+    		}
+			Computer();
+			caselleOccupate++;
+            checkWinner();
+        }
+    });
+    $("#P7").click(function()
+    {
+    	if(gioco.c7==0)
+        {
+    		if(scelta==1)
+    		{
+    			document.getElementById("P7").src = "red.png" ;
+                gioco.c7=scelta;
+        		scelta=2;
+				caselleOccupate++;
+    		}
+			Computer();
+			caselleOccupate++;
+            checkWinner();
+        }
+    });
+    $("#P8").click(function()
+    {
+    	if(gioco.c8==0)
+        {
+    		if(scelta==1)
+    		{
+    			document.getElementById("P8").src = "red.png" ;
+                gioco.c8=scelta;
+        		scelta=2;
+				caselleOccupate++;
+    		}
+			Computer();
+			caselleOccupate++;
+            checkWinner();
+        }
+    });
+    $("#P9").click(function()
+    {
+    	if(gioco.c9==0)
+        {
+    		if(scelta==1)
+    		{
+    			document.getElementById("P9").src = "red.png" ;
+                gioco.c9=scelta;
+        		scelta=2;
+				caselleOccupate++;
+    		}
+			Computer();
+			caselleOccupate++;
+            checkWinner();
+        }
+    });
+
+
+});
+
+</script>
+</head>
+<body>
+	<h1>
+<center><strong>Gioco Tris</center></strong>
+</h1>
+<br>
+<br>
+<br>
+<div>
+	<img id = "P1" src = "nero.png";>
+	<img id = "P2" src = "nero.png";>
+	<img id = "P3" src = "nero.png";><br>
+	<img id = "P4" src = "nero.png";>
+	<img id = "P5" src = "nero.png";>
+	<img id = "P6" src = "nero.png";><br>
+	<img id = "P7" src = "nero.png";>
+	<img id = "P8" src = "nero.png";>
+	<img id = "P9" src = "nero.png";>
+</div>
+</body>
+</html>
