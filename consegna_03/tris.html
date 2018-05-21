@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="tris.css" rel="stylesheet" type="text/css" />
+<title>Tris Andrea Stocco</title>
+<script>
+
+var gioco = {c1: 0 , c2: 0,c3: 0 , c4: 0,c5: 0 , c6: 0,c7: 0 , c8: 0,c9: 0 };
+var scelta=1;
+var sceltaCPU;
+var caselleOccupate = 0;
+var vittorie0 = 0;
+var vittorieX = 0;
+var vincitore;
+
+
+
+function mossaCPU()
+{
+
+if(caselleOccupate != 9)
+{
+	while(true)
+	{
+		sceltaCPU = Math.floor((Math.random()*9)+1);
+			
+		if(sceltaCPU==1)
+		{
+			if(gioco.c1 == 0)
+			{
+				document.getElementById("i1").src = "o.jpeg" ;
+				gioco.c1 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+		if(sceltaCPU==2)
+		{
+			if(gioco.c2 == 0)
+			{
+				document.getElementById("i2").src = "o.jpeg" ;
+				gioco.c2 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+		if(sceltaCPU==3)
+		{
+			if(gioco.c3 == 0)
+			{
+				document.getElementById("i3").src = "o.jpeg" ;
+				gioco.c3 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+		if(sceltaCPU==4)
+		{
+			if(gioco.c4 == 0)
+			{
+				document.getElementById("i4").src = "o.jpeg" ;
+				gioco.c4 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+		if(sceltaCPU==5)
+		{
+			if(gioco.c5 == 0)
+			{
+				document.getElementById("i5").src = "o.jpeg" ;
+				gioco.c5 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+		if(sceltaCPU==6)
+		{
+			if(gioco.c6 == 0)
+			{
+				document.getElementById("i6").src = "o.jpeg" ;
+				gioco.c6 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+		if(sceltaCPU==7)
+		{
+			if(gioco.c7 == 0)
+			{
+				document.getElementById("i7").src = "o.jpeg" ;
+				gioco.c7 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+		if(sceltaCPU==8)
+		{
+			if(gioco.c8 == 0)
+			{
+				document.getElementById("i8").src = "o.jpeg" ;
+				gioco.c8 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+		if(sceltaCPU==9)
+		{
+			if(gioco.c9 == 0)
+			{
+				document.getElementById("i9").src = "o.jpeg" ;
+				gioco.c9 = 2;
+				scelta = 1;
+				break;
+			}
+		}
+	}
+	}
+
+}
+
+function checkWinner()
+{
+
+	if(gioco.c1==gioco.c2&&gioco.c2==gioco.c3&&gioco.c3==gioco.c1&&gioco.c1!=0)
+    {
+    	if(gioco.c1 == 1)
+		{
+			alert("ha vinto X");
+			vincitore = 1;
+		}
+		else 
+		{
+			alert("ha vinto O");
+			vincitore = 2;
+		}
+		scriviPunteggi();
+        reset();
+    }
+    else if(gioco.c4==gioco.c5&&gioco.c5==gioco.c6&&gioco.c6==gioco.c4&&gioco.c4!=0)
+    {
+		if(gioco.c4 == 1)
+		{
+			alert("ha vinto X");
+			vincitore = 1;
+		}
+		else 
+		{
+			alert("ha vinto O");
+			vincitore = 2;
+		}
+		scriviPunteggi();
+        reset();
+    }
+    else if(gioco.c7==gioco.c8&&gioco.c8==gioco.c9&&gioco.c9==gioco.c7&&gioco.c7!=0)
+    {
+		if(gioco.c7 == 1)
+		{
+			alert("ha vinto X");
+			vincitore = 1;
+		}
+		else 
+		{
+			alert("ha vinto O");
+			vincitore = 2;
+		}
+		scriviPunteggi();
+        reset();
+    }
+    else if(gioco.c1==gioco.c4&&gioco.c4==gioco.c7&&gioco.c7==gioco.c1&&gioco.c1!=0)
+    {
+		if(gioco.c1 == 1)
+		{
+			alert("ha vinto X");
+			vincitore = 1;
+		}
+		else 
+		{
+			alert("ha vinto O");
+			vincitore = 2;
+		}
+		scriviPunteggi();
+        reset();
+    }
+    else if(gioco.c2==gioco.c5&&gioco.c5==gioco.c8&&gioco.c8==gioco.c2&&gioco.c2!=0)
+    {
+		if(gioco.c2 == 1)
+		{
+			alert("ha vinto X");
+			vincitore = 1;
+		}
+		else 
+		{
+			alert("ha vinto O");
+			vincitore = 2;
+		}
+		scriviPunteggi();
+        reset();
+    }
+    else if(gioco.c3==gioco.c6&&gioco.c6==gioco.c9&&gioco.c9==gioco.c3&&gioco.c3!=0)
+    {
+		if(gioco.c3 == 1)
+		{
+			alert("ha vinto X");
+			vincitore = 1;
+		}
+		else 
+		{
+			alert("ha vinto O");
+			vincitore = 2;
+		}
+		scriviPunteggi();
+        reset();
+    }
+    else if(gioco.c1==gioco.c5&&gioco.c5==gioco.c9&&gioco.c9==gioco.c1&&gioco.c1!=0)
+    {
+		if(gioco.c1 == 1)
+		{
+			alert("ha vinto X");
+			vincitore = 1;
+		}
+		else 
+		{
+			alert("ha vinto O");
+			vincitore = 2;
+		}
+		scriviPunteggi();
+        reset();
+    }
+    else if(gioco.c3==gioco.c5&&gioco.c5==gioco.c7&&gioco.c7==gioco.c3&&gioco.c3!=0)
+    {
+		if(gioco.c3 == 1)
+		{
+			alert("ha vinto X");
+			vincitore = 1;
+		}
+		else 
+		{
+			alert("ha vinto O");
+			vincitore = 2;
+		}
+		scriviPunteggi();
+        reset();
+    }
+	else if(gioco.c1!=0&&gioco.c2!=0&&gioco.c3!=0&&gioco.c4!=0&&gioco.c5!=0&&gioco.c6!=0&&gioco.c7!=0&&gioco.c8!=0&&gioco.c9!=0)
+	{
+		alert("Pareggio");
+		reset();
+	}
+
+}
+
+
+function reset()
+{
+	/*alert("cuaiai");cit. campa fantastico*/
+	scelta = 1;
+    gioco.c1=0;
+	document.getElementById("i1").src = "bianco.jpeg" ;
+	gioco.c2=0;
+	document.getElementById("i2").src = "bianco.jpeg" ;
+	gioco.c3=0;
+	document.getElementById("i3").src = "bianco.jpeg" ;
+	gioco.c4=0;
+	document.getElementById("i4").src = "bianco.jpeg" ;
+	gioco.c5=0;
+	document.getElementById("i5").src = "bianco.jpeg" ;
+	gioco.c6=0;
+	document.getElementById("i6").src = "bianco.jpeg" ;
+	gioco.c7=0;
+	document.getElementById("i7").src = "bianco.jpeg" ;
+	gioco.c8=0;
+	document.getElementById("i8").src = "bianco.jpeg" ;
+	gioco.c9=0;
+	document.getElementById("i9").src = "bianco.jpeg" ;
+	caselleOccupate = 0;
+
+}
+
+$(document).ready(function()
+{
+    $("#i1").click(function()
+    {
+    	if(gioco.c1==0)
+        {
+    		if(scelta==1)
+    		{
+				document.getElementById("i1").src = "letter-x.jpg" ;
+                gioco.c1=scelta;
+        		scelta=2;
+				caselleOccupate++;
+    		}
+			mossaCPU();
+			caselleOccupate++;
+            checkWinner();
+            
+        }
+    });
+    $("#i2").click(function()
+    {
+    	if(gioco.c2==0)
+        {
+    		if(scelta==1)
+    		{
+    			document.getElementById("i2").src = "letter-x.jpg" ;
+                gioco.c2=scelta;
+				caselleOccupate++;
+        		scelta=2;
+    		}
+			mossaCPU();
+			caselleOccupate++;
+            checkWinner();
+            
+        }
+    });
+    $("#i3").click(function()
+    {
+    	if(gioco.c3==0)
+        {
+    		if(scelta==1)
+    		{
+    			document.getElementById("i3").src = "letter-x.jpg" ;
+                gioco.c3=scelta;
+        		scelta=2;
+				caselleOccupate++;
+    		}
+			mossaCPU();
+			caselleOccupate++;
+            checkWinner();
+        }
+    });
+    $("#i4").click(function()
+    {
+    	if(gioco.c4==0)
+        {
+    		if(scelta==1)
+    		{
+				document.getElementById("i4").src = "letter-x.jpg" ;
+                gioco.c4=scelta;
+        		scelta=2;
+				caselleOccupate++;
+    		}
+			mossaCPU();
+			caselleOccupate++;
+            checkWinner();
+        }
+    });
+    $("#i5").click(function()
+    {
+    	if(gioco.c5==0)
+        {
+    		if(scelta==1)
+    		{
+    			document.getElementById("i5").src = "letter-x.jpg" ;
+                gioco.c5=scelta;
+        		scelta=2;
+				caselleOccupate++;
+    		}
+			mossaCPU();
+			caselleOccupate++;
+            checkWinner();
+        }
+    });
+    $("#i6").click(function()
+    {
+    	if(gioco.c6==0)
+        {
+    		if(scelta==1)
+    		{
+    			document.getElementById("i6").src = "letter-x.jpg" ;
+                gioco.c6=scelta;
+        		scelta=2;
+				caselleOccupate++;
+    		}
+			mossaCPU();
+			caselleOccupate++;
+            checkWinner();
+        }
+    });
+    $("#i7").click(function()
+    {
+    	if(gioco.c7==0)
+        {
+    		if(scelta==1)
+    		{
+    			document.getElementById("i7").src = "letter-x.jpg" ;
+                gioco.c7=scelta;
+        		scelta=2;
+				caselleOccupate++;
+    		}
+			mossaCPU();
+			caselleOccupate++;
+            checkWinner();
+        }
+    });
+    $("#i8").click(function()
+    {
+    	if(gioco.c8==0)
+        {
+    		if(scelta==1)
+    		{
+    			document.getElementById("i8").src = "letter-x.jpg" ;
+                gioco.c8=scelta;
+        		scelta=2;
+				caselleOccupate++;
+    		}
+			mossaCPU();
+			caselleOccupate++;
+            checkWinner();
+        }
+    });
+    $("#i9").click(function()
+    {
+    	if(gioco.c9==0)
+        {
+    		if(scelta==1)
+    		{
+    			document.getElementById("i9").src = "letter-x.jpg" ;
+                gioco.c9=scelta;
+        		scelta=2;
+				caselleOccupate++;
+    		}
+			mossaCPU();
+			caselleOccupate++;
+            checkWinner();
+        }
+    });
+    
+    
+});
+
+function scriviPunteggi()
+{
+	if(vincitore == 1)
+	{
+		vittorieX++;
+	}
+	else if(vincitore == 2)
+	{
+		vittorie0++;
+	}
+	$("#1").val(vittorieX);
+	$("#2").val(vittorie0);
+}
+
+function reset2()
+{
+	vittorieX = 0;
+	vittorie0 = 0;
+	scelta = 1;
+    gioco.c1=0;
+	document.getElementById("i1").src = "bianco.jpeg" ;
+	gioco.c2=0;
+	document.getElementById("i2").src = "bianco.jpeg" ;
+	gioco.c3=0;
+	document.getElementById("i3").src = "bianco.jpeg" ;
+	gioco.c4=0;
+	document.getElementById("i4").src = "bianco.jpeg" ;
+	gioco.c5=0;
+	document.getElementById("i5").src = "bianco.jpeg" ;
+	gioco.c6=0;
+	document.getElementById("i6").src = "bianco.jpeg" ;
+	gioco.c7=0;
+	document.getElementById("i7").src = "bianco.jpeg" ;
+	gioco.c8=0;
+	document.getElementById("i8").src = "bianco.jpeg" ;
+	gioco.c9=0;
+	document.getElementById("i9").src = "bianco.jpeg" ;
+	caselleOccupate = 0;
+	$("#1").val(vittorieX);
+	$("#2").val(vittorie0);
+}
+</script>
+</head>
+<body>
+	<header>
+		<h1>TIC-TAC TOE</h1>
+	</header>
+	<main>
+<div id = "d1">
+	<img id = "i1" src = "bianco.jpeg";>
+	<img id = "i2" src = "bianco.jpeg";>
+	<img id = "i3" src = "bianco.jpeg";><br>
+	<img id = "i4" src = "bianco.jpeg";>
+	<img id = "i5" src = "bianco.jpeg";>
+	<img id = "i6" src = "bianco.jpeg";><br>
+	<img id = "i7" src = "bianco.jpeg";>
+	<img id = "i8" src = "bianco.jpeg";>
+	<img id = "i9" src = "bianco.jpeg";>
+<div id = "d2">
+	<img id = "ipiccola" src = "letter-x.jpg">	
+	<input id = "1"></input>
+	<br>
+	<br>
+	<img id = "ipiccola" src = "o.jpeg">
+	<input id = "2"></input>
+	<br>
+	<br>
+	<button onclick="reset2()">Reset</button>
+</div>
+</div>
+</main>
+</body>
+</html>
