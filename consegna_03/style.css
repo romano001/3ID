@@ -1,0 +1,39 @@
+#gamecontainer {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    width: 612px;
+}
+#alertbox {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    top: 650px;
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 612px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: green;
+}
+.cell {
+    border: 2px solid black;
+    height: 200px;
+    width: 200px;
+    float: left;
+    border-radius: 15px;
+}
+#btn_riavvias {
+    position: absolute;
+    right: 20px;
+}
+#btn_riavviam {
+    position: absolute;
+    right: 110px;
+}
+#giocacontro {
+    position: absolute;
+    right: 230px;
+}
