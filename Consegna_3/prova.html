@@ -1,0 +1,815 @@
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+var sceglie = 1;
+var sceglieOpzione=1;
+var sceltaAI;
+
+var caselleOccupate = 0;
+var secondoGiocatore = 0;
+var fine=0;
+
+var partita1="";
+var partita2="";
+var partita3="";
+
+var tavola = {c1: 0, c2: 0, c3: 0, c4: 0, c5: 0, c6: 0, c7: 0, c8: 0, c9: 0,
+
+
+AI: function(){
+
+	if(caselleOccupate != 9)
+{
+
+		while(true)
+{
+
+			sceltaAI = Math.floor((Math.random()*9)+1);
+
+			
+			if(sceglieOpzione!=2){
+
+			if(sceltaAI==1)
+{
+if(tavola.c1 == 0)
+{
+document.getElementById("i").src = "img1.jpg" ;
+tavola.c1 = 2;
+sceglie = 1;
+break;
+}
+}
+
+			if(sceltaAI==2)
+{
+if(tavola.c2== 0)
+{
+document.getElementById("i1").src = "img1.jpg" ;
+
+tavola.c2 = 2;
+sceglie = 1;
+break;
+}
+}
+
+			if(sceltaAI==3)
+{
+if(tavola.c3== 0)
+{
+document.getElementById("i2").src = "img1.jpg" ;
+
+tavola.c3 = 2;
+sceglie = 1;
+break;
+}
+}
+
+			if(sceltaAI==4)
+{
+if(tavola.c4== 0)
+{
+document.getElementById("i3").src = "img1.jpg" ;
+
+tavola.c4 = 2;
+sceglie = 1;
+break;
+}
+}
+
+			if(sceltaAI==5)
+{
+if(tavola.c5== 0)
+{
+document.getElementById("i4").src = "img1.jpg" ;
+
+tavola.c5 = 2;
+sceglie = 1;
+break;
+}
+}
+
+			if(sceltaAI==6)
+{
+if(tavola.c6== 0)
+{
+document.getElementById("i5").src = "img1.jpg" ;
+
+tavola.c6 = 2;
+sceglie = 1;
+break;
+}
+}
+
+			if(sceltaAI==7)
+{
+if(tavola.c7== 0)
+{
+document.getElementById("i6").src = "img1.jpg" ;
+
+tavola.c7 = 2;
+sceglie = 1;
+break;
+}
+}
+
+			if(sceltaAI==8)
+{
+if(tavola.c8== 0)
+{
+document.getElementById("i7").src = "img1.jpg" ;
+
+tavola.c8 = 2;
+sceglie = 1;
+break;
+}
+}
+
+			if(sceltaAI==9)
+{
+if(tavola.c9== 0)
+{
+document.getElementById("i8").src = "img1.jpg" ;
+
+tavola.c9 = 2;
+sceglie = 1;
+break;
+}
+}}
+
+
+			else{
+
+			if(sceltaAI==1)
+{
+if(tavola.c1 == 0)
+{
+document.getElementById("i").src = "img.png" ;
+tavola.c1 = 2;
+sceglie = 1;
+break;
+}
+}
+
+			if(sceltaAI==2)
+{
+if(tavola.c2== 0)
+{
+document.getElementById("i1").src = "img.png" ;
+
+tavola.c2 = 2;
+sceglie = 1;
+break;
+}
+}
+
+			if(sceltaAI==3)
+{
+if(tavola.c3== 0)
+{
+document.getElementById("i2").src = "img.png" ;
+
+tavola.c3 = 2;
+sceglie = 1;
+break;
+}
+}
+
+			if(sceltaAI==4)
+{
+if(tavola.c4== 0)
+{
+document.getElementById("i3").src = "img.png" ;
+
+tavola.c4 = 2;
+sceglie = 1;
+break;
+}
+}
+
+			if(sceltaAI==5)
+{
+if(tavola.c5== 0)
+{
+document.getElementById("i4").src = "img.png" ;
+
+tavola.c5 = 2;
+sceglie = 1;
+break;
+}
+}
+
+			if(sceltaAI==6)
+{
+if(tavola.c6== 0)
+{
+document.getElementById("i5").src = "img.png" ;
+
+tavola.c6 = 2;
+sceglie = 1;
+break;
+}
+}
+
+			if(sceltaAI==7)
+{
+if(tavola.c7== 0)
+{
+document.getElementById("i6").src = "img.png" ;
+
+tavola.c7 = 2;
+sceglie = 1;
+break;
+}
+}
+
+			if(sceltaAI==8)
+{
+if(tavola.c8== 0)
+{
+document.getElementById("i7").src = "img.png" ;
+
+tavola.c8 = 2;
+sceglie = 1;
+break;
+}
+}
+
+			if(sceltaAI==9)
+{
+if(tavola.c9== 0)
+{
+document.getElementById("i8").src = "img.png" ;
+
+tavola.c9 = 2;
+sceglie = 1;
+break;
+}
+}}
+
+			}}},
+
+checkWinner: function(){
+
+    if(tavola.c1==tavola.c2&&tavola.c2==tavola.c3&&tavola.c3==tavola.c1&&tavola.c1==tavola.c4&&tavola.c4==tavola.c7&&tavola.c7==tavola.c1&&tavola.c1!=0)
+    {
+	if(tavola.c1==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l11").show();
+    fine=1;
+    /*reset();*/
+    }
+    else if(tavola.c3==tavola.c6&&tavola.c6==tavola.c9&&tavola.c9==tavola.c3&&tavola.c1==tavola.c2&&tavola.c2==tavola.c3&&tavola.c3==tavola.c1&&tavola.c1!=0)
+    {
+    if(tavola.c1==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l12").show();
+    fine=1;
+    /*reset();*/
+    }
+    else if(tavola.c3==tavola.c6&&tavola.c6==tavola.c9&&tavola.c9==tavola.c3&&tavola.c7==tavola.c8&&tavola.c8==tavola.c9&&tavola.c9==tavola.c7&&tavola.c3!=0)
+    {
+    if(tavola.c3==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l13").show();
+    fine=1;
+    /*reset();*/
+    }
+    else if(tavola.c2==tavola.c5&&tavola.c5==tavola.c8&&tavola.c8==tavola.c2&&tavola.c7==tavola.c8&&tavola.c8==tavola.c9&&tavola.c9==tavola.c7&&tavola.c2!=0)
+    {
+    if(tavola.c2==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l14").show();
+    fine=1;
+    /*reset();*/
+    }
+    else if(tavola.c2==tavola.c5&&tavola.c5==tavola.c8&&tavola.c8==tavola.c2&&tavola.c1==tavola.c2&&tavola.c2==tavola.c3&&tavola.c3==tavola.c1&&tavola.c1!=0)
+    {
+    if(tavola.c1==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l15").show();
+    fine=1;
+    /*reset();*/
+    }
+
+    else if(tavola.c1==tavola.c4&&tavola.c4==tavola.c7&&tavola.c7==tavola.c1&&tavola.c4==tavola.c5&&tavola.c5==tavola.c6&&tavola.c6==tavola.c4&&tavola.c1!=0)
+    {
+    if(tavola.c1==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l16").show();
+    fine=1;
+    /*reset();*/
+    }
+
+    else if(tavola.c3==tavola.c6&&tavola.c6==tavola.c9&&tavola.c9==tavola.c3&&tavola.c4==tavola.c5&&tavola.c5==tavola.c6&&tavola.c6==tavola.c4&&tavola.c3!=0)
+    {
+    if(tavola.c3==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l17").show();
+    fine=1;
+    /*reset();*/
+    }
+    else if(tavola.c1==tavola.c2&&tavola.c2==tavola.c3&&tavola.c3==tavola.c1&&tavola.c1!=0)
+    {
+	if(tavola.c1==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l6").show();
+    fine=1;
+    /*reset();*/
+    }
+    else if(tavola.c4==tavola.c5&&tavola.c5==tavola.c6&&tavola.c6==tavola.c4&&tavola.c2==tavola.c5&&tavola.c5==tavola.c8&&tavola.c8==tavola.c2&&tavola.c2!=0)
+    {
+    if(tavola.c2==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l9").show();
+    fine=1;
+    /*reset();*/
+    }
+    else if(tavola.c1==tavola.c4&&tavola.c4==tavola.c7&&tavola.c7==tavola.c1&&tavola.c7==tavola.c8&&tavola.c8==tavola.c9&&tavola.c9==tavola.c7&&tavola.c1!=0)
+    {
+    if(tavola.c1==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l10").show();
+    fine=1;
+    /*reset();*/
+    }
+    else if(tavola.c4==tavola.c5&&tavola.c5==tavola.c6&&tavola.c6==tavola.c4&&tavola.c4!=0)
+    {
+    if(tavola.c4==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l5").show();
+    fine=1;
+    /*reset();*/
+    }
+    else if(tavola.c7==tavola.c8&&tavola.c8==tavola.c9&&tavola.c9==tavola.c7&&tavola.c7!=0)
+    {
+    if(tavola.c7==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l7").show();
+    fine=1;
+    /*reset();*/
+    }
+    else if(tavola.c1==tavola.c4&&tavola.c4==tavola.c7&&tavola.c7==tavola.c1&&tavola.c1!=0)
+    {
+    if(tavola.c1==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l3").show();
+    fine=1;
+    /*reset();*/
+    }
+    else if(tavola.c2==tavola.c5&&tavola.c5==tavola.c8&&tavola.c8==tavola.c2&&tavola.c2!=0)
+    {
+    if(tavola.c2==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l2").show();
+    fine=1;
+    /*reset();*/
+    }
+    else if(tavola.c3==tavola.c6&&tavola.c6==tavola.c9&&tavola.c9==tavola.c3&&tavola.c3!=0)
+    {
+    if(tavola.c3==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l4").show();
+    fine=1;
+    /*reset();*/
+    }
+    else if(tavola.c1==tavola.c5&&tavola.c5==tavola.c9&&tavola.c9==tavola.c1&&tavola.c3==tavola.c5&&tavola.c5==tavola.c7&&tavola.c7==tavola.c3&&tavola.c1!=0)
+    {
+    if(tavola.c1==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l8").show();
+    fine=1;
+    /*reset();*/
+
+    }
+    else if(tavola.c1==tavola.c5&&tavola.c5==tavola.c9&&tavola.c9==tavola.c1&&tavola.c1!=0)
+    {
+    if(tavola.c1==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l1").show();
+    fine=1;
+    /*reset();*/
+    }
+    else if(tavola.c3==tavola.c5&&tavola.c5==tavola.c7&&tavola.c7==tavola.c3&&tavola.c3!=0)
+    {
+    if(tavola.c3==1){if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}}
+	else{if(sceglieOpzione==2){document.getElementById("t9").innerHTML = "HA VINTO X" ;partita1="X";}
+    else{document.getElementById("t9").innerHTML = "HA VINTO O" ;partita1="O";}}
+    $("#l").show();
+    fine=1;
+    /*reset();*/
+    }
+    else if(tavola.c1!=0&&tavola.c2!=0&&tavola.c3!=0&&tavola.c4!=0&&tavola.c5!=0&&tavola.c6!=0&&tavola.c7!=0&&tavola.c8!=0&&tavola.c9!=0)
+    {
+    document.getElementById("t9").innerHTML = "PAREGGIO" ;partita1="nessuno";
+    /*reset();*/
+    }
+    
+    }}
+    
+function reset(){
+
+   if(partita1!=""){
+   document.getElementById("par").innerHTML = "Ultima partita vinta da " ;
+   document.getElementById("par").innerHTML += partita1 ;
+   document.getElementById("par1").innerHTML = "Penultima partita vinta da " ;
+   document.getElementById("par1").innerHTML += partita2 ;
+   document.getElementById("par2").innerHTML = "Terzultima partita vinta da " ;
+   document.getElementById("par2").innerHTML += partita3 ;
+
+   partita3=partita2;
+   partita2=partita1;
+   partita1="";}
+
+    $("#l").hide();
+    $("#l1").hide();
+    $("#l2").hide();
+    $("#l3").hide();
+    $("#l4").hide();
+    $("#l5").hide();
+    $("#l6").hide();
+    $("#l7").hide();
+    $("#l8").hide();
+    $("#l9").hide();
+    $("#l10").hide();
+    $("#l11").hide();
+    $("#l12").hide();
+    $("#l13").hide();
+    $("#l14").hide();
+    $("#l15").hide();
+    $("#l16").hide();
+    $("#l17").hide();
+
+    sceglie=1;
+    caselleOccupate = 0;
+    fine=0;
+
+    document.getElementById("t9").innerHTML = "TIC TAC TOE" ;
+    tavola.c1=0 ;
+	document.getElementById("i").src = "img3.png";
+    tavola.c2=0 ;
+	document.getElementById("i1").src = "img3.png";
+    tavola.c3=0 ;
+	document.getElementById("i2").src = "img3.png";
+    tavola.c4=0 ;
+	document.getElementById("i3").src = "img3.png";
+    tavola.c5=0 ;
+	document.getElementById("i4").src = "img3.png";
+    tavola.c6=0 ;
+	document.getElementById("i5").src = "img3.png";
+    tavola.c7=0 ;
+	document.getElementById("i6").src = "img3.png";
+    tavola.c8=0 ;
+	document.getElementById("i7").src = "img3.png";
+    tavola.c9=0 ;
+	document.getElementById("i8").src = "img3.png";}
+
+$(document).ready(function(){
+
+    $("#l").hide();
+    $("#l1").hide();
+    $("#l2").hide();
+    $("#l3").hide();
+    $("#l4").hide();
+    $("#l5").hide();
+    $("#l6").hide();
+    $("#l7").hide();
+    $("#l8").hide();
+    $("#l9").hide();
+    $("#l10").hide();
+    $("#l11").hide();
+    $("#l12").hide();
+    $("#l13").hide();
+    $("#l14").hide();
+    $("#l15").hide();
+    $("#l16").hide();
+    $("#l17").hide();
+
+    $("#r").click(function(){
+    reset();
+    });
+
+    $("#o3").click(function(){
+    document.getElementById("i33").src = "img25.png";
+    document.getElementById("i30").src = "img26.png";
+    secondoGiocatore=1;
+    });
+
+    $("#o").click(function(){
+    document.getElementById("i30").src = "img25.png";
+    document.getElementById("i33").src = "img26.png";
+    secondoGiocatore=0;
+    });
+
+    $("#o1").click(function(){
+    document.getElementById("i31").src = "img25.png";
+    document.getElementById("i32").src = "img26.png";
+    sceglieOpzione=2;
+    });
+
+    $("#o2").click(function(){
+    document.getElementById("i32").src = "img25.png";
+    document.getElementById("i31").src = "img26.png";
+    sceglieOpzione=1;
+    });
+
+    $("#f").click(function(){
+    $("#p1").hide();
+    reset();
+    });
+
+    $("#p").click(function(){
+    $("#p1").show();
+    });
+
+    $("#b").click(function(){
+    if(tavola.c1==0){
+    if(sceglie==1){if(sceglieOpzione==2){document.getElementById("i").src = "img1.jpg";}
+	else{document.getElementById("i").src = "img.png";}
+    tavola.c1=1 ;
+    sceglie=2;
+    tavola.checkWinner();
+    if(secondoGiocatore==1&&fine!=1){
+    caselleOccupate++;
+    tavola.AI();
+    caselleOccupate++;
+    tavola.checkWinner();}tavola.checkWinner();}
+    else{
+	if(sceglieOpzione==2){document.getElementById("i").src = "img.png";}
+	else{document.getElementById("i").src = "img1.jpg";}
+    tavola.c1=2 ;
+    sceglie=1;
+    tavola.checkWinner();}}
+    });
+    
+    $("#b1").click(function(){
+    if(tavola.c2==0){
+    if(sceglie==1){if(sceglieOpzione==2){document.getElementById("i1").src = "img1.jpg";}
+	else{document.getElementById("i1").src = "img.png";}
+    tavola.c2=1 ;
+    sceglie=2;
+    tavola.checkWinner();
+    if(secondoGiocatore==1&&fine!=1){
+    caselleOccupate++;
+    tavola.AI();
+    caselleOccupate++;
+    tavola.checkWinner();}tavola.checkWinner();}
+    else{
+	if(sceglieOpzione==2){document.getElementById("i1").src = "img.png";}
+	else{document.getElementById("i1").src = "img1.jpg";}
+    tavola.c2=2 ;
+    sceglie=1;
+    tavola.checkWinner();}}
+	});
+    
+    $("#b2").click(function(){
+    if(tavola.c3==0){
+    if(sceglie==1){if(sceglieOpzione==2){document.getElementById("i2").src = "img1.jpg";}
+	else{document.getElementById("i2").src = "img.png";}
+    tavola.c3=1 ;
+    sceglie=2;
+    tavola.checkWinner();
+    if(secondoGiocatore==1&&fine!=1){
+    caselleOccupate++;
+    tavola.AI();
+    caselleOccupate++;
+    tavola.checkWinner();}tavola.checkWinner();}
+    else{
+	if(sceglieOpzione==2){document.getElementById("i2").src = "img.png";}
+	else{document.getElementById("i2").src = "img1.jpg";}
+    tavola.c3=2 ;
+    sceglie=1;
+    tavola.checkWinner();}}
+	});
+    
+    $("#b3").click(function(){
+    if(tavola.c4==0){
+    if(sceglie==1){if(sceglieOpzione==2){document.getElementById("i3").src = "img1.jpg";}
+	else{document.getElementById("i3").src = "img.png";}
+    tavola.c4=1 ;
+    sceglie=2;
+    tavola.checkWinner();
+    if(secondoGiocatore==1&&fine!=1){
+    caselleOccupate++;
+    tavola.AI();
+    caselleOccupate++;
+    tavola.checkWinner();}tavola.checkWinner();}
+    else{
+	if(sceglieOpzione==2){document.getElementById("i3").src = "img.png";}
+	else{document.getElementById("i3").src = "img1.jpg";}
+    tavola.c4=2 ;
+    sceglie=1;
+    tavola.checkWinner();}}
+    });
+    
+    $("#b4").click(function(){
+    if(tavola.c5==0){
+    if(sceglie==1){if(sceglieOpzione==2){document.getElementById("i4").src = "img1.jpg";}
+	else{document.getElementById("i4").src = "img.png";}
+    tavola.c5=1 ;
+    sceglie=2;
+    tavola.checkWinner();
+    if(secondoGiocatore==1&&fine!=1){
+    caselleOccupate++;
+    tavola.AI();
+    caselleOccupate++;
+    tavola.checkWinner();}tavola.checkWinner();}
+    else{
+	if(sceglieOpzione==2){document.getElementById("i4").src = "img.png";}
+	else{document.getElementById("i4").src = "img1.jpg";}
+    tavola.c5=2 ;
+    sceglie=1;
+    tavola.checkWinner();}}
+	});
+    
+    $("#b5").click(function(){
+    if(tavola.c6==0){
+    if(sceglie==1){if(sceglieOpzione==2){document.getElementById("i5").src = "img1.jpg";}
+	else{document.getElementById("i5").src = "img.png";}
+    tavola.c6=1 ;
+    sceglie=2;
+    tavola.checkWinner();
+    if(secondoGiocatore==1&&fine!=1){
+    caselleOccupate++;
+    tavola.AI();
+    caselleOccupate++;
+    tavola.checkWinner();}tavola.checkWinner();}
+    else{
+	if(sceglieOpzione==2){document.getElementById("i5").src = "img.png";}
+	else{document.getElementById("i5").src = "img1.jpg";}
+    tavola.c6=2 ;
+    sceglie=1;
+    tavola.checkWinner();}}
+	});
+    
+    $("#b6").click(function(){
+    if(tavola.c7==0){
+    if(sceglie==1){if(sceglieOpzione==2){document.getElementById("i6").src = "img1.jpg";}
+	else{document.getElementById("i6").src = "img.png";};
+    tavola.c7=1 ;
+    sceglie=2;
+    tavola.checkWinner();
+    if(secondoGiocatore==1&&fine!=1){
+    caselleOccupate++;
+    tavola.AI();
+    caselleOccupate++;
+    tavola.checkWinner();}tavola.checkWinner();}
+    else{
+	if(sceglieOpzione==2){document.getElementById("i6").src = "img.png";}
+	else{document.getElementById("i6").src = "img1.jpg";}
+    tavola.c7=2 ;
+    sceglie=1;
+    tavola.checkWinner();}}
+    });
+    
+    $("#b7").click(function(){
+    if(tavola.c8==0){
+    if(sceglie==1){if(sceglieOpzione==2){document.getElementById("i7").src = "img1.jpg";}
+	else{document.getElementById("i7").src = "img.png";}
+    tavola.c8=1 ;
+    sceglie=2;
+    tavola.checkWinner();
+    if(secondoGiocatore==1&&fine!=1){
+    caselleOccupate++;
+    tavola.AI();
+    caselleOccupate++;
+    tavola.checkWinner();}tavola.checkWinner();}
+    else{
+	if(sceglieOpzione==2){document.getElementById("i7").src = "img.png";}
+	else{document.getElementById("i7").src = "img1.jpg";}
+    tavola.c8=2 ;
+    sceglie=1;
+    tavola.checkWinner();}}
+	});
+    
+    $("#b8").click(function(){
+    if(tavola.c9==0){
+    if(sceglie==1){if(sceglieOpzione==2){document.getElementById("i8").src = "img1.jpg";}
+	else{document.getElementById("i8").src = "img.png";}
+    tavola.c9=1 ;
+    sceglie=2;
+    tavola.checkWinner();
+    if(secondoGiocatore==1&&fine!=1){
+    caselleOccupate++;
+    tavola.AI();
+    caselleOccupate++;
+    tavola.checkWinner();}tavola.checkWinner();}
+    else{
+	if(sceglieOpzione==2){document.getElementById("i8").src = "img.png";}
+	else{document.getElementById("i8").src = "img1.jpg";}
+    tavola.c9=2 ;
+    sceglie=1;
+    tavola.checkWinner();}}
+	});
+    
+	});
+
+
+</script>
+</style>
+
+</head>
+<body>
+
+<div style="position: absolute;top:21%;left:13.5%;width: 36%;height: 76%;background:url(img2.png) no-repeat center;background-size: cover;">
+
+<div id="b" style="position: relative;top:26px;left:22px;width: 120px;height: 120px;background:url(img3.png) no-repeat center;background-size: cover;"><img id="i" src="img3.png" width="120" height="120"></div>
+<div id="b1" style="position: relative;top:72px;left:22px;width: 120px;height: 120px;background:url(img3.png) no-repeat center;background-size: cover;"><img id="i1" src="img3.png" width="120" height="120"></div>
+<div id="b2" style="position: relative;top:118px;left:22px;width: 120px;height: 120px;background:url(img3.png) no-repeat center;background-size: cover;"><img id="i2" src="img3.png" width="120" height="120"></div>
+
+<div id="b3" style="position: relative;top:-334px;left:187.3px;width: 120px;height: 120px;background:url(img3.png) no-repeat center;background-size: cover;"><img id="i3" src="img3.png" width="120" height="120"></div>
+<div id="b4" style="position: relative;top:-288px;left:187.3px;width: 120px;height: 120px;background:url(img3.png) no-repeat center;background-size: cover;"><img id="i4" src="img3.png" width="120" height="120"></div>
+<div id="b5" style="position: relative;top:-242px;left:187.3px;width: 120px;height: 120px;background:url(img3.png) no-repeat center;background-size: cover;"><img id="i5" src="img3.png" width="120" height="120"></div>
+
+<div id="b6" style="position: relative;top:-694px;left:345.6px;width: 120px;height: 120px;background:url(img3.png) no-repeat center;background-size: cover;"><img id="i6" src="img3.png" width="120" height="120"></div>
+<div id="b7" style="position: relative;top:-648px;left:345.6px;width: 120px;height: 120px;background:url(img3.png) no-repeat center;background-size: cover;"><img id="i7" src="img3.png" width="120" height="120"></div>
+<div id="b8" style="position: relative;top:-602px;left:345.6px;width: 120px;height: 120px;background:url(img3.png) no-repeat center;background-size: cover;"><img id="i8" src="img3.png" width="120" height="120"></div>
+
+<div id="l" style="position: relative;top:-1061px;left:22px;width: 135px;height: 135px;"><img id="i9" src="img4.png" width="445" height="465"></div>
+<div id="l1" style="position: relative;top:-1061px;left:22px;width: 135px;height: 135px;"><img id="i10" src="img5.png" width="445" height="465"></div>
+<div id="l2" style="position: relative;top:-1068px;left:22px;width: 135px;height: 135px;"><img id="i11" src="img6.png" width="445" height="465"></div>
+<div id="l3" style="position: relative;top:-1079px;left:22px;width: 135px;height: 135px;"><img id="i12" src="img7.png" width="445" height="465"></div>
+<div id="l4" style="position: relative;top:-1054px;left:22px;width: 135px;height: 135px;"><img id="i13" src="img8.png" width="445" height="465"></div>
+<div id="l5" style="position: relative;top:-1061px;left:25px;width: 135px;height: 135px;"><img id="i14" src="img9.png" width="445" height="465"></div>
+<div id="l6" style="position: relative;top:-1061px;left:7px;width: 135px;height: 135px;"><img id="i15" src="img10.png" width="445" height="465"></div>
+<div id="l7" style="position: relative;top:-1061px;left:34px;width: 135px;height: 135px;"><img id="i16" src="img11.png" width="445" height="465"></div>
+<div id="l8" style="position: relative;top:-1061px;left:23px;width: 135px;height: 135px;"><img id="i17" src="img12.png" width="445" height="465"></div>
+<div id="l9" style="position: relative;top:-1065px;left:25px;width: 135px;height: 135px;"><img id="i18" src="img13.png" width="445" height="465"></div>
+<div id="l10" style="position: relative;top:-1077px;left:23px;width: 135px;height: 135px;"><img id="i19" src="img14.png" width="445" height="465"></div>
+<div id="l11" style="position: relative;top:-1077px;left:23px;width: 135px;height: 135px;"><img id="i20" src="img15.png" width="445" height="465"></div>
+<div id="l12" style="position: relative;top:-1055px;left:23px;width: 135px;height: 135px;"><img id="i21" src="img16.png" width="445" height="465"></div>
+<div id="l13" style="position: relative;top:-1055px;left:23px;width: 135px;height: 135px;"><img id="i22" src="img17.png" width="445" height="465"></div>
+<div id="l14" style="position: relative;top:-1066px;left:21px;width: 135px;height: 135px;"><img id="i23" src="img18.png" width="445" height="465"></div>
+<div id="l15" style="position: relative;top:-1066px;left:23px;width: 135px;height: 135px;"><img id="i24" src="img19.png" width="445" height="465"></div>
+<div id="l16" style="position: relative;top:-1078px;left:25px;width: 135px;height: 135px;"><img id="i25" src="img20.png" width="445" height="465"></div>
+<div id="l17" style="position: relative;top:-1086px;left:25px;width: 135px;height: 135px;"><img id="i26" src="img21.png" width="445" height="465"></div>
+
+</div>
+
+<h1><p id="t9" style="font-style: oblique;font-size:90px;position: absolute;top:-60px;left:150px;">TIC TAC TOE</p></h1>
+
+<div id="r" style="position: absolute;top:67%;left:60%;width: 30%;height: 20%;"background:url(img22.png) no-repeat center;background-size: cover;"><img id="i27" src="img22.png" width="370" height="180"></div>
+
+<div id="p" style="position: absolute;top:18%;left:60%;width: 30%;height: 20%;"background:url(img23.png) no-repeat center;background-size: cover;"><img id="i28" src="img23.png" width="370" height="100"></div>
+
+<div id="tab" style="position: absolute;top:35%;left:60%;width: 30%;height: 20%;"background:url(img28.png) no-repeat center;background-size: cover;"><img id="i35" src="img28.png" width="370" height="200">
+
+<h1><p style="font-style: oblique;font-size:20px;position: relative;top:-200px;left:30px;">Parite precedenti:</p></h1>
+<h1><p id="par" style="font-style: oblique;font-size:20px;position: relative;top:-200px;left:30px;">Ultima partita vinta da </p></h1>
+<h1><p id="par1" style="font-style: oblique;font-size:20px;position: relative;top:-200px;left:30px;">Penultima partita vinta da </p></h1>
+<h1><p id="par2" style="font-style: oblique;font-size:20px;position: relative;top:-200px;left:30px;">Terzultima partita vinta da </p></h1>
+
+</div>
+
+<div id="p1" style="position: absolute;top:0%;left:0%;width: 100%;height: 100%;"background:url(img24.png) no-repeat center;background-size: cover;"><img id="i29" src="img24.png" width="1366" height="651">
+
+<div id="o" style="position: relative;top:-410px;left:555px;width: 135px;height: 135px;"><img id="i30" src="img25.png" width="50" height="50"></div>
+<div id="o1" style="position: relative;top:-415px;left:755px;width: 135px;height: 135px;"><img id="i31" src="img26.png" width="50" height="50"></div>
+
+<div id="o2" style="position: relative;top:-550px;left:555px;width: 135px;height: 135px;"><img id="i32" src="img25.png" width="50" height="50"></div>
+<div id="o3" style="position: relative;top:-815px;left:755px;width: 135px;height: 135px;"><img id="i33" src="img26.png" width="50" height="50"></div>
+
+<div id="f" style="position: relative;top: -780px;left:605px;width: 100px;height: 50px;"background:url(img27.png) no-repeat center;background-size: cover;"><img id="i34" src="img27.png" width="150" height="75"></div>
+
+</div>
+
+</body>
+</html>
