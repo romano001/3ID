@@ -1,0 +1,1 @@
+Ho riconsegnato la consegna 02(quella del codice fiscale) perché mi sono accorto della presenza di un errore
