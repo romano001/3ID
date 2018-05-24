@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -87,7 +87,7 @@
      //Adesso calcoliamo la parte del codice fiscale occupata dal COGNOME
      ConCog=ConCog+VocCog+"XXX";
      ConNom=ConNom+VocNom+"XXX";
-     codice=codice+ConCog.substring(0,3)+ConNom.charAt(0)+ConNom.charAt(1)+ConNom.charAt(2);
+     codice=codice+ConCog.substring(0,3)+ConNom.charAt(0)+ConNom.charAt(1)+ConNom.charAt(3);
       //Adesso calcoliamo la parte dell'ANNO di nascita del codice fiscale
       j=6;
       for(let i=2;i<4;i++)
