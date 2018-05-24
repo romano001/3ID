@@ -1,0 +1,1 @@
+Ho riconsegnato la consegna_02(quella del codice fiscale) in quanto mi sono accorto della presenza di un errore
