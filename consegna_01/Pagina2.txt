@@ -1,0 +1,136 @@
+<html>
+ <head>
+  <title>
+    Leicester post-titolo
+  </title>
+  <link rel="stylesheet" type="text/css" href="stile2.css">
+  <style type="text/css">
+  </style>
+ </head>
+ <body>
+   <div id="margineintro">
+     <FONT COLOR="RED" size=5;>
+       Stagione 2016-17
+     </FONT>
+   </div>
+ </body>
+   <div id="immagini2">
+   <img src="images.jpg" alt="immagine non trovata">
+   <a href="http://www.thefa.com/competitions/hidden---the-fa-community-shield">
+    <img src="images3.jpg" alt="immagine non trovata">
+   </a>
+   <a href="http://www.thefa.com/competitions/hidden---the-fa-community-shield">
+    <img src="images4.jpg" alt="immagine non trovata">
+   </a>
+ </div>
+<div class="dropdown"  style="width:99%;">
+<button class="dropbtn" style="display:block; margin-left: 25px; margin-top: -150px;">Scegli la stagione di cui vedere l'andamento</button>
+<div class="dropdown-content" style="width:0%; margin-left: 25px; margin-top:0px;">
+  <a href="Pagina1.html">Stagione 2015 - 16</a>
+  <a href="Pagina2.html">Stagione 2016 - 17</a>
+</div>
+</div>
+   <font face="verdana">
+   <div id="contenuto">
+    <font color="green" face="courier">
+    <h1>
+    <center>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#p1").css("color", "blue")
+            .slideUp(2000)
+            .slideDown(2000);
+    });
+});
+</script>
+</head>
+<body>
+
+<p id="p1">Leicester post-titolo</p>
+
+<button>animazione</button>
+
+</body>
+    </center>
+    </h1>
+    </font>
+    <br>
+     La stagione 2016-17 inizia con la sconfitta nel Community Shield per 2-1 contro il Manchester United. Con lo stesso risultato il Leiester perde anche la prima partita stagionale in Premier League sul campo dell'Hull City. La prima vittoria stagionale arriva a fine settembre con il 2-1 ai danni dello Swansea. Nelle 3 giornate successive arrivano pero' due sconfitte pesantissime per 4-1 sui campi di Liverpool e Manchester United, intervallate dalla vittoria casalinga per 3-0 col Burnley.
+     <div id="immagine">
+</head>
+<body>
+      <img src="images9.jpg" alt="immagine non trovata">
+    </div>
+     Dopo il pareggio per 1-1 in trasferta col Tottenham (decima giornata) arriva un periodo di crisi che dura fino alla 26esima giornata (vittoria per 3-1 col Liverpool con in panchina il vice di Ranieri) durante il quale le foxes raccolgono la miseria di 9 punti. Mentre in FA Cup e' arrivata l'eliminazione per mano del Millwall (terza divisione inglese), in Champions il Leicester passa tranquillamente il suo girone (nonostante la sconfitta per 5-0 in casa del Porto, ma il Leicester era gia' qualificato) e pesca agli ottavi gli spagnoli del Siviglia. La gara di andata termina 2-1 per gli andalusi e il Leicester decide di esonerare il tecnico Ranieri e il suo vice, Craig Shakespeare, ne prende il posto. Il nuovo allenatore sembra dare una scossa ai giocatori, infatti in campionato arrivano 5 vittorie di fila (dopo la vittoria col Liverpool i giocatori vennero accusati di aver remato contro Ranieri per via di come e' arrivata questa vittoria), mentre in Champions il Leicester ribalta il 2-1 del Sanchez-Pizjuan imponendosi 2-0 tra le mura amiche. L'avventura delle foxes in Champions termina pero' ai quarti di finale contro l'Atletico Madrid, che s'impone 1-0 a Madrid e pareggia 1-1 a Leicester. Il Leicester City chiude discretamente il suo campionato, arrivano infatti 2 vittorie, 2 pareggi e 3 sconfitte (tra le quali spicca l'1-6 casalingo col Tottenham), piazzandosi al 12esimo posto in un campionato che vede trionfare il Chelsea di Antonio Conte.
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+</script>
+
+<style>
+#panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(65, 105, 225);
+    border: solid 10px blue;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+</style>
+</head>
+<body>
+ <br>
+ <br>
+ <div id="flip">
+   <font color="white">
+   Clicca per vedere alcune statistiche relative alla stagione 2016 - 17
+ </div>
+ <div id="panel">
+   <vl type="round">
+   <vl type="round">
+   <li>In questa stagione con Ranieri in panchina il Leicester ha vinto solo una partita in trasferta, in FA Cup, grazie al 2-1 sull'Everton</li>
+   <li>In questa stagione il Leicester ha eguagliato il record del Malaga in Champions League per essere arrivato ai quarti di finale alla prima esperienza in questa competizione</li>
+   <li>Con il rigore parato a N'Zonzi (Siviglia), Schmeichel diventa il primo portiere della storia della Champions League a parare un rigore sia all'andata che al ritorno nella fase ad eliminazione diretta</li>
+  </vl>
+</font>
+  <div id="panel"><vl type="round">
+  <vl type="round">
+ </div>
+</div>
+    <div id="collegamenti">
+     <a href="https://www.premierleague.com/">
+      <img src="images1.jpg" alt="immagine non trovata">
+     </a>
+     <a href="http://www.thefa.com/competitions/thefacup">
+      <img src="images10.jpg" alt="immagine non trovata">
+     </a>
+     <a href="http://it.uefa.com/uefachampionsleague/">
+      <img src="images6.jpg" alt="immagine non trovata">
+     </a>
+     <img src="img24.jpg" alt="immagine non trovata">
+     Nell'immagine di sopra si puo' ammirare il murale dedicato a Ranieri, che ,anche se la seconda (e ultima) stagione non è stata delle migliori, non verra' mai dimenticato da quelle parti
+    </div>
+   </div>
+   <a href="http://www.itiszuccante.gov.it/">
+   <img src="img22.jpg" alt="immagine non trovata">
+   </a>
+   <br>
+   La data e l'ora in questo momento sono(aggiornare ogni volta):<br>
+   <body>
+   <script>
+    document.write(Date());
+   </script>
+  </body>
+   </font>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,73 @@
+
+    #margini{
+        width: 1280px;
+        margin: auto;
+        }
+    #margineintro{
+      margin-top: 0px;
+      margin-left: 0px;
+    }
+    #contenuto{
+        width:1000px;
+        margin-left: 150px;
+        margin-top: 50px;
+        }
+    #immagine{
+        margin-left: 200px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        }
+    #immagini2{
+        margin-left: 400px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        }
+        #immaginecentro{
+          margin-right: 400px;
+          margin-top: 50px;
+          margin-bottom: 50px;
+        }
+    #collegamenti{
+        margin-left: 250px;
+        margin-top: 50px;
+        margin-bottom: 50px
+        }
+  .dropbtn {
+            background-color: blue;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 345px;
+            box-shadow: 0px 8px 16px 0px /*rgba(0,0,0,0.2)*/ blue;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: gold}
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: red;
+        }
