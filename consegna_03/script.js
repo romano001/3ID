@@ -53,35 +53,35 @@ let game = {
         this.stampa();
     },
     checkWinner: function() {
-        if(this.mosse===9){
-            this.alertbox.style.backgroundColor = "yellow";
+        winCheck = (this.nextMove==='o') ? 'x' : 'o';
+        if(
+            /* righe */
+            this.celle[0].value===winCheck&&this.celle[1].value===winCheck&&this.celle[2].value===winCheck ||
+            this.celle[3].value===winCheck&&this.celle[4].value===winCheck&&this.celle[5].value===winCheck ||
+            this.celle[6].value===winCheck&&this.celle[7].value===winCheck&&this.celle[8].value===winCheck ||
+            /* colonne */
+            this.celle[0].value===winCheck&&this.celle[3].value===winCheck&&this.celle[6].value===winCheck ||
+            this.celle[1].value===winCheck&&this.celle[4].value===winCheck&&this.celle[7].value===winCheck ||
+            this.celle[2].value===winCheck&&this.celle[5].value===winCheck&&this.celle[8].value===winCheck ||
+            /* diagonali */
+            this.celle[0].value===winCheck&&this.celle[4].value===winCheck&&this.celle[8].value===winCheck ||
+            this.celle[2].value===winCheck&&this.celle[4].value===winCheck&&this.celle[6].value===winCheck
+        ) {                
+            for(let c of this.celle) {
+                if(c.value!==winCheck) {
+                    c.value='-';
+                }
+            }
+            this.stampa();
+            this.alertbox.style.backgroundColor = "green";
             this.out.style.color = 'black';
-            this.out.innerHTML = `Pareggio!`;
+            this.out.innerHTML = `Vince il player ${winCheck}`;
             this.canPlay = false;
         } else {
-            winCheck = (this.nextMove==='o') ? 'x' : 'o';
-            if(
-                /* righe */
-                this.celle[0].value===winCheck&&this.celle[1].value===winCheck&&this.celle[2].value===winCheck ||
-                this.celle[3].value===winCheck&&this.celle[4].value===winCheck&&this.celle[5].value===winCheck ||
-                this.celle[6].value===winCheck&&this.celle[7].value===winCheck&&this.celle[8].value===winCheck ||
-                /* colonne */
-                this.celle[0].value===winCheck&&this.celle[3].value===winCheck&&this.celle[6].value===winCheck ||
-                this.celle[1].value===winCheck&&this.celle[4].value===winCheck&&this.celle[7].value===winCheck ||
-                this.celle[2].value===winCheck&&this.celle[5].value===winCheck&&this.celle[8].value===winCheck ||
-                /* diagonali */
-                this.celle[0].value===winCheck&&this.celle[4].value===winCheck&&this.celle[8].value===winCheck ||
-                this.celle[2].value===winCheck&&this.celle[4].value===winCheck&&this.celle[6].value===winCheck
-            ) {                
-                for(let c of this.celle) {
-                    if(c.value!==winCheck) {
-                        c.value='-';
-                    }
-                }
-                this.stampa();
-                this.alertbox.style.backgroundColor = "green";
+            if(this.mosse===9) {
+                this.alertbox.style.backgroundColor = "yellow";
                 this.out.style.color = 'black';
-                this.out.innerHTML = `Vince il player ${winCheck}`;
+                this.out.innerHTML = `Pareggio!`;
                 this.canPlay = false;
             }
         }
