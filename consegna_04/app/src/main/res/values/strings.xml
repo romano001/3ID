@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TicTacToe</string>
+    <string name="new_game">New Game</string>
+    <string name="parity">Draw!</string>
+    <string name="winX">Player X Wins!</string>
+    <string name="winO">Player O Wins!</string>
+    <string name="exit_app">Exit</string>
+    <string name="new_round">New Round</string>
+    <string name="xpoint">Player X</string>
+    <string name="opoint">Player O</string>
+    <string name="whose_round">Player %1$s moves</string>
+</resources>

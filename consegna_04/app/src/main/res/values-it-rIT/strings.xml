@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TicTacToe</string>
+    <string name="new_game">Nuova Partita</string>
+    <string name="parity">Si é verificata una situazione di pareggio</string>
+    <string name="winX">Vince il giocatore X</string>
+    <string name="winO">Vince il giocatore O</string>
+    <string name="exit_app">Esci</string>
+    <string name="new_round">Nuovo Round</string>
+    <string name="xpoint">Punti X</string>
+    <string name="opoint">Punti O</string>
+    <string name="whose_round">Tocca al giocatore %1$s</string>
+</resources>
