@@ -32,10 +32,18 @@
   #contenuto{
     margin-top: -550px;
   }
+  #reset2{
+    height: 80px;
+    width: 300px;
+    background-color: green;
+  }
   </style>
   <script>
   let clicked=[0,0,0,0,0,0,0,0,0];
   let risultato="";
+  let ContX=0;
+  let ContO=0;
+  let Par=0;
 
   function tris(id){
     let Premuto=document.getElementById(id);
@@ -57,10 +65,13 @@
     else if(clicked[0]==1 && clicked[3]==1 && clicked[6]==1) {vittoriaX=true; clicked=[3,3,3,3,3,3,3,3,3];}//controllo colonna a sinistra
     else if(clicked[1]==1 && clicked[4]==1 && clicked[7]==1) {vittoriaX=true; clicked=[3,3,3,3,3,3,3,3,3];}//controllo colonna centrale
     else if(clicked[0]==1 && clicked[4]==1 && clicked[8]==1) {vittoriaX=true; clicked=[3,3,3,3,3,3,3,3,3];}//controllo diagonale che va da sinistra a destra
+    else if(clicked[2]==1 && clicked[5]==1 && clicked[8]==1) {vittoriaX=true; clicked=[3,3,3,3,3,3,3,3,3];}//colonna destra
     else if(clicked[2]==1 && clicked[4]==1 && clicked[6]==1) {vittoriaX=true; clicked=[3,3,3,3,3,3,3,3,3];}//controllo diagonaleche va da destra a sinistra
     if(vittoriaX){
       //in caso positivo rilascia un messaggio
       risultato="Vittoria dell'utente";
+      ContX++;
+      document.getElementById("vittX").innerHTML=ContX;
       document.getElementById("risultato").innerHTML=risultato;
       return;
     }//if
@@ -75,10 +86,8 @@
 
     //altrimenti tocca alla macchina
     let i=0;
-    while(clicked[i]!=0 && i<9)
-    {
-      i++;
-    }
+    i=Math.floor(Math.random() * 9);
+    while(clicked[i]!=0) i=Math.floor(Math.random() * 9);
     clicked[i]=2;
     pos = i+1;
     document.getElementById(""+pos).className="giocatoreO";
@@ -91,10 +100,13 @@
     else if(clicked[0]==2 && clicked[3]==2 && clicked[6]==2) {vittoriaO=true; clicked=[3,3,3,3,3,3,3,3,3];}//controllo colonna a sinistra
     else if(clicked[1]==2 && clicked[4]==2 && clicked[7]==2) {vittoriaO=true; clicked=[3,3,3,3,3,3,3,3,3];}//controllo colonna centrale
     else if(clicked[0]==2 && clicked[4]==2 && clicked[8]==2) {vittoriaO=true; clicked=[3,3,3,3,3,3,3,3,3];}//controllo diagonale che va da sinistra a destra
+    else if(clicked[2]==2 && clicked[5]==2 && clicked[8]==2) {vittoriaO=true; clicked=[3,3,3,3,3,3,3,3,3];}//colonna destra
     else if(clicked[2]==2 && clicked[4]==2 && clicked[6]==2) {vittoriaO=true; clicked=[3,3,3,3,3,3,3,3,3];}//controllo diagonaleche va da destra a sinistra
     if(vittoriaO){
       //in caso positivo rilascia un messaggio
       risultato="Vittoria del computer";
+      ContO++;
+      document.getElementById("vittO").innerHTML=ContO;
       document.getElementById("risultato").innerHTML=risultato;
       return;
     }//if
@@ -103,7 +115,8 @@
     {
       if(clicked[j]==0) Finita=false;
     }
-    if(risultato=="" && Finita) {risultato="Pareggio";}
+    if(risultato=="" && Finita) {risultato="Pareggio";Par++;}
+    document.getElementById("Pari").innerHTML=Par;
     document.getElementById("risultato").innerHTML=risultato;
   }//tris
 
@@ -117,7 +130,18 @@
       let pos = i+1;
       document.getElementById(""+pos).className="init";
     }
+
   }
+
+  function AzzeraCont(){
+    ContX=0;
+    ContO=0;
+    Par=0;
+    document.getElementById("vittX").innerHTML=ContX;
+    document.getElementById("vittO").innerHTML=ContO;
+    document.getElementById("Pari").innerHTML=Par;
+  }
+
   </script>
 
 </header>
@@ -173,6 +197,20 @@
 <font color="green" size=5 face="verdana">Risultato: </font>
 <font color="black" size=5 face="verdana">
 <label id="risultato"></label></font>
+<br><br>
+<font color="green" size=5 face="verdana">Vittorie X: </font>
+<font color="black" size=5 face="verdana">
+<label id="vittX">0</label></font>
+<br><br>
+<font color="green" size=5 face="verdana">Pareggi: </font>
+<font color="black" size=5 face="verdana">
+<label id="Pari">0</label></font>
+<br><br>
+<font color="green" size=5 face="verdana">Vittorie O: </font>
+<font color="black" size=5 face="verdana">
+<label id="vittO">0</label></font>
+<br><br><br><br>
+<button id="reset2" onclick="AzzeraCont()"> <font color="white" size=4 face="verdana"> Azzera contatori </font></button>
 </div>
 </body>
 </html>
