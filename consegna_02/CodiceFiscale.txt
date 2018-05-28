@@ -85,9 +85,12 @@
        else VocNom=VocNom+nome.substring(i,i+1)//VocNom=VocNom.replace(VocNom.substring(nVoc,nVoc+1), nome.substring(i,i+1));
      }//for
      //Adesso calcoliamo la parte del codice fiscale occupata dal COGNOME
+
      ConCog=ConCog+VocCog+"XXX";
-     ConNom=ConNom+VocNom+"XXX";
-     codice=codice+ConCog.substring(0,3)+ConNom.charAt(0)+ConNom.charAt(1)+ConNom.charAt(3);
+     let finaleNome=ConNom+VocNom+"XXX";
+     alert("Nome="+ConNom);
+     if(ConNom.length>=4) codice=codice+ConCog.substring(0,3)+finaleNome.charAt(0)+finaleNome.charAt(1)+finaleNome.charAt(3);
+     else codice=codice+ConCog.substring(0,3)+finaleNome.charAt(0)+finaleNome.charAt(1)+finaleNome.charAt(2);
       //Adesso calcoliamo la parte dell'ANNO di nascita del codice fiscale
       j=6;
       for(let i=2;i<4;i++)
@@ -141,18 +144,12 @@
       j++;
       //Adesso calcoliamo la parte del GIORNO di nascita del codice fiscale
       let k=0;
+      let numero=GNascita*1;
       if(sesso.substring(k,k+1) == "F")
       {
-          GNascita=GNascita+GNascita.substring(k,k+1)+4;
+          numero+=40;
       }//if
-      for(k=0; k<2; k++)
-      {
-          if(j<11)
-          {
-              codice=codice+GNascita.substring(k,k+1);
-              j++;
-          }//if
-      }//for
+      codice=codice+numero;
       //Adesso calcoliamo la parte del COMUNE di nascita del codice fiscale
       codice=codice+siglaProv;
      //Adesso calcoliamo la parte del codice fiscale occupata dal CARATTERE DI CONTROLLO
