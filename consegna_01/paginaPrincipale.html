@@ -1,0 +1,439 @@
+<html>
+<head>
+<style> 
+
+/*Impostazione dello sfondo della pagina*/
+html { 
+	background: url(img1.jpg) no-repeat center fixed;
+	background-size: cover;
+}
+
+/*Dichiarazione del paragrafo principale*/
+.par1 {
+        position: absolute;
+        left: 4.9%;
+	top: 1%;
+	width: 90%;
+	height: 440%;
+	background: white;
+	border: 3px solid black;
+}
+
+/*Dichiarazione del titolo pincipale*/
+.titolo{
+position: relative;
+	font: italic bold 12px/30px Georgia, serif;
+	text-align: center;
+	font-size: 5em;
+	margin-top:-10%;
+}
+
+/*Dichiarazione del titolo secondario*/
+.titolo1{
+position: relative;
+	font: italic bold 12px/30px Georgia, serif;
+	margin-top:15%;
+	font-size: 2.3em;
+}
+
+/*Dichiarazione del titolo terziario*/
+.titolo2{
+position: relative;
+	font: italic bold 12px/30px Georgia, serif;
+	text-align: center;
+	margin-top:-5%;
+	font-size: 3em;
+}
+
+/*Dichiarazione del titolo quaternario*/
+.titolo3{
+position: relative;
+	font: italic bold 12px/30px Georgia, serif;
+	margin-left:9%;
+	margin-top:16%;
+	font-size: 3em;
+}
+
+/*Dichiarazione del paragrafo contenente le immagini che cambiano*/
+.par2{
+	position: relative;
+	left: 4%;
+	top: 3%;
+	width: 80%;
+}
+
+/*Dichiarazione cornice del paragrafo 2*/
+.par3{
+	position: relative;
+	width: 88.5%;
+	height: 16.9%;
+    	border: 10px solid transparent;
+    	border-image: url(img5.png) 50 round;
+}
+
+/*Dichiarazione del paragrafo contenente la descrizione della prima immagine*/
+.par4{
+	position: relative;
+	left:104%;
+	top:-100%;
+	width: 25%;
+	height:96%;
+	border-radius: 10px;
+	border: 4px solid orange;
+	background-color:rgba(255,150,0,0.6);
+	text-align: justify;
+        padding: 5px;
+}
+
+/*Metodo per aumentare lo spazio tra le righe*/
+p.big {
+    line-height: 1.5;
+}
+
+/*Dichiarazione del paragrafo contenente l'immagine del logo in alto a destra*/
+.par5{
+	position: relative;
+	width: 9%;
+	height: 7%;
+	top:-6%;
+	left:89%;
+	background:url(img6.png) no-repeat center;
+	background-size: cover;
+}
+
+/*Dichiarazione del paragrafo contenente la prima immagine*/
+.par6{
+	position: relative;
+	width: 24%;
+	height: 7%;
+	top:3%;
+	left:6%;
+	background: url(img7.jpg) no-repeat center;
+	background-size: cover;
+}
+
+/*Dichiarazione del paragrafo contenente la seconda immagine*/
+.par7{
+	position: relative;
+	width: 24%;
+	height: 7%;
+	top:-4%;
+	left:40%;
+	background: url(img8.png) no-repeat center;
+	background-size: cover;
+}
+
+/*Dichiarazione del paragrafo contenente la terza immagine*/
+.par8{
+	position: relative;
+	width: 24%;
+	height: 7%;
+	top:-11%;
+	left:70%;
+	background: url(img9.png) no-repeat center;
+	background-size: cover;
+}
+
+/*Dichiarazione del paragrafo contenente la descrizione delle novità*/
+.par9{
+	margin-left:auto;
+	margin-right:auto;
+	position: relative;
+	top: 3%;
+	width: 85%;
+	height: 20%;
+	border-radius: 10px;
+	border: 4px solid rgb(255, 26, 102);
+	background-color:rgb(255, 204, 204);
+	text-align: justify;
+        padding: 5px;
+	text-align: center;
+	font-size: 40px;
+}
+
+/*Dichiarazione del paragrafo contenente l'immagine all'interno del paragrafp delle novità*/
+.par10{
+	position: relative;
+        left: 30%;
+	width: 35%;
+	height: 30%;
+	background: url(img10.png) no-repeat center;
+	background-size: cover;
+}
+
+/*Dichiarazione del paragrafo contenente l'immagine a sinistra all'interno del paragrafp delle novità*/
+.par11{
+	position: relative;
+	width: 26%;
+	height: 24%;
+	top:-30%;
+	left:2%;
+	background: url(img11.png) no-repeat center;
+	background-size: cover;
+}
+
+/*Dichiarazione del paragrafo contenente l'immagine a destra all'interno del paragrafo delle novità*/
+.par12{
+	position: relative;
+	width: 26%;
+	height: 27%;
+	top:-58%;
+	left:68%;
+	background: url(img12.png) no-repeat center;
+	background-size: cover;
+}
+
+/*Dichiarazione del paragrafo finale*/
+.par13{
+	margin-left: 4.5%;
+	margin-top: 220%;
+	width: 90%;
+	height: 50%;
+	top: -100%;
+	background: #8a8a5c;
+	border: 3px solid black;
+	text-align: justify;
+        padding: 5px;
+	text-align: center;
+	font-size: 40px;
+}
+
+/*Dichiarazione del paragrafo contenente l'ultima immagine*/
+.par14{
+	position: relative;
+	width: 48%;
+	height: 15%;
+	top:-1%;
+	left:46%;
+	background:url(img13.jpg) no-repeat center;
+	background-size: cover;
+}
+
+/*Dichiarazione del paragrafo contenente la descrizione dell'ultima immagine*/
+.par15{
+	position: relative;
+	left:6%;
+	top:-12%;
+	width: 30%;
+	height: 7%;
+	border-radius: 10px;
+	border: 4px solid orange;
+	background-color:rgba(255,150,0,0.6);
+	text-align: justify;
+        padding: 5px;
+}
+
+/*Tipologia dell'immagine*/
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*Dichiarazione dell'overlay invisibile presente sopra l'immagine*/
+.overlay {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+}
+
+/*Attivazione e tipologie di overlay*/
+.par6:hover .overlay {
+  opacity: 0.6;
+}
+.par7:hover .overlay {
+  opacity: 0.6;
+}
+.par8:hover .overlay {
+  opacity: 0.6;
+}
+
+/*Tipologia di testo prsente nell'overlay dell'immagine*/
+.text {
+  color: black;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+/*Dichiarazione degli attributi del primo pulsante*/
+.pulsante {
+  position: relative;
+  margin-top: -20% ;
+  left: 32% ;
+  padding: 20px 150px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #ff9900;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+/*Cambiamento del colore dl pulsante quando il puntatore vi è sopra*/
+.pulsante:hover {background-color: #ff6600}
+
+/*Traslazione verso il basso del pulsante quando premuto*/
+.pulsante:active {
+  background-color: #ff6600;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/*Dichiarazione degli elementi necessari per la barra di ricerca*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: orange;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 50px 50px;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: purple;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="par1">
+
+<ul>
+  <li><a class="active" href="file:///C:/Users/Leonardo/Desktop/pagina%20HTML.html">Home</a></li>
+  <li><a href="file:///C:/Users/Leonardo/Desktop/pagina2%20HTML.html">Hamburgers</a></li>
+  <li><a href="https://www.google.it/maps/search/mcdonald+italia/@45.4305557,12.2175301,9.69z">Maps</a></li>
+  <li><a href="#informazioni">Informazioni</a></li>
+  <li><a href="#home" onclick="scrollWin(0, 1500)">Novità</a></li>
+</ul>
+
+<script> //Script per spostare la visuale verso il basso
+function scrollWin(x, y) {
+    window.scrollBy(x, y);
+}
+</script>
+
+<div class="par5">
+</div>
+
+<div class="titolo">
+<font color="yellow"><u>McDonald's website</u></font>
+</div>
+
+<div class="par2">
+<div class="par3">
+
+	<img class="mySlides" src="img2.png" >
+	<img class="mySlides" src="img3.png" >
+	<img class="mySlides" src="img4.png" >
+
+<div class="par4">
+<p class="big">
+Vieni da McDonald e prova tutti i nuovi sapori dei nostri hamburger. Anche lo chef Joe Bastianich ha approvato il nostro gusto e la nostra qualità. Affrettati e corri ad assaggiare il gusto del nostro nuovo Mega Crispy McBacon, da oggi ancora più grande! E con un happy meal riceverai un giocattolo in omaggio. Non dimenticare inoltre che, solo questa settimana, serviamo anche la colazione con uno sconto del 50%.
+</p>
+</div>
+
+</div>
+</div>
+
+<div class="titolo1">
+<font color="black">Controlla la lista dei panini selezionati da Joe Bastianich:</font>
+</div>
+
+<div class="par6">
+  <img class="image">
+  <div class="overlay">
+    <div class="text">McBacon</div>
+  </div>
+</div>
+
+<div class="par7">
+  <img class="image">
+  <div class="overlay">
+    <div class="text">McChiken</div>
+  </div>
+</div>
+
+<div class="par8">
+  <img class="image">
+  <div class="overlay">
+    <div class="text">Big Mac</div>
+  </div>
+</div>
+
+<button class="pulsante"><a href="file:///C:/Users/Leonardo/Desktop/pagina2%20HTML.html">Vai alla lista</a></button>
+
+<div class="titolo2">
+<font color="yellow">Novità della settimana</font>
+</div>
+
+<div class="par9">
+<font color="#660033"><i><br>Solo fino a sabato 27 gennaio 2018<br>serviremo la colazione con uno sconto del 50%!<br>e riceverete dei coupon come questi:<br><br><br><div class="par10"></div>per ottenere uno sconto sul vostro prossimo pasto.</i></font>
+<div class="par11"></div>
+<div class="par12"></div>
+</div>
+
+<div class="titolo3">
+<font color="yellow">Happy Meal</font>
+</div>
+
+<div class="par14">
+</div>
+
+<div class="par15">
+E per grandi e piccini, non dimenticarti dell'irresistibile Happy Meal! Con ogni Happy Meal troverai una sorpresa annessa.<br>All'interno di ogni Happy Meal c'è:<br>-Un hamburger medio<br>-Una CocaCola piccola<br>-Patatine medie (con salsa a scelta)<br>-Crocchette di pollo da 4<br>-Un giocattolo
+</div>
+
+<script> //Script per il cambio auomatico dell'immagine
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 3000); //Cambia ogni 3 secondi
+}
+</script>
+
+</div>
+
+<div class="par13">
+<font color=white>Ricrdati di mandarci un messaggio tramite la sezione informazioni<br><br>Lonardo Campagnol<br>21/01/18</font>
+</div>
+
+</body>
+</html>

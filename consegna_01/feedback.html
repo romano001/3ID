@@ -1,0 +1,188 @@
+<html>
+<head>
+<style> 
+
+/*Impostazione dello sfondo della pagina*/
+html { 
+	background: url(img1.jpg) no-repeat center fixed;
+	background-size: cover;
+}
+
+/*Dichiarazione del paragrafo principale*/
+.par1 {
+	margin-left:auto;
+	margin-right:auto;
+	width: 1200px;
+	height: 1000px;
+	background: white;
+	border: 3px solid black;
+}
+
+/*Dichiarazione del titolo pincipale*/
+.titolo{
+	font: italic bold 12px/30px Georgia, serif;
+	text-align: center;
+	font-size: 65px;
+	margin-top:-100px;
+}
+
+/*Dichiarazione del paragrafo contenente l'immagine del logo in alto a destra*/
+.par2{
+	position: relative;
+	width: 200px;
+	height: 200px;
+	top:-170px;
+	left:1015px;
+	background:url(img6.png) no-repeat center;
+	background-size: cover;
+}
+
+/*Dichiarazione del paragrafo finale*/
+.par3{
+	margin-left:auto;
+	margin-right:auto;
+	width: 1200px;
+	height: 250px;
+	top:-100px;
+	background: #8a8a5c;
+	border: 3px solid black;
+	text-align: justify;
+        padding: 5px;
+	text-align: center;
+	font-size: 40px;
+}
+
+/*Dichiarazione degli attributi del primo pulsante*/
+.pulsante {
+  position: absolute;
+  top:850px;
+  left:520px;
+  padding: 25px 200px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #33cc33;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+/*Cambiamento del colore dl pulsante quando il puntatore vi è sopra*/
+.pulsante:hover {background-color: #1f7a1f}
+
+/*Traslazione verso il basso del pulsante quando premuto*/
+.pulsante:active {
+  background-color: #1f7a1f;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/*Dichiarazione degli elementi necessari per la barra di ricerca*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: orange;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 50px 50px;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: purple;
+}
+
+</style>
+</head>
+<body>
+
+<div class="par1">
+
+<ul>
+  <li><a class="active" href="file:///C:/Users/Leonardo/Desktop/pagina%20HTML.html">Home</a></li>
+  <li><a href="file:///C:/Users/Leonardo/Desktop/pagina2%20HTML.html">Hamburgers</a></li>
+  <li><a href="https://www.google.it/maps/search/mcdonald+italia/@45.4305557,12.2175301,9.69z">Maps</a></li>
+  <li><a href="file:///C:/Users/Leonardo/Desktop/pagina3%20HTML.html">Informazioni</a></li>
+</ul>
+
+<div class="par2">
+</div>
+
+<div class="titolo">
+<font color="yellow"><u>Feedback</u></font>
+</div>
+
+<br><br><br><br>
+<font size="6">-Qual'è il tuo Hamburger preferito:</font>
+<select>
+  <option value="volvo">Crispy McBacon</option>
+  <option value="saab">Big Mac</option>
+  <option value="opel">Cheeseburger</option>
+  <option value="audi">McChicken</option>
+  <option value="audi">Filet-o-Fish</option>
+</select>
+
+<br><br><br><br>
+<font size="6">-Cosa bevi di solito:</font>
+<select>
+  <option value="volvo">Fanta</option>
+  <option value="saab">CocaCola</option>
+  <option value="opel">Sprite</option>
+  <option value="audi">thè</option>
+  <option value="audi">Acqua</option>
+</select>
+
+<br><br><br><br>
+<font size="6">-Quand'è che vieni a mangiare al McDonald di solito:</font>
+<select>
+  <option value="volvo">Nel weekend</option>
+  <option value="saab">Una volta al mese</option>
+  <option value="opel">Una volta all'anno</option>
+  <option value="audi">Mai</option>
+  <option value="audi">Ogni giorno</option>
+</select>
+
+<br><br><br><br>
+<font size="6">-Dove mangi il tuo panino:</font>
+<select>
+  <option value="volvo">In macchina</option>
+  <option value="saab">Su una panchina</option>
+  <option value="opel">A casa</option>
+  <option value="audi">In ristorante</option>
+  <option value="audi">Camminando</option>
+</select>
+
+<br><br><br><br>
+<font size="6">-Com'è questo sito:</font>
+<select>
+  <option value="volvo">Molto</option>
+  <option value="saab">Abbastanza</option>
+  <option value="opel">così così</option>
+  <option value="audi">Brutto</option>
+  <option value="audi">Orrendo</option>
+</select>
+
+<button class="pulsante"><a href="file:///C:/Users/Leonardo/Desktop/pagina%20HTML.html">Invia le risposte</a></button>
+
+</div>
+
+<div class="par3">
+<font color=white>Ricrdati di mandarci un messaggio tramite la sezione feedback<br><br>Lonardo Campagnol<br>21/01/18</font>
+</div>
+
+</body>
+</html>
