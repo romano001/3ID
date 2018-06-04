@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<style>
+.gioco{
+  top: 5%;
+  position: absolute;
+  left: 20%;
+  width: 60%;
+  height: 54vw;
+}
+#up{
+  position: absolute;
+  height: 20%;
+  width: 20%;
+  background-color: pink;
+  left: 45%;
+  top:100%;
+}
+#down{
+  position: absolute;
+  height: 20%;
+  width: 20%;
+  background-color: pink;
+  left: 45%;
+  top:130%;
+}
+#left{
+  position: absolute;
+  left: 20%;
+  height: 20%;
+  width: 20%;
+  background-color: pink;
+  top:115%;
+}
+#right{
+  position: absolute;
+  left: 70%;
+  height: 20%;
+  width: 20%;
+  background-color: pink;
+  top:115%;
+}
+
+</style>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+let altezza=10,larghezza=10;
+let matrice =[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]
+              ,[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]
+              ,[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]];
+let valore=3;
+let xfrutta=0;
+let yfrutta=0;
+$(document).ready(function(){
+  for(let x=0;x<altezza;x++) {
+    for(let j=0;j<altezza;j++) {
+      $(".gioco").append('<div id='+ x + j + '></div>');
+      let left=x*100/altezza;
+      let top=j*100/larghezza;
+      let height=95/altezza;
+      let width=95/larghezza;
+      $('#' + x + j).css({"background-color": "gray", "top": top+'%',"left":left+'%',"position":"absolute","height":height+'%',"width":width+'%'});
+    }
+    }//fine ciclo for che riempie il container
+    let direzione=0;
+    let posx=5;
+    let posy=5;
+    let speed=450;
+    $("#up").click(function(){
+      if  (direzione!=1)
+      {
+        direzione=3;
+      }
+    });
+    $("#down").click(function(){
+      if  (direzione!=3)
+      {
+        direzione=1;
+      }
+    });
+    $("#left").click(function(){
+      if  (direzione!=0)
+      {
+        direzione=2;
+      }
+    });
+    $("#right").click(function(){
+      if  (direzione!=2)
+      {
+        direzione=0;
+      }
+    });
+    $("#lvl1").click(function(){
+      speed=650;
+      reset();
+    });
+    $("#lvl2").click(function(){
+      speed=450;
+      reset();
+    });
+    $("#lvl3").click(function(){
+      speed=150;
+      reset();
+    });
+    $("#start").click(function(){
+      reset();
+    });
+    function reset() {
+      valore=3;
+      xfrutta=0;
+      yfrutta=0;
+      direzione=0;
+      posx=5;
+      posy=5;
+      for (let x=0;x<altezza;x++) {
+        for (let j=0;j<larghezza;j++) {
+
+          matrice[x][j]=0;
+
+        }
+      }
+    }
+    function intervallo() {
+      for (let x=0;x<altezza;x++) {
+        for (let j=0;j<larghezza;j++) {
+
+          if(matrice[x][j]>0)matrice[x][j]-=1;
+          if(matrice[x][j]>0)$('#' + x + j).css({"background-color": "green"});
+          else{$('#' + x + j).css({"background-color": "gray"})}
+        }
+      }
+    }
+    function frutta() {
+      if (xfrutta==posx && yfrutta==posy)
+      {
+        valore++;
+        for (let x=0;x<altezza;x++) {
+          for (let j=0;j<larghezza;j++) {
+            if(matrice[x][j]>0)matrice[x][j]+=1;
+          }
+        }
+      while(matrice[xfrutta][yfrutta]>0)
+      {
+        xfrutta=Math.round(Math.random() * (10 - 1));
+        yfrutta=Math.round(Math.random() * (10 - 1));
+      }
+    }
+  }
+    setInterval(function(){
+    switch (direzione) {
+      case 0:
+        posx=(posx+1)%larghezza;
+        if (matrice[posx][posy]>0){alert("hai perso");
+      reset();}
+        matrice[posx][posy]=valore;
+      break;
+      case 1:
+        posy=(posy+1)%altezza;
+        if (matrice[posx][posy]>0){alert("hai perso");
+      reset();}
+        matrice[posx][posy]=valore;
+      break;
+      case 2:
+        posx=(posx-1+larghezza)%larghezza;
+        if (matrice[posx][posy]>0){alert("hai perso");
+      reset();}
+        matrice[posx][posy]=valore;
+      break;
+      case 3:
+        posy=(posy-1+altezza)%altezza;
+        if (matrice[posx][posy]>0){alert("hai perso");
+      reset();}
+        matrice[posx][posy]=valore;
+      break;
+    }
+    intervallo();
+    frutta();
+    $('#' + xfrutta + yfrutta).css({"background-color": "red"});
+    $('#' + posx + posy).css({"background-color": "darkgreen"});
+
+  }, speed);
+});
+
+</script>
+</head>
+<body>
+  <button id="start">start</button>
+  <button id="lvl1">livello 1</button>
+  <button id="lvl2">livello 2</button>
+  <button id="lvl3">livello 3</button>
+  <div class="gioco">
+  <div id="up">su</div>
+  <div id="down">giu</div>
+  <div id="left">sx</div>
+  <div id="right">dx</div>
+  </div>
+</body>
+</html>

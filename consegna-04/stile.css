@@ -1,0 +1,39 @@
+.gioco{
+  top: 5%;
+  position: absolute;
+  left: 20%;
+  width: 60%;
+  height: 54vw;
+}
+#up{
+  position: absolute;
+  height: 20%;
+  width: 20%;
+  background-color: pink;
+  left: 45%;
+  top:100%;
+}
+#down{
+  position: absolute;
+  height: 20%;
+  width: 20%;
+  background-color: pink;
+  left: 45%;
+  top:130%;
+}
+#left{
+  position: absolute;
+  left: 20%;
+  height: 20%;
+  width: 20%;
+  background-color: pink;
+  top:115%;
+}
+#right{
+  position: absolute;
+  left: 70%;
+  height: 20%;
+  width: 20%;
+  background-color: pink;
+  top:115%;
+}
